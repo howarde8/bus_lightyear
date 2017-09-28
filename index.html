@@ -14,10 +14,13 @@
     <button id="search" onclick="retrieveResult()">搜尋</button>
     <p>Result</p>
     <div id="resultDiv"></div>
+    <div id="list" >  </div>
 </body>
 
 <script>
 function loadData() {
+    var x = document.getElementById("list");
+    x.innerHTML= "hi im Jeffrey";
     var request = new XMLHttpRequest();
     request.open("GET", "/homepage-info");
     request.onload = function() {
@@ -40,6 +43,7 @@ function loadData() {
         }
     };
     request.send();
+
 }
 
 function retrieveResult() {
@@ -60,6 +64,7 @@ function retrieveResult() {
         resultDiv.innerHTML = "您選擇的是：" + company + "。";
     };
     request.send();
+
 }
 </script>
 
