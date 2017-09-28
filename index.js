@@ -2,14 +2,29 @@ const express = require("express");
 const path = require("path");
 const app = express();
 
+// define data
+var homepageJson = {
+    startCity: ["基隆市", "台北市", "新北市"],
+    endCity: ["桃園市", "新竹市"]
+};
+
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname + "/index.html"));
 });
 
-app.get("/text-response", (req, res) => {
-    user = req.query["user"];
-    resText = "Hello " + user + "!";
-    res.send(resText);
+app.get("/homepage-info", (req, res) => {
+    res.send(homepageJson);
+});
+
+app.get("/search-bus-by-city", (req, res) => {
+    startCityIndex = req.query["startCityIndex"];
+    endCityIndex = req.query["endCityIndex"];
+    res.send(
+        homepageJson.startCity[startCityIndex] +
+            "往" +
+            homepageJson.endCity[endCityIndex] +
+            "的客運公司"
+    );
 });
 
 const PORT = process.env.PORT || 5000;

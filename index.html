@@ -2,30 +2,62 @@
 
 <html>
 <head>
-    <title>AJAX Test</title>
+    <title>Bus Lightyear</title>
 </head>
 
-<body>
-    <h1>AJAX Test!!</h1>
-    <input id="user" type="text"/>
-    <button onclick="submit()">Submit</button>
-    <br/>
-    <div id="output">
-        <h3>Text to be modify</h3>
-    </div>
+<body onload="loadData()">
+    <h1>Bus Lightyear</h1>
+    <p>出發地</p>
+    <select id="startCity"></select>
+    <p>目的地</p>
+    <select id="endCity"></select>
+    <button id="search" onclick="retrieveResult()">搜尋</button>
+    <p>Result</p>
+    <div id="resultDiv"></div>
 </body>
 
 <script>
-function submit() {
+function loadData() {
+    var request = new XMLHttpRequest();
+    request.open("GET", "/homepage-info");
+    request.onload = function() {
+        var data = JSON.parse(request.responseText);
+
+        // Add startCity item to select menu
+        var startCity = document.getElementById("startCity");
+        for (var i in data.startCity) {
+            var option = document.createElement("option");
+            option.text = data.startCity[i];
+            startCity.add(option);
+        }
+
+        // Add endCity item to select menu
+        var endCity = document.getElementById("endCity");
+        for (var i in data.endCity) {
+            var option = document.createElement("option");
+            option.text = data.endCity[i];
+            endCity.add(option);
+        }
+    };
+    request.send();
+}
+
+function retrieveResult() {
+    startCityIndex = document.getElementById("startCity").selectedIndex;
+    endCityIndex = document.getElementById("endCity").selectedIndex;
+
     var request = new XMLHttpRequest();
     request.open(
         "GET",
-        "/text-response?user=" + document.getElementById("user").value
+        "/search-bus-by-city?startCityIndex=" +
+            startCityIndex +
+            "&endCityIndex=" +
+            endCityIndex
     );
     request.onload = function() {
-        console.log(request.responseText);
-        document.getElementById("output").innerHTML =
-            "<h3>" + request.responseText + "</h3";
+        var company = request.responseText;
+        var resultDiv = document.getElementById("resultDiv");
+        resultDiv.innerHTML = "您選擇的是：" + company + "。";
     };
     request.send();
 }
