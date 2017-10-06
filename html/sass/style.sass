@@ -1,0 +1,526 @@
+// COLOR VARIABLE
+$color_yellow: #EEC853
+$color_blue: #1085A8
+$color_green: #96D2D2
+$color_white: #FCFCFC
+$color_gray: rgba(0,0,0,0.5)
+
+// BASE SIZE
+$base_line_width: 4px
+
+// BREAK WIDTH
+$break_large: 1024px
+$break_medium: 768px
+$break_small: 400px
+
+// FONT SETTING
+$font_family: 微軟正黑體
+$font_size: 15px
+
+// MIXIN SETTING
+@mixin fill
+  width: 100%
+  height: 100%  
+@mixin center
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translateX(-50%) translateY(-50%) 
+@mixin center_horizontal
+  left: 50%
+  transform: translateX(-50%)
+@mixin size($w: 50px,$h: 50px)
+  width: $w
+  height: $h
+
+// GLOBAL SETTING
+*
+  position: relative
+  margin: 0px
+  padding: 0px
+  font-family: $font_family
+  box-sizing: border-box
+  //border: solid 0.1px 
+  word-break: break-all
+  
+html,body
+  width: 100%
+  border: 0px
+  
+.buspage
+  +size(70%,100%)
+.empty_space
+  +size(100%,105px)
+.bus_photo
+  left: 0px
+  +size(100%,700px)
+  padding-top: 250px
+  background-image: url(https://i.imgur.com/BwWEKCP.jpg)
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  
+.guide_line
+  +size(75%,50px)
+  padding: 10px 0px
+  +center_horizontal
+  background-color: $color_white
+  .topic
+    display: inline-block
+    font-size: $font_size*1.2
+    letter-spacing: 1px
+    margin-right: 20px
+    cursor: pointer
+.main_info
+  +size(75%,150px)
+  padding: 20px 10px 0px 0px
+  +center_horizontal
+  border-top: 1px solid rgba(0,0,0,0.5)
+  border-bottom: 1px solid rgba(0,0,0,0.5)
+  .text
+    font-size: $font_size*2.4
+    font-weight: 500
+    color: rgba(0,0,0,0.9)
+  .subtext
+    font-size: $font_size*1.8
+    font-weight: 200
+    .number_of_comment, .star
+      display: inline-block
+    .star
+      letter-spacing: 10px
+      font-size: $font_size*1.6
+      color: $color_yellow
+.bus_info
+  +size(75%,250px)
+  padding: 30px 0px
+  +center_horizontal
+  border-bottom: 1px solid rgba(0,0,0,0.5)
+  .text,.max_number,.work_time
+    margin-bottom: 25px
+    font-size: $font_size*1.2
+    font-weight: 500
+  .text
+    font-size: $font_size*2
+    font-weight: 600
+    color: $color_blue 
+.content
+  width: 75%
+  padding: 20px 0px
+  +center_horizontal
+  .text
+    font-size: $font_size*1.2
+    color: $color_blue
+  .detail
+.approve
+  border-bottom: 1px solid $color_gray
+.accessory
+  width: 75%
+  padding: 30px 0px
+  +center_horizontal
+  border-bottom: 1px solid $color_gray
+  .title
+    font-size: $font_size*2
+    font-weight: 600
+    color: $color_blue 
+  .entertainment,.safety_facilities
+    display: inline-block
+    width: 40%
+    margin-top: 20px
+    .text
+      font-size: $font_size*1.2
+      color: $color_blue
+    .icon,.name
+      display: inline-block
+    .icon
+      +size(25px,25px)
+      margin-top: 8px
+    .name
+      margin-left: 10px
+      top: -6px
+  .button
+    display: inline-block
+    color: $color_blue
+    margin-top: 10px
+    cursor: pointer
+.comment
+  width: 75%
+  padding: 30px 0px
+  +center_horizontal
+  border-bottom: 1px solid $color_gray
+  .total_comment
+    .text,.star,input
+      display: inline-block
+    .text
+      font-size: $font_size*2
+      font-weight: 600
+      color: $color_blue
+    .star
+      letter-spacing: 10px
+      font-size: $font_size*1.6
+      color: $color_yellow 
+      margin-left: 27px
+    input
+      border-radius: 5px
+      height: 30px
+      float: right
+      top: 0px
+  .type,.star
+    display: inline-block
+  .driver_comment,.bus_comment 
+    font-size: $font_size*1.2
+    margin: 10px 0px
+    .star
+      color: $color_yellow 
+      letter-spacing: 10px
+  .driver_comment
+    .star
+      margin-left: 18px
+.owner
+  width: 75%
+  padding: 30px 0px
+  +center_horizontal
+  .block
+    display: inline-block
+  .left
+    +size(80%,100px)
+    .text
+      .title
+        font-size: $font_size*2
+        font-weight: 600
+        color: $color_blue
+      .join_time
+        color: $color_gray
+      .number_of_comment,.approval
+        display: inline-block
+        color: $color_gray
+  .right
+    +size(100px,100px)
+    float: right 
+  .info
+  .button
+    display: inline-block
+    margin-top: 10px
+    color: $color_blue
+    padding: 5px
+    border-radius: 5px
+    border: 1px solid $color_blue
+    cursor: pointer
+    
+    
+
+  
+    
+    
+
+
+/////////order order order
+.order
+  position: fixed 
+  top: 108px
+  right: 0px
+  +size(31%,700px)
+  background-color: $color_white
+  .banner
+    background-color: $color_blue
+    color: $color_white
+    +size(100%,50px)
+    font-size: $font_size*1.8
+    .text
+      bottom: -10px
+      left: 10px
+      &::before
+        content: "最低 "
+        font-size: $font_size*1
+      &::after
+        content: " 一天"
+        font-size: $font_size*1
+  .enterspace
+    +size(80%,52px)
+    margin-top:  35px 
+    left: 50%
+    transform: translateX(-50%)       
+  .textarea
+    display: inline-block
+    width: 45%
+    .orderblock
+      background-color: white
+      padding: 3px
+      border: 1px solid #000
+      
+  .textarea_right
+    float: right
+  .text
+    display: inline-block
+    .text_left
+      display: inline-block
+      color: $color_gray
+    .text_right
+      display: inline-block
+      float: right
+      color: $color_gray
+  .show
+    +size(80%,25px)
+    margin-top: 35px
+    left: 10%
+    right: 10%
+    border-bottom: 0.5px solid $color_gray
+  input
+    border-radius: 5px
+    +size(150px,25px)
+  .button 
+    +size(80%,50px)
+    border-radius: 5px
+    +center_horizontal
+    margin-top: 30px
+    background-color: $color_blue
+    text-align: center
+    padding-top: 5px
+    font-size: $font_size*1.8
+    color: $color_white
+    letter-spacing: 5px
+    cursor: pointer
+    user-select: none
+  .line
+    margin-top: 25px
+    text-align: center
+    color: $color_gray
+    
+  
+    
+  
+  
+  
+  
+  
+/////////header header header header header header header header
+.header
+  position: fixed 
+  top: 0px
+  left: 0px
+  +size(100%,110px)
+  background-color: $color_white
+  box-shadow: 0px 25px 15px -20px rgba(0,0,0,0.2)
+  .logo
+    +size(50px,50px)
+    display: inline-block
+    top: 15px
+    margin-left: 30px
+    margin-right: 10px
+  .searcharea
+    +size(600px,35px)
+    display: inline-block
+    top: 8px
+    margin-left: 20px
+    background-color: #fff
+    border: 1px solid $color_gray
+    border-radius: 5px
+    box-shadow: 8px 8px 10px -10px rgba(0,0,0,0.5)
+    user-select: none
+    font-size: 0px
+    transition-duration: 0.3s
+    .search
+      display: inline-block
+      bottom: 0px
+      +size(24%,100%)
+      border-right: 0.5px solid $color_gray
+      cursor: pointer
+      transition-duration: 0.3s
+      input
+        position: absolute
+        font-size: $font_size*1.2
+        padding: 5px
+        cursor: pointer
+        +size(95%,80%)
+        margin-top: 4px
+        margin-left: -30px
+        
+      .text,.icon
+        display: inline-block
+      .icon
+        +size(30px,30px)
+        padding: 3px
+      .text
+        top: -8px
+        color: rgba(0,0,0,0.8)
+        font-size: $font_size*1.2
+      .show
+        position: absolute
+        +size(100%,0px)
+        top: 28px
+        background-color: #fff
+        overflow: hidden
+        font-size: 0px
+        .choice
+          display: inline-block
+          float: center
+          padding: 2px
+          margin: 10px 3px 3px 5.5px
+          font-size: $font_size
+          cursor: pointer
+          &:hover
+            color: $color_blue
+    .number
+      border: 0px
+          
+      
+  .headerlinkarea
+    +size(300px,30px)
+    position: absolute
+    right: 0px
+    top: 20px
+    display: flex
+    justify-content: center
+    .headerlink
+      display: inline-block
+      margin-right: 10px
+      margin-left: 10px
+      cursor: pointer
+      user-select: none
+      &:hover
+        border-bottom: 1px solid $color_blue
+        
+  .mainarea
+    position: absolute
+    display: flex
+    justify-content: center
+    left: 3%
+    top: 100%
+    transform: translateY(-100%)
+    .link
+      margin-right: 35px
+      cursor: pointer
+      
+/////////login login login login login login login login login
+.login_cover_off
+  position: fixed 
+  top: 0px
+  left: 0px
+  input
+    display: none
+.cover_on
+  background-color: rgba(black,0.5)
+  +size(100%,100%)
+  overflow: hidden
+  transition-duration: 0s
+  .login_cover
+    +size(100%,100%)
+  .login_window
+    font-size: $font_size
+    background-color: white
+    +size(360px,600px)
+    +center
+    border-radius: 5px
+    .close_window
+      float: right
+      +size(30px,30px)
+      cursor: pointer
+      user-select: none
+      .text
+        +center
+        font-size: $font_size*1.2 
+        font-weight: 300
+    .button
+      cursor: pointer
+      user-select: none
+      +center_horizontal
+      +size(90%,80px)
+      margin-top: 10px
+      border-radius: 5px
+      .icon, .text
+        display: inline-block
+    .facebook_login
+      margin-top: 35px
+      background-color: #3B5998
+      color: white
+      .icon
+        background-image: url(https://i.imgur.com/32njHZy.png)
+        background-repeat: no-repeat
+        background-position: center
+        background-size: cover
+    .google_login
+      border: 2px solid $color_gray
+      .icon 
+        background-image: url(https://i.imgur.com/B2G8HAn.png)
+        background-repeat: no-repeat
+        background-position: center
+        background-size: cover
+      .text
+        font-weight: 500
+    .facebook_login,.google_login
+      .icon
+        +size(40px,40px)
+        top: 50%
+        transform: translateY(-50%)
+        left: 5%
+      .text
+        +center
+    .text_or
+      display: inline-block
+      margin-top: 10px
+      +center_horizontal
+    .email_input,.password_input,.email_signup,.firstname_signup,.lastname_signup,.password_signup
+      input
+        display: inline-block
+        transform: translateY(-50%)
+        font-size: $font_size
+        +size(100%,100%)
+        margin-top: 30px
+        border-radius: 5px
+        padding-left: 10px
+    .email_signup,.firstname_signup,.lastname_signup,.password_signup
+      +size(90%,40px)
+      margin-top: 5px
+      
+    .login_forgot
+      margin-top: 5px
+      float: right
+      color: $color_green
+      right: 5%
+      cursor: pointer
+      user-select: none
+      &:hover
+        color: darken($color_green,30%)
+    .login_button  
+      margin-top: 30px
+      margin-bottom: 10px
+      background-color: $color_blue
+      .text
+        +center
+        font-size: $font_size*1.2
+        color: white
+    .signup_button
+      +size(90%,50px)
+    h4, .change_to_signup,.change_to_login
+      display: inline-block
+      margin-top: 15px
+    h4
+      font-weight: 400
+      margin-left: 5%
+    .change_to_signup,.change_to_login
+      cursor: pointer
+      user-select: none
+      float: right
+      right: 5%
+      +size(100px,40px)
+      border: 1.5px solid $color_blue
+      color: $color_blue
+      border-radius: 5px
+      &:hover
+        border: 2px solid $color_blue
+      &:active
+        transform: scale(0.9)
+      .text 
+        +center
+      
+/////////signup signup signup signup signup signup signup signup  
+.signup_cover_off
+  position: fixed 
+  top: 0px
+  left: 0px
+  input
+    display: none
+
+
+
+  
+    
