@@ -1,8 +1,14 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+const mongoose = require("mongoose");
+require("./models/User");
 require("./services/passport");
 require("./routes/authRoutes")(app);
+
+// mongodb relatives
+const keys = require("./config/keys");
+mongoose.connect(keys.mongoURI);
 
 // define data
 var homepageJson = {
