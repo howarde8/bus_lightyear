@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>buspage_ver.1_1006</title>
-  
-  
-  
-      <link rel="stylesheet" href="css/style.css">
 
-  
+
+
+      <link rel="stylesheet" href="css/index">
+
+
 </head>
 
 <body>
-  
+
 <div class="buspage">
   <div class="empty_space"></div>
   <div class="bus_photo"> </div>
@@ -81,7 +81,7 @@
     <div class="button">查看更多</div>
   </div>
   <div class="comment">
-    <div class="total_comment"> 
+    <div class="total_comment">
       <div class="text">評價</div>
       <div class="star">★★★★★</div>
       <input id="search_bar" type="text" style="font-size: 15px" color="$color_gray" value="搜尋評價"/>
@@ -95,8 +95,8 @@
       <div class="star">★★★★★</div>
     </div>
   </div>
-  <div class="owner"> 
-    <div class="block left"> 
+  <div class="owner">
+    <div class="block left">
       <div class="text">
         <div class="title">e-go 臺灣租車旅遊集團</div>
         <div class="join_time">2017年11月</div>
@@ -111,7 +111,7 @@
   <div class="similar_choice"></div>
 </div>
 <div class="order">
-  <div class="banner"> 
+  <div class="banner">
     <div class="text">$5,488 TWD</div>
   </div>
   <div class="enterspace">
@@ -129,7 +129,7 @@
       <div class="text">租用日期 從</div><br/>
       <div class="orderblock start_date">2017.09.27</div>
     </div>
-    <div class="textarea textarea_right"> 
+    <div class="textarea textarea_right">
       <div class="text">到</div><br/>
       <div class="orderblock end_date">2017.09.29</div>
     </div>
@@ -138,11 +138,11 @@
     <div class="text_left">$5,488 TWD x 3天 </div>
     <div class="text_right">$16,464</div>
   </div>
-  <div class="show text"> 
+  <div class="show text">
     <div class="text_left">折扣</div>
     <div class="text_right">九折   </div>
   </div>
-  <div class="show text"> 
+  <div class="show text">
     <div class="text_left">總價約為</div>
     <div class="text_right">$14,810</div>
   </div>
@@ -150,7 +150,7 @@
   <div class="line">您暫時不會被收費</div>
 </div>
 <div class="header">
-  <div class="headerlinkarea"> 
+  <div class="headerlinkarea">
     <div class="headerlink data">刊登遊覽車資料</div>
     <div class="headerlink massage">訊息</div>
     <div class="headerlink assist">協助</div>
@@ -159,6 +159,9 @@
   <div class="mainarea">
     <div class="link home">首頁</div>
     <div class="link bus">遊覽車</div>
+    <div class="link bus">
+        <a href="/about">關於我們</a>
+    </div>
   </div>
   <div class="searcharea">
     <div class="search destination">
@@ -185,7 +188,7 @@
       </div><img class="icon" src="https://i.imgur.com/FaOfEGX.png" alt=""/>
       <div class="text text_des">出發地</div>
     </div>
-    <div class="search departure"> 
+    <div class="search departure">
       <div class="show">
         <div class="choice choice2">基隆市</div>
         <div class="choice choice2">台北市</div>
@@ -218,32 +221,34 @@
     <div class="login_cover_off">
       <div class="login_cover"></div>
       <div class="login_window">
-        <div class="close_window"> 
+        <div class="close_window">
           <div class="text">Ｘ</div>
         </div>
-        <div class="facebook_login button"> 
+        <div class="facebook_login button">
           <div class="icon"></div>
           <div class="text">使用facebook帳號登入</div>
         </div>
-        <div class="google_login button"> 
-          <div class="icon"></div>
-          <div class="text">使用Google帳號登入</div>
-        </div>
+        <a href="auth/google">
+            <div class="google_login button">
+                <div class="icon"></div>
+                <div class="text">使用Google帳號登入</div>
+            </div>
+        </a>
         <div class="text_or">————————— 或 —————————</div>
-        <div class="email_input button"> 
+        <div class="email_input button">
           <input placeholder="電子郵件地址"/>
         </div>
-        <div class="password_input button"> 
+        <div class="password_input button">
           <input type="password" placeholder="密碼"/>
           <div class="icon"></div>
         </div>
         <div class="login_forgot">忘記密碼？</div>
-        <div class="login_button button"> 
+        <div class="login_button button">
           <div class="text">登入</div>
         </div>
         <hr/>
         <h4>還沒有帳號嗎？</h4>
-        <div class="change_to_signup"> 
+        <div class="change_to_signup">
           <div class="text">註冊 </div>
         </div>
       </div>
@@ -251,31 +256,31 @@
     <div class="signup_cover_off">
       <div class="signup_cover"></div>
       <div class="login_window">
-        <div class="close_window"> 
+        <div class="close_window">
           <div class="text">Ｘ</div>
         </div>
-        <div class="facebook_login button"> 
+        <div class="facebook_login button">
           <div class="icon"></div>
           <div class="text">使用facebook帳號註冊</div>
         </div>
-        <div class="google_login button"> 
+        <div class="google_login button">
           <div class="icon"></div>
           <div class="text">使用Google帳號註冊</div>
         </div>
         <div class="text_or">————————— 或 —————————</div>
-        <div class="email_signup button"> 
+        <div class="email_signup button">
           <input placeholder="電子郵件地址"/>
         </div>
-        <div class="firstname_signup button"> 
+        <div class="firstname_signup button">
           <input placeholder="名字"/>
         </div>
-        <div class="lastname_signup button"> 
+        <div class="lastname_signup button">
           <input placeholder="姓氏"/>
         </div>
-        <div class="password_signup button"> 
+        <div class="password_signup button">
           <input placeholder="建立密碼"/>
         </div>
-        <div class="login_button signup_button button"> 
+        <div class="login_button signup_button button">
           <div class="text">註冊</div>
         </div>
         <hr/>
@@ -290,7 +295,7 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
 
-    <script  src="js/index.js"></script>
+    <script  src="/js/index"></script>
 
 </body>
 </html>

@@ -34,6 +34,22 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname + "/html/index.html"));
 });
 
+app.get("/about", (req, res) => {
+    res.sendFile(path.join(__dirname + "/html/about.html"));
+});
+
+app.get("/js/index", (req, res) => {
+    res.sendFile(path.join(__dirname + "/html/js/index.js"));
+});
+
+app.get("/css/index", (req, res) => {
+    res.sendFile(path.join(__dirname + "/html/css/index.css"));
+});
+
+app.get("/css/about", (req, res) => {
+    res.sendFile(path.join(__dirname + "/html/css/about.css"));
+});
+
 app.get("/homepage-info", (req, res) => {
     res.send(homepageJson);
 });
