@@ -38,8 +38,20 @@ app.get("/about", (req, res) => {
     res.sendFile(path.join(__dirname + "/html/about.html"));
 });
 
+app.get("/bus", (req, res) => {
+    res.sendFile(path.join(__dirname + "/html/bus.html"));
+});
+
 app.get("/js/index", (req, res) => {
     res.sendFile(path.join(__dirname + "/html/js/index.js"));
+});
+
+app.get("/css/bus", (req, res) => {
+    res.sendFile(path.join(__dirname + "/html/css/bus.css"));
+});
+
+app.get("/js/bus", (req, res) => {
+    res.sendFile(path.join(__dirname + "/html/js/bus.js"));
 });
 
 app.get("/css/index", (req, res) => {
