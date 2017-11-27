@@ -1,11 +1,11 @@
 <html lang="en">
 
   <head>
-	
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    
+
 	  <title>HomePage</title>
   	<link rel="icon" href="./pic/homepage/BUS_logo.png">
     <!-- Bootstrap Core CSS -->
@@ -17,7 +17,7 @@
     <link rel='stylesheet' href='./css/homepage.css?v={random number/string}'>
 
 
-  
+
   </head>
 
 <body>
@@ -33,16 +33,16 @@
 			</button>
 			<a class="navbar-brand" href="#">BUS-lightyear</a>
 		</div>
-		
+
 		<!-- 手機隱藏選單區 -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<!-- 左選單 -->
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">刊登資料</a></li>
+				<li><a href="comepage.html">刊登資料</a></li>
 				<li><a href="#">關於我們</a></li>
 				<li><a href="#">臉書粉專</a></li>
 			</ul>
-		
+
 			<!-- 搜尋表單 -->
 			<form class="navbar-form navbar-left" role="search">
 				<div class="form-group">
@@ -50,7 +50,7 @@
 				</div>
 				<button type="submit" class="btn btn-default">搜尋</button>
 			</form>
-		
+
 			<!-- 右選單 -->
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#">Amos 您好</a></li>
@@ -69,7 +69,7 @@
 		<!-- 手機隱藏選單區結束 -->
 		</nav>
 		<div class="index_block">
-       <div class="index_block_text"> 
+       <div class="index_block_text">
          <p>台灣遊覽車資訊網站</p>
           <h3>巴士光年</h3>
           <p>最快速且方便的遊覽車預訂體驗</p>
@@ -110,7 +110,7 @@
     </div>
     <div class="row bgc-green">
       <div class="bus-set col-sm-4" v-for="busdata in bus_datas">
-        <div class="card"><a href="{{busdata.link_bus}}" target="_blank"> <img class="top" src="{{busdata.img}}" alt=""/>
+        <div class="card"><a href="{{busdata.link_bus}}"> <img class="top" src="{{busdata.img}}" alt=""/>
             <div class="bottom">
               <h3 class="title">{{busdata.name}}</h3>
               <div class="circle">{{busdata.number}}人</div>
@@ -136,16 +136,15 @@
     </div>
   </div>
 </div>
-  
+
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.js'></script>
 <script src='./js/homepage.js'></script>
-  
-  
-  
+
+
+
 
 </body>
 </html>
- 

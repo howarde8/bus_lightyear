@@ -7,7 +7,8 @@ var busdatas=[
     price: 15000,
     is_discount: true,
     discount: 0.89,
-    link_bus: "https://i.imgur.com/B3kfNpA.jpg",
+    // link_bus: "https://i.imgur.com/B3kfNpA.jpg",
+    link_bus: "buspage.html",
     link_owner: "",
     date: "2017/12"
   },
@@ -19,7 +20,8 @@ var busdatas=[
     price: 18000,
     is_discount: true,
     discount: 0.79,
-    link_bus: "https://i.imgur.com/fRnihjQ.jpg",
+    // link_bus: "https://i.imgur.com/fRnihjQ.jpg",
+    link_bus: "buspage.html",
     link_owner: "",
     date: "2018/01"
   },
@@ -31,7 +33,8 @@ var busdatas=[
     price: 13000,
     is_discount: true,
     discount: 0.89,
-    link_bus: "https://i.imgur.com/zqOkQFD.jpg",
+    // link_bus: "https://i.imgur.com/zqOkQFD.jpg",
+    link_bus: "buspage.html",
     link_owner: "",
     date: "2018/01"
   },
@@ -43,7 +46,8 @@ var busdatas=[
     price: 15000,
     is_discount: true,
     discount: 0.89,
-    link_bus: "https://i.imgur.com/B3kfNpA.jpg",
+    // link_bus: "https://i.imgur.com/B3kfNpA.jpg",
+    link_bus: "buspage.html",
     link_owner: "",
     date: "2017/12"
   },
@@ -55,7 +59,8 @@ var busdatas=[
     price: 18000,
     is_discount: true,
     discount: 0.79,
-    link_bus: "https://i.imgur.com/fRnihjQ.jpg",
+    // link_bus: "https://i.imgur.com/fRnihjQ.jpg",
+    link_bus: "buspage.html",
     link_owner: "",
     date: "2018/01"
   },
@@ -67,7 +72,8 @@ var busdatas=[
     price: 13000,
     is_discount: true,
     discount: 0.89,
-    link_bus: "https://i.imgur.com/zqOkQFD.jpg",
+    // link_bus: "https://i.imgur.com/zqOkQFD.jpg",
+    link_bus: "buspage.html",
     link_owner: "",
     date: "2018/01"
   }
