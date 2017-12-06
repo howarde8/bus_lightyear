@@ -20,6 +20,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require("./routes/authRoutes")(app);
+require("./routes/dataRoutes")(app);
 app.use(express.static('html'));
 
 // mongodb relatives
