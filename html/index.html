@@ -1,11 +1,11 @@
 <html lang="en">
 
   <head>
-
+	
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
+    
 	  <title>HomePage</title>
   	<link rel="icon" href="./pic/homepage/BUS_logo.png">
     <!-- Bootstrap Core CSS -->
@@ -17,13 +17,11 @@
     <link rel='stylesheet' href='./css/homepage.css?v={random number/string}'>
 
 
-
+  
   </head>
 
 <body>
-
-<header class="header" id="top">
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default" role="navigation" style="margin-bottom:0px;">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 				<span class="sr-only">選單切換</span>
@@ -33,16 +31,16 @@
 			</button>
 			<a class="navbar-brand" href="#">BUS-lightyear</a>
 		</div>
-
+		
 		<!-- 手機隱藏選單區 -->
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<!-- 左選單 -->
 			<ul class="nav navbar-nav">
-				<li><a href="comepage.html">刊登資料</a></li>
-				<li><a href="#">關於我們</a></li>
-				<li><a href="#">臉書粉專</a></li>
+				<li class="active"><a href="./index.html">關於我們</a></li>
+				<li><a href="./comepage.html">刊登資料</a></li>
+				<li><a href="./buspage.html">開始探索</a></li>
 			</ul>
-
+		
 			<!-- 搜尋表單 -->
 			<form class="navbar-form navbar-left" role="search">
 				<div class="form-group">
@@ -50,7 +48,7 @@
 				</div>
 				<button type="submit" class="btn btn-default">搜尋</button>
 			</form>
-
+		
 			<!-- 右選單 -->
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#">Amos 您好</a></li>
@@ -68,16 +66,33 @@
 		</div>
 		<!-- 手機隱藏選單區結束 -->
 		</nav>
-		<div class="index_block">
-       <div class="index_block_text">
-         <p>台灣遊覽車資訊網站</p>
-          <h3>巴士光年</h3>
-          <p>最快速且方便的遊覽車預訂體驗</p>
-       </div>
-      </div>
-</header>
+
+
 <div class="intro">
+  
   <div class="container-fluid">
+    
+    <div class="row bgc-blue">
+      <div class="picture col-sm-12">
+        <div class="block">
+          <h2 class="subtitle">台灣遊覽車資訊網站</h2>
+          <h1 class="title">巴士光年</h1>
+          <h4 class="slogan">最快速且方便的遊覽車預訂體驗</h4>
+        </div><img class="bus" src="https://i.imgur.com/R4lcT0e.png" alt=""/>
+        <div class="shadow">
+          <div class="road">
+            <div class="line"> </div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="row">
       <div class="better-choice col-sm-12">
         <div class="block">
@@ -100,7 +115,7 @@
         <h5 class="content">取代繁瑣的電話預訂線上即可完成預訂與交易</h5>
       </div>
     </div>
-    <div class="row bgc-green">
+    <div class="row bgc-white">
       <div class="search-result col-sm-12">
         <div class="block">
           <h1 class="title">搜尋結果</h1>
@@ -108,11 +123,11 @@
         </div>
       </div>
     </div>
-    <div class="row bgc-green">
-      <div class="bus-set col-sm-4" v-for="busdata in bus_datas">
-        <div class="card"><a href="{{busdata.link_bus}}"> <img class="top" src="{{busdata.img}}" alt=""/>
+    <div class="row bgc-white">
+      <div class="bus-set col-sm-4 col-lg-3" v-for="busdata in bus_datas">
+        <div class="card"><a href="{{busdata.link_bus}}" target="_blank"> <img class="top" src="{{busdata.img}}" alt=""/>
             <div class="bottom">
-              <h3 class="title">{{busdata.name}}</h3>
+              <h3 class="title">{{busdata.name}}</h3><br/>
               <div class="circle">{{busdata.number}}人</div>
               <h4 class="price">優惠價：<span class="red">{{busdata.discount*100}}</span><span>折 </span><span class="red">{{parseInt(busdata.price*busdata.discount)}}</span><span>元  </span></h4><br/>
               <h4 class="owner">擁有者： {{busdata.owner}}</h4><br/>
@@ -120,7 +135,7 @@
             </div></a></div>
       </div>
     </div>
-    <div class="row bgc-green">
+    <div class="row bgc-white">
       <div class="button-area col-sm-4 col-sm-offset-8">
         <button class="more-button">更多選擇</button>
       </div>
@@ -136,15 +151,16 @@
     </div>
   </div>
 </div>
-
+  
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.js'></script>
 <script src='./js/homepage.js'></script>
-
-
-
+  
+  
+  
 
 </body>
 </html>
+ 

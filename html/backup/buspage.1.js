@@ -1,8 +1,3 @@
-var button_audio= new Audio("http://www.monoame.com/awi_class/ballsound/click23.wav");
-
-
-
-
 // section#order
 var order_outer_data={
   price_per_day: 5488,
@@ -42,21 +37,9 @@ var info_outer_data={
   // section#bus-info
   entertainment_list: [
     {
-      id: "heating",
-      name: "暖氣",
-      url: "https://i.imgur.com/pxfTifJ.png",
-      owner: "true"
-    },
-    {
-      id: "air-conditioning",
-      name: "空調冷氣",
-      url: "https://i.imgur.com/SNlJ2Oy.png",
-      owner: "true"
-    },
-    {
       id: "wifi",
       name: "無線網路",
-      url: "https://i.imgur.com/blJmV3E.png",
+      url: "https://i.imgur.com/z4Mg3CO.png",
       owner: "true"
     },
     {
@@ -66,61 +49,13 @@ var info_outer_data={
       owner: "true"
     },
     {
-      id: "KTV",
-      name: "伴唱功能",
-      url: "https://i.imgur.com/FnB5vEK.png",
-      owner: "true"
-    },
-    {
-      id: "microphone",
-      name: "麥克風",
-      url: "https://i.imgur.com/LccQhmD.png",
-      owner: "true"
-    },
-    {
-      id: " guided-tour",
-      name: "導覽服務",
-      url: "https://i.imgur.com/T60eeQG.png",
-      owner: "true"
-    },
-    {
-      id: "DVD",
-      name: "ＤＶＤ影音系統",
-      url: "https://i.imgur.com/LOzUcp6.png",
-      owner: "true"
-    },
-    {
       id: "restroom",
       name: "廁所",
       url: "https://i.imgur.com/WZSkECC.png",
       owner: "true"
-    },
-    {
-      id: "baggage",
-      name: "放置行李區",
-      url: "https://i.imgur.com/bKvDJNW.png",
-      owner: "true"
-    }  
+    }
   ],
   safety_facilities_list: [
-    {
-      id: "GPS",
-      name: "ＧＰＳ",
-      url: "https://i.imgur.com/g0qCFvZ.png",
-      owner: "true"
-    },
-    {
-      id: "driving-recorder",
-      name: "行車記錄器",
-      url: "https://i.imgur.com/sSRVqkk.png",
-      owner: "true"
-    },
-    {
-      id: "first-aid",
-      name: "急救包",
-      url: "https://i.imgur.com/2n28se0.png",
-      owner: "true"
-    },
     {
       id: "fire-extinguisher",
       name: "滅火器",
@@ -134,33 +69,9 @@ var info_outer_data={
       owner: "true"
     },
     {
-      id: "tempered-glass",
-      name: "強化玻璃",
-      url: "https://i.imgur.com/LS2RCjZ.png",
-      owner: "true"
-    },
-    {
-      id: "safety-sunroof",
-      name: "安全天窗",
-      url: "https://i.imgur.com/MMJKNcg.png",
-      owner: "true"
-    },
-    {
-      id: "emergency-exit",
-      name: "緊急逃生門",
-      url: "https://i.imgur.com/znP0bYj.png",
-      owner: "true"
-    },
-    {
       id: "barrier-free",
       name: "無障礙設施",
       url: "https://i.imgur.com/IdUJNPo.png",
-      owner: "true"
-    },
-    {
-      id: "CO-sensor",
-      name: "一氧化碳偵測器",
-      url: "https://i.imgur.com/iIVUbzI.png",
       owner: "true"
     }
   ],
@@ -188,18 +99,14 @@ var info_outer_data={
 
 var vm=new Vue({
   el: ".info",
-  data: info_outer_data,
-  title_edit_mode: false,
-  intro_edit_mode: false,
-  subscribe_edit_mode: false,
-  unsubscribe_edit_mode: false
-  
+  data: info_outer_data
 });
 
 // section#accessory
-
-$(".btn").click(
+$(".accessory-btn").click(
   function(){
-    button_audio.play();
-});
-//# sourceURL=pen.js
+    $(".accessory-bottom").css("height","initial");
+    $(".accessory-btn").css("display","none");
+  });
+
+

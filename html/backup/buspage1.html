@@ -25,9 +25,12 @@
    
     
   </head>
+
 <body>
-<nav class="navbar navbar-default" role="navigation" style="margin-bottom:0px;">
-		<div class="navbar-header"> 
+
+<div class="intro">
+    <nav class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 				<span class="sr-only">選單切換</span>
 				<span class="icon-bar"></span>
@@ -41,9 +44,9 @@
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<!-- 左選單 -->
 			<ul class="nav navbar-nav">
-				<li><a href="./index.html">關於我們</a></li>
-        <li><a href="./comepage.html">刊登資料</a></li>
-        <li class="active"><a href="./buspage.html">開始探索</a></li>
+				<li class="active"><a href="#">刊登資料</a></li>
+				<li><a href="#">關於我們</a></li>
+				<li><a href="#">臉書粉專</a></li>
 			</ul>
 		
 			<!-- 搜尋表單 -->
@@ -71,11 +74,10 @@
 		</div>
 		<!-- 手機隱藏選單區結束 -->
 		</nav>
-<div class="intro">
   <div class="container-fluid">
-    <div class="row slide">
-      <div class="col-lg-6 col-sm-12 picture col-lg-offset-1"></div>
-      <div class="col-lg-4 col-lg-offset-7 col-sm-10 col-sm-offset-1 order">
+    <div class="row">
+      <div class="col-md-8 col-sm-12 picture"></div>
+      <div class="col-md-4 col-md-offset-8 col-sm-10 col-sm-offset-1 order">
         <div class="container-fluid">
           <div class="row">
             <div class="banner col-xs-12">
@@ -85,93 +87,65 @@
           <div class="row">
             <div class="click-area col-sm-4 col-xs-offset-1 col-xs-10">
               <h6 class="text">出發地</h6>
-              <select class="form-control">
-                <option>請選擇出發地</option>
-                <option>基隆市</option>
-                <option>台北市</option>
-                <option>新北市</option>
-                <option>桃園縣</option>
-                <option>新竹市</option>
-                <option>新竹縣</option>
-                <option>苗栗縣</option>
-                <option>台中市</option>
-                <option>彰化縣</option>
-                <option>南投縣</option>
-                <option>雲林縣</option>
-                <option>嘉義市</option>
-                <option>嘉義縣</option>
-                <option>台南市</option>
-                <option>高雄市</option>
-                <option>屏東縣</option>
-                <option>宜蘭縣</option>
-                <option>花蓮縣</option>
-                <option>台東縣</option>
-            </select>
+              <div class="order-block dep"> 
+                <h6 class="text-muted">請選擇出發地</h6>
+                <div class="dep-bottom"></div>
+              </div>
             </div>
             <div class="click-area col-sm-4 col-sm-offset-2 col-xs-offset-1 col-xs-10">
               <h6 class="text">目的地</h6>
-              <select class="form-control">
-                <option>請選擇目的地</option>
-                <option>基隆市</option>
-                <option>台北市</option>
-                <option>新北市</option>
-                <option>桃園縣</option>
-                <option>新竹市</option>
-                <option>新竹縣</option>
-                <option>苗栗縣</option>
-                <option>台中市</option>
-                <option>彰化縣</option>
-                <option>南投縣</option>
-                <option>雲林縣</option>
-                <option>嘉義市</option>
-                <option>嘉義縣</option>
-                <option>台南市</option>
-                <option>高雄市</option>
-                <option>屏東縣</option>
-                <option>宜蘭縣</option>
-                <option>花蓮縣</option>
-                <option>台東縣</option>
-            </select>
+              <div class="order-block des"> 
+                <h6 class="text-muted">請選擇目的地</h6>
+                <div class="des-bottom"></div>
+              </div>
             </div>
           </div>
           <div class="row">
             <div class="click-area col-sm-4 col-xs-offset-1 col-xs-10">
               <h6 class="text">租用日期 從</h6>
-                <div class="form-group">
-                    <div class='input-group date' id='datetimepicker1'>
-                        <input type='text' class="form-control" />
-                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar"></span>
-                        </span>
+              
+                <div class="container" style="float:left; padding-left:0px;">
+                    <div class="row">
+                        <div class='col-sm-2 col-md-2 col-xs-3' style="padding-left:0px;">
+                            <div class="form-group">
+                                <div class='input-group date' id='datetimepicker1'>
+                                    <input type='text' class="form-control" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            $(function () {
+                                $('#datetimepicker1').datetimepicker();
+                            });
+                        </script>
                     </div>
                 </div>
-                        
-                <script type="text/javascript">
-                    $(function () {
-                        
-                        $('#datetimepicker1').datetimepicker();
-                        
-                    });
-                </script>
-            </div>
+              </div>
+
             <div class="click-area col-sm-4 col-sm-offset-2 col-xs-offset-1 col-xs-10">
               <h6 class="text">到</h6>
-                <div class="form-group">
-                    <div class='input-group date' id='datetimepicker2'>
-                        <input type='text' class="form-control" />
-                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar"></span>
-                        </span>
+              <div class="container" style="float:left; padding-left:0px;">
+                    <div class="row">
+                        <div class='col-sm-2 col-md-2 col-xs-3' style="padding-left:0px;">
+                            <div class="form-group">
+                                <div class='input-group date' id='datetimepicker2'>
+                                    <input type='text' class="form-control" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            $(function () {
+                                $('#datetimepicker2').datetimepicker();
+                            });
+                        </script>
                     </div>
                 </div>
-                        
-                <script type="text/javascript">
-                    $(function () {
-                        $('#datetimepicker2').datetimepicker();
-                    });
-                </script>
-                    
-                
             </div>
           </div>
           <div class="row">
@@ -211,22 +185,12 @@
       </div>
     </div>
     <div class="row">
-      <div class="info col-lg-6 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+      <div class="info col-md-6 col-md-offset-1 col-sm-10 col-sm-offset-1">
         <section id="guide-line">
           <ul class="nav"><a class="nav-link" href="#main-info">概述</a><a class="nav-link" href="#accessory">設備</a><a class="nav-link" href="#comment">評價</a><a class="nav-link" href="#owner">車主</a></ul>
         </section>
         <section id="main-info">
-          <h2 v-if="!title_edit_mode">{{title}}
-            <label class="title-edit-btn edit-btn btn">編輯
-              <input id="swith" type="checkbox" v-model="title_edit_mode"/>
-            </label>
-          </h2>
-          <h2 v-if="title_edit_mode">
-            <input type="text" v-model="title"/>
-            <label class="title-edit-btn edit-btn btn">編輯
-              <input id="swith" type="checkbox" v-model="title_edit_mode"/>
-            </label>
-          </h2>
+          <h2>{{title}}</h2>
           <div class="subtitle">
             <h4 class="total-comments">{{total_comments}} 則評價</h4>
             <h4 class="stars"> {{stars}}</h4>
@@ -238,15 +202,8 @@
           <h4 class="work-time">工作時間： {{start_time}} - {{end_time}}</h4>
         </section>
         <section class="content">
-          <h2 class="title">簡介
-            <label class="edit-btn btn">編輯
-              <input id="swith" type="checkbox" v-model="intro_edit_mode"/>
-            </label>
-          </h2>
-          <p class="detail" v-if="!intro_edit_mode">{{intro}}</p>
-          <p class="detail" v-if="intro_edit_mode"> 
-            <textarea rows="5" v-model="intro"></textarea>
-          </p>
+          <h2 class="title">簡介</h2>
+          <p class="detail">{{intro}}</p>
         </section>
         <section class="content">
           <h2 class="title">注意事項</h2>
@@ -255,26 +212,12 @@
           </div>
         </section>
         <section class="content">
-          <h2 class="title">可訂狀態
-            <label class="edit-btn btn">編輯
-              <input id="swith" type="checkbox" v-model="subscribe_edit_mode"/>
-            </label>
-          </h2>
-          <p class="detail" v-if="!subscribe_edit_mode">{{subscribe}}</p>
-          <p class="detail" v-if="subscribe_edit_mode"> 
-            <textarea rows="3" v-model="subscribe"></textarea>
-          </p>
+          <h2 class="title">可訂狀態</h2>
+          <p class="detail">{{subscribe}}</p>
         </section>
         <section class="content">
-          <h2 class="title">退訂方案
-            <label class="edit-btn btn">編輯
-              <input id="swith" type="checkbox" v-model="unsubscribe_edit_mode"/>
-            </label>
-          </h2>
-          <p class="detail" v-if="!unsubscribe_edit_mode">{{unsubscribe}}</p>
-          <p class="detail" v-if="unsubscribe_edit_mode"> 
-            <textarea rows="3" v-model="unsubscribe"></textarea>
-          </p>
+          <h2 class="title">退訂方案</h2>
+          <p class="detail">{{unsubscribe}}</p>
         </section>
         <section id="accessory">
           <h2 class="title">設備與安全措施</h2>
@@ -282,38 +225,59 @@
             <div class="entertainment"> 
               <h4>設施</h4>
               <div class="block" v-for="item in entertainment_list"> <img class="icon" src="{{item.url}}"/>
-                <h5 class="icon-name">{{item.name}}</h5>
+                <div class="icon-name">{{item.name}}</div>
               </div>
             </div>
             <div class="safety-facilities"> 
               <h4>安全設備</h4>
               <div class="block" v-for="item in safety_facilities_list"> <img class="icon" src="{{item.url}}"/>
-                <h5 class="icon-name">{{item.name}}</h5>
+                <div class="icon-name">{{item.name}}</div>
+              </div>
+            </div><br/>
+          </div>
+          <div class="accessory-bottom">
+            <div class="entertainment"> 
+              <div class="block"><img class="icon" id="wifi" src="https://i.imgur.com/z4Mg3CO.png"/>
+                <div class="icon-name">無線網路</div>
+              </div>
+              <div class="block"><img class="icon" id="wifi" src="https://i.imgur.com/z4Mg3CO.png"/>
+                <div class="icon-name">無線網路</div>
               </div>
             </div>
-          </div><br/>
+            <div class="safety-facilities"> 
+              <div class="block"><img class="icon" id="fire-extinguisher" src="https://i.imgur.com/hgEtmUj.png"/>
+                <div class="icon-name">滅火器</div>
+              </div>
+              <div class="block"><img class="icon" id="fire-extinguisher" src="https://i.imgur.com/hgEtmUj.png"/>
+                <div class="icon-name">滅火器</div>
+              </div>
+            </div>
+          </div>
+          <div class="accessory-btn btn">查看更多  </div>
         </section>
         <section id="comment">
-          <h2 class="title">評價
+          <div class="title">評價
             <div class="stars"> {{stars}}</div>
             <input id="search_bar" type="search" style="font-size: 15px" color="$color_gray" placeholder=" 搜尋評價"/>
-          </h2>
+          </div>
           <div class="driver-comment">
-            <h5>司機評價
+            <h4>司機評價
               <div class="stars"> {{driver_stars}}</div>
-            </h5>
+            </h4>
           </div>
           <div class="bus-comment">
-            <h5>遊覽車評價
+            <h4>遊覽車評價
               <div class="stars"> {{bus_stars}}</div>
-            </h5>
-          </div><br/>
+            </h4>
+          </div>
           <div class="comment" v-for="item in user_comment_list"> <img class="user-photo" src="{{item.photo}}" alt=""/>
             <div class="user-info">
               <h4 class="user-name">{{item.name}}</h4>
               <div class="comment-date text-muted">{{item.date}}</div>
             </div>
-            <p> {{item.comment}}</p>
+            <div class="user-comment">
+              <p> {{item.comment}}</p>
+            </div>
           </div>
         </section>
         <section id="owner">
@@ -329,7 +293,7 @@
             </div>
             <div class="row"> 
               <p class="info col-sm-12">{{company_info}}</p>
-              <div class="owner-btn btn">向車主提問</div><br/>
+              <div class="owner-btn btn">向房東提問</div>
             </div>
           </div>
         </section>
@@ -337,6 +301,7 @@
     </div>
   </div>
 </div>
+
 <section class="footer">
 	<div class="row bgc-blue">
       <div class="email col-md-12">
@@ -356,3 +321,4 @@
 
 </body>
 </html>
+ 
