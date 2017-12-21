@@ -79,7 +79,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="banner col-xs-12">
-              <h3>$ {{price_per_day}} TWD </h3>
+              <h3>$ {{busdata.order.price}} TWD </h3>
             </div>
           </div>
           <div class="row">
@@ -176,10 +176,10 @@
           </div>
           <div class="row">
             <div class="formula col-xs-5 col-xs-offset-1 text-muted">
-              <h5>$ {{price_per_day}} TWD x {{day}} 天 </h5>
+              <h5>$ {{busdata.order.price}} TWD x {{day}} 天 </h5>
             </div>
             <div class="price col-xs-4 col-xs-offset-1 text-muted">
-              <h5>$ {{price_per_day*day}} TWD</h5>
+              <h5>$ {{busdata.order.price*day}} TWD</h5>
             </div>
             <div class="bottom-line col-xs-10 col-xs-offset-1"></div>
           </div>
@@ -188,7 +188,7 @@
               <h5 class="text-muted">折扣</h5>
             </div>
             <div class="discount col-xs-4 col-xs-offset-2">
-              <h5 class="text-muted">{{discount*100}}折</h5>
+              <h5 class="text-muted">{{busdata.order.discount*100}}折</h5>
             </div>
             <div class="bottom-line col-xs-10 col-xs-offset-1"></div>
           </div>
@@ -197,7 +197,7 @@
               <h5 class="text-muted">總價</h5>
             </div>
             <div class="total col-xs-4 col-xs-offset-2">
-              <h5 class="text-muted">$ {{parseInt(price_per_day*day*discount)}} TWD</h5>
+              <h5 class="text-muted">$ {{parseInt(busdata.order.price*day*busdata.order.discount)}} TWD</h5>
             </div>
             <div class="bottom-line col-xs-10 col-xs-offset-1"></div>
           </div>
@@ -216,7 +216,7 @@
           <ul class="nav"><a class="nav-link" href="#main-info">概述</a><a class="nav-link" href="#accessory">設備</a><a class="nav-link" href="#comment">評價</a><a class="nav-link" href="#owner">車主</a></ul>
         </section>
         <section id="main-info">
-          <h2 v-if="!title_edit_mode">{{title}}
+          <h2 v-if="!title_edit_mode">{{busdata.name}}
             <label class="title-edit-btn edit-btn btn">編輯
               <input id="swith" type="checkbox" v-model="title_edit_mode"/>
             </label>
@@ -228,14 +228,14 @@
             </label>
           </h2>
           <div class="subtitle">
-            <h4 class="total-comments">{{total_comments}} 則評價</h4>
-            <h4 class="stars"> {{stars}}</h4>
+            <h4 class="total-comments">{{busdata.total_comments}} 則評價</h4>
+            <h4 class="stars"> {{busdata.average.stars}}</h4>
           </div>
         </section>
         <section id="bus-info">
           <h2 class="title">遊覽車資訊</h2>
-          <h4 class="max-number">最高乘載人數：{{max_number}} 人</h4>
-          <h4 class="work-time">工作時間： {{start_time}} - {{end_time}}</h4>
+          <h4 class="max-number">最高乘載人數：{{busdata.description.max_amount}} 人</h4>
+          <h4 class="work-time">工作時間： {{busdata.description.start_time}} - {{busdata.description.end_time}}</h4>
         </section>
         <section class="content">
           <h2 class="title">簡介
@@ -243,14 +243,14 @@
               <input id="swith" type="checkbox" v-model="intro_edit_mode"/>
             </label>
           </h2>
-          <p class="detail" v-if="!intro_edit_mode">{{intro}}</p>
+          <p class="detail" v-if="!intro_edit_mode">{{busdata.description.introduction}}</p>
           <p class="detail" v-if="intro_edit_mode"> 
             <textarea rows="5" v-model="intro"></textarea>
           </p>
         </section>
         <section class="content">
           <h2 class="title">注意事項</h2>
-          <div class="block" v-for="item in precautions_list"> 
+          <div class="block" v-for="item in busdata.description.precautions_list"> 
             <p class="detail">{{item}}</p>
           </div>
         </section>
@@ -260,7 +260,7 @@
               <input id="swith" type="checkbox" v-model="subscribe_edit_mode"/>
             </label>
           </h2>
-          <p class="detail" v-if="!subscribe_edit_mode">{{subscribe}}</p>
+          <p class="detail" v-if="!subscribe_edit_mode">{{busdata.description.subscription}}</p>
           <p class="detail" v-if="subscribe_edit_mode"> 
             <textarea rows="3" v-model="subscribe"></textarea>
           </p>
@@ -271,7 +271,7 @@
               <input id="swith" type="checkbox" v-model="unsubscribe_edit_mode"/>
             </label>
           </h2>
-          <p class="detail" v-if="!unsubscribe_edit_mode">{{unsubscribe}}</p>
+          <p class="detail" v-if="!unsubscribe_edit_mode">{{busdata.description.subscription_cancel}}</p>
           <p class="detail" v-if="unsubscribe_edit_mode"> 
             <textarea rows="3" v-model="unsubscribe"></textarea>
           </p>
@@ -281,14 +281,14 @@
           <div class="top">
             <div class="entertainment"> 
               <h4>設施</h4>
-              <div class="block" v-for="item in entertainment_list"> <img class="icon" src="{{item.url}}"/>
-                <h5 class="icon-name">{{item.name}}</h5>
+              <div class="block" v-for="item in busdata.entertainment"> <img class="icon" src="{{item.url}}"/>
+                <h5 class="icon-name">{{item}}</h5>
               </div>
             </div>
             <div class="safety-facilities"> 
               <h4>安全設備</h4>
-              <div class="block" v-for="item in safety_facilities_list"> <img class="icon" src="{{item.url}}"/>
-                <h5 class="icon-name">{{item.name}}</h5>
+              <div class="block" v-for="item in busdata.safety_facilities"> <img class="icon" src="{{item.url}}"/>
+                <h5 class="icon-name">{{item}}</h5>
               </div>
             </div>
           </div><br/>
@@ -320,15 +320,15 @@
           <div class="container-fluid">
             <div class="row">
               <div class="block col-sm-9">
-                <h2 class="title">{{company_name}}</h2>
-                <div class="join-time text-muted">{{join_time}}</div>
+                <h2 class="title">{{busdata.company_name}}</h2>
+                <div class="join-time text-muted">{{busdata.reg_date}}</div>
                 <div class="total-comments text-muted">{{company_comments}} 則評論</div>
-                <div class="approval text-muted">{{approval}}</div>
+                <div class="approval text-muted">{{busdata.approval}}</div>
               </div>
               <div class="block col-sm-3"><img src="{{company_picture}}" alt=""/></div>
             </div>
             <div class="row"> 
-              <p class="info col-sm-12">{{company_info}}</p>
+              <p class="info col-sm-12">{{busdata.company_info}}</p>
               <div class="owner-btn btn">向車主提問</div><br/>
             </div>
           </div>
