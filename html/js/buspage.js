@@ -1,8 +1,6 @@
 var button_audio= new Audio("http://www.monoame.com/awi_class/ballsound/click23.wav");
 
 
-
-
 // section#order
 var order_outer_data={
   price_per_day: 5488,
