@@ -149,7 +149,11 @@
                 <script type="text/javascript">
                     $(function () {
                         
-                        $('#datetimepicker1').datetimepicker();
+                        var datepicker = $('#datetimepicker1').datetimepicker().data("DateTimePicker");
+						datepicker.format('YYYY/MM/DD');
+						datepicker.minDate("201712/12");
+						datepicker.disabledDates(["2017/12/20","2017/12/22"]);
+						datepicker.maxDate("2017/12/24");
                         
                     });
                 </script>
