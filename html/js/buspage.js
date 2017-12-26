@@ -1,7 +1,43 @@
 var button_audio= new Audio("http://www.monoame.com/awi_class/ballsound/click23.wav");
 
 
+var here = document.URL;
+var here_url = new URL(here);
+var bus_id = here_url.searchParams.get("id");
+var apiURL = "/api/bus/"+bus_id;
 
+
+// var vm=new Vue({
+//   el: ".info",
+//   data: info_outer_data,
+//   title_edit_mode: false,
+//   intro_edit_mode: false,
+//   subscribe_edit_mode: false,
+//   unsubscribe_edit_mode: false
+  
+// });
+var vm = new Vue({
+  el:".intro",
+  data: {
+    busdata:null,
+  },//busdatas,
+  
+ created: function () {
+    this.fetchData();
+  },
+
+  methods: {
+    fetchData: function () {
+    var self = this;
+    $.get( apiURL, function( data ) {
+        self.busdata = data;
+        console.log(JSON.stringify(data));
+    });
+  
+    }
+
+  }
+});
 
 // section#order
 var order_outer_data={
@@ -186,15 +222,6 @@ var info_outer_data={
   
 };
 
-var vm=new Vue({
-  el: ".info",
-  data: info_outer_data,
-  title_edit_mode: false,
-  intro_edit_mode: false,
-  subscribe_edit_mode: false,
-  unsubscribe_edit_mode: false
-  
-});
 
 // section#accessory
 

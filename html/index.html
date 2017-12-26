@@ -125,13 +125,16 @@
     </div>
     <div class="row bgc-white">
       <div class="bus-set col-sm-4 col-lg-3" v-for="busdata in bus_datas">
-        <div class="card"><a href="{{busdata.link_bus}}" target="_blank"> <img class="top" src="{{busdata.img}}" alt=""/>
+        <div class="card">
+          <a href="buspage.html?id={{busdata.id}}" target="_blank"> 
+          
+            <img class="top" src="{{busdata.img_src}}" alt=""/>
             <div class="bottom">
               <h3 class="title">{{busdata.name}}</h3><br/>
-              <div class="circle">{{busdata.number}}人</div>
-              <h4 class="price">優惠價：<span class="red">{{busdata.discount*100}}</span><span>折 </span><span class="red">{{parseInt(busdata.price*busdata.discount)}}</span><span>元  </span></h4><br/>
-              <h4 class="owner">擁有者： {{busdata.owner}}</h4><br/>
-              <h4 class="publish-date">刊登日期： {{busdata.date}}</h4>
+              <div class="circle">{{busdata.description.max_amount}}人</div>
+              <h4 class="price">優惠價：<span class="red">{{busdata.order.discount*100}}</span><span>折 </span><span class="red">{{parseInt(busdata.order.price*busdata.order.discount)}}</span><span>元  </span></h4><br/>
+              <h4 class="owner">擁有者： {{busdata.company_name}}</h4><br/>
+              <h4 class="publish-date">刊登日期： {{busdata.reg_date}}</h4>
             </div></a></div>
       </div>
     </div>
