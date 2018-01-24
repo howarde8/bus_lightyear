@@ -1,0 +1,362 @@
+<html lang="en">
+
+  <head>
+	
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+	  <title>BusPage</title>
+  	<link rel="icon" href="./pic/homepage/BUS_logo.png">
+    <!-- Bootstrap Core CSS -->
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+	  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <!-- Custom Fonts -->
+
+    <!-- Custom CSS -->
+    <link rel='stylesheet' href='./css/buspage.css?v={random number/string}'>
+    <link rel="stylesheet" href="./bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+    <script type="text/javascript" src="./bower_components/moment/min/moment.min.js"></script>
+    
+    <script type="text/javascript" src="./bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+   
+    
+  </head>
+<body>
+<nav class="navbar navbar-default" role="navigation" style="margin-bottom:0px;">
+		<div class="navbar-header"> 
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+				<span class="sr-only">選單切換</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">BUS-lightyear</a>
+		</div>
+		
+		<!-- 手機隱藏選單區 -->
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
+			<!-- 左選單 -->
+			<ul class="nav navbar-nav">
+				<li><a href="./index.html">關於我們</a></li>
+        <li><a href="./comepage.html">刊登資料</a></li>
+        <li class="active"><a href="./buspage.html">開始探索</a></li>
+			</ul>
+		
+			<!-- 搜尋表單 -->
+			<form class="navbar-form navbar-left" role="search">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="請輸入關鍵字">
+				</div>
+				<button type="submit" class="btn btn-default">搜尋</button>
+			</form>
+		
+			<!-- 右選單 -->
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">Amos 您好</a></li>
+				<li><a href="#">登出</a></li>
+				<li><a href="#">個人設定</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">繁體中文 <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">繁體中文</a></li>
+						<li><a href="#">English</a></li>
+						<li><a href="#">日本語</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- 手機隱藏選單區結束 -->
+		</nav>
+<div class="intro">
+  <div class="container-fluid">
+    <div class="row slide">
+      <div class="col-lg-6 col-sm-12 picture col-lg-offset-1"></div>
+      <div class="col-lg-4 col-lg-offset-7 col-sm-10 col-sm-offset-1 order">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="banner col-xs-12">
+              <h3>$ {{busdata.order.price}} TWD </h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="click-area col-sm-4 col-xs-offset-1 col-xs-10">
+              <h6 class="text">出發地</h6>
+              <select class="form-control">
+                <option>請選擇出發地</option>
+                <option>基隆市</option>
+                <option>台北市</option>
+                <option>新北市</option>
+                <option>桃園縣</option>
+                <option>新竹市</option>
+                <option>新竹縣</option>
+                <option>苗栗縣</option>
+                <option>台中市</option>
+                <option>彰化縣</option>
+                <option>南投縣</option>
+                <option>雲林縣</option>
+                <option>嘉義市</option>
+                <option>嘉義縣</option>
+                <option>台南市</option>
+                <option>高雄市</option>
+                <option>屏東縣</option>
+                <option>宜蘭縣</option>
+                <option>花蓮縣</option>
+                <option>台東縣</option>
+            </select>
+            </div>
+            <div class="click-area col-sm-4 col-sm-offset-2 col-xs-offset-1 col-xs-10">
+              <h6 class="text">目的地</h6>
+              <select class="form-control">
+                <option>請選擇目的地</option>
+                <option>基隆市</option>
+                <option>台北市</option>
+                <option>新北市</option>
+                <option>桃園縣</option>
+                <option>新竹市</option>
+                <option>新竹縣</option>
+                <option>苗栗縣</option>
+                <option>台中市</option>
+                <option>彰化縣</option>
+                <option>南投縣</option>
+                <option>雲林縣</option>
+                <option>嘉義市</option>
+                <option>嘉義縣</option>
+                <option>台南市</option>
+                <option>高雄市</option>
+                <option>屏東縣</option>
+                <option>宜蘭縣</option>
+                <option>花蓮縣</option>
+                <option>台東縣</option>
+            </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="click-area col-sm-4 col-xs-offset-1 col-xs-10">
+              <h6 class="text">租用日期 從</h6>
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker1'>
+                        <input type='text' class="form-control" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+                        
+                <script type="text/javascript">
+                    $(function () {
+                        
+                        var datepicker = $('#datetimepicker1').datetimepicker().data("DateTimePicker");
+						datepicker.format('YYYY/MM/DD');
+						datepicker.minDate("201712/12");
+						datepicker.disabledDates(["2017/12/20","2017/12/22"]);
+						datepicker.maxDate("2017/12/24");
+                        
+                    });
+                </script>
+            </div>
+            <div class="click-area col-sm-4 col-sm-offset-2 col-xs-offset-1 col-xs-10">
+              <h6 class="text">到</h6>
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker2'>
+                        <input type='text' class="form-control" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+                        
+                <script type="text/javascript">
+                    $(function () {
+                        $('#datetimepicker2').datetimepicker();
+                    });
+                </script>
+                    
+                
+            </div>
+          </div>
+          <div class="row">
+            <div class="formula col-xs-5 col-xs-offset-1 text-muted">
+              <h5>$ {{busdata.order.price}} TWD x {{day}} 天 </h5>
+            </div>
+            <div class="price col-xs-4 col-xs-offset-1 text-muted">
+              <h5>$ {{busdata.order.price*day}} TWD</h5>
+            </div>
+            <div class="bottom-line col-xs-10 col-xs-offset-1"></div>
+          </div>
+          <div class="row">
+            <div class="text col-xs-4 col-xs-offset-1">
+              <h5 class="text-muted">折扣</h5>
+            </div>
+            <div class="discount col-xs-4 col-xs-offset-2">
+              <h5 class="text-muted">{{busdata.order.discount*100}}折</h5>
+            </div>
+            <div class="bottom-line col-xs-10 col-xs-offset-1"></div>
+          </div>
+          <div class="row">
+            <div class="text col-xs-4 col-xs-offset-1">
+              <h5 class="text-muted">總價</h5>
+            </div>
+            <div class="total col-xs-4 col-xs-offset-2">
+              <h5 class="text-muted">$ {{parseInt(busdata.order.price*day*busdata.order.discount)}} TWD</h5>
+            </div>
+            <div class="bottom-line col-xs-10 col-xs-offset-1"></div>
+          </div>
+          <div class="row">
+            <div class="btn order-btn col-xs-6 col-xs-offset-3">開始預定</div>
+            <div class="reminder col-xs-6 col-xs-offset-3">
+              <h6 class="text-muted">您暫時不會被收費</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="info col-lg-6 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+        <section id="guide-line">
+          <ul class="nav"><a class="nav-link" href="#main-info">概述</a><a class="nav-link" href="#accessory">設備</a><a class="nav-link" href="#comment">評價</a><a class="nav-link" href="#owner">車主</a></ul>
+        </section>
+        <section id="main-info">
+          <h2 v-if="!title_edit_mode">{{busdata.name}}
+            <label class="title-edit-btn edit-btn btn">編輯
+              <input id="swith" type="checkbox" v-model="title_edit_mode"/>
+            </label>
+          </h2>
+          <h2 v-if="title_edit_mode">
+            <input type="text" v-model="title"/>
+            <label class="title-edit-btn edit-btn btn">編輯
+              <input id="swith" type="checkbox" v-model="title_edit_mode"/>
+            </label>
+          </h2>
+          <div class="subtitle">
+            <h4 class="total-comments">{{busdata.total_comments}} 則評價</h4>
+            <h4 class="stars"> {{busdata.average.stars}}</h4>
+          </div>
+        </section>
+        <section id="bus-info">
+          <h2 class="title">遊覽車資訊</h2>
+          <h4 class="max-number">最高乘載人數：{{busdata.description.max_amount}} 人</h4>
+          <h4 class="work-time">工作時間： {{busdata.description.start_time}} - {{busdata.description.end_time}}</h4>
+        </section>
+        <section class="content">
+          <h2 class="title">簡介
+            <label class="edit-btn btn">編輯
+              <input id="swith" type="checkbox" v-model="intro_edit_mode"/>
+            </label>
+          </h2>
+          <p class="detail" v-if="!intro_edit_mode">{{busdata.description.introduction}}</p>
+          <p class="detail" v-if="intro_edit_mode"> 
+            <textarea rows="5" v-model="intro"></textarea>
+          </p>
+        </section>
+        <section class="content">
+          <h2 class="title">注意事項</h2>
+          <div class="block" v-for="item in busdata.description.precautions_list"> 
+            <p class="detail">{{item}}</p>
+          </div>
+        </section>
+        <section class="content">
+          <h2 class="title">可訂狀態
+            <label class="edit-btn btn">編輯
+              <input id="swith" type="checkbox" v-model="subscribe_edit_mode"/>
+            </label>
+          </h2>
+          <p class="detail" v-if="!subscribe_edit_mode">{{busdata.description.subscription}}</p>
+          <p class="detail" v-if="subscribe_edit_mode"> 
+            <textarea rows="3" v-model="subscribe"></textarea>
+          </p>
+        </section>
+        <section class="content">
+          <h2 class="title">退訂方案
+            <label class="edit-btn btn">編輯
+              <input id="swith" type="checkbox" v-model="unsubscribe_edit_mode"/>
+            </label>
+          </h2>
+          <p class="detail" v-if="!unsubscribe_edit_mode">{{busdata.description.subscription_cancel}}</p>
+          <p class="detail" v-if="unsubscribe_edit_mode"> 
+            <textarea rows="3" v-model="unsubscribe"></textarea>
+          </p>
+        </section>
+        <section id="accessory">
+          <h2 class="title">設備與安全措施</h2>
+          <div class="top">
+            <div class="entertainment"> 
+              <h4>設施</h4>
+              <div class="block" v-for="item in busdata.entertainment"> <img class="icon" src="{{item.url}}"/>
+                <h5 class="icon-name">{{item}}</h5>
+              </div>
+            </div>
+            <div class="safety-facilities"> 
+              <h4>安全設備</h4>
+              <div class="block" v-for="item in busdata.safety_facilities"> <img class="icon" src="{{item.url}}"/>
+                <h5 class="icon-name">{{item}}</h5>
+              </div>
+            </div>
+          </div><br/>
+        </section>
+        <section id="comment">
+          <h2 class="title">評價
+            <div class="stars"> {{stars}}</div>
+            <input id="search_bar" type="search" style="font-size: 15px" color="$color_gray" placeholder=" 搜尋評價"/>
+          </h2>
+          <div class="driver-comment">
+            <h5>司機評價
+              <div class="stars"> {{driver_stars}}</div>
+            </h5>
+          </div>
+          <div class="bus-comment">
+            <h5>遊覽車評價
+              <div class="stars"> {{bus_stars}}</div>
+            </h5>
+          </div><br/>
+          <div class="comment" v-for="item in user_comment_list"> <img class="user-photo" src="{{item.photo}}" alt=""/>
+            <div class="user-info">
+              <h4 class="user-name">{{item.name}}</h4>
+              <div class="comment-date text-muted">{{item.date}}</div>
+            </div>
+            <p> {{item.comment}}</p>
+          </div>
+        </section>
+        <section id="owner">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="block col-sm-9">
+                <h2 class="title">{{busdata.company_name}}</h2>
+                <div class="join-time text-muted">{{busdata.reg_date}}</div>
+                <div class="total-comments text-muted">{{company_comments}} 則評論</div>
+                <div class="approval text-muted">{{busdata.approval}}</div>
+              </div>
+              <div class="block col-sm-3"><img src="{{company_picture}}" alt=""/></div>
+            </div>
+            <div class="row"> 
+              <p class="info col-sm-12">{{busdata.company_info}}</p>
+              <div class="owner-btn btn">向車主提問</div><br/>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="footer">
+	<div class="row bgc-blue">
+      <div class="email col-md-12">
+        <h2 class="section-heading">最快速的訂車體驗</h2>
+        <h4 class="section-subheading">傳送任何您想對我們說的話</h4>
+        <input class="form-control" type="email" placeholder="關於疑問｜關於建議｜關於鼓勵"/>
+        <hr/>
+        <button class="btn btn-default">送出</button>
+      </div>
+    </div>
+</section>
+
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.js'></script>
+<script src='./js/buspage.js'></script>
+
+</body>
+</html>

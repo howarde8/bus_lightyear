@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<head>
+    <title>API Example</title>
+</head>
+
+<body>
+    <div>
+        <h1>首頁區塊</h1>
+        <p>隨機選2台車範例</p>
+        <div id="bus_block">
+        </div>
+    </div>
+
+<!-- .js source code down here -->
+<script>
+    var bus_id = []; // keep the bus_id in this request
+
+    var xhr_bus = new XMLHttpRequest();
+    xhr_bus.open("GET", "/api/bus/random/2");
+    xhr_bus.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var buses = JSON.parse(this.responseText);
+
+            // generate buses block
+            var htmlContent = "";
+            for (var i = 0; i < buses.length; i++) {
+                htmlContent += "<div>";
+                htmlContent += "<img src='images/" + buses[i].img_src + "' >";
+                htmlContent += "<p>名稱：" + buses[i].name + "</p>";
+                htmlContent += "<p>價格：" + buses[i].order.price + "，折扣：" + buses[i].order.discount + "</p>";
+                htmlContent += "<p id='bus_" + i + "'></p>"; // set id to bus_(i), modify later
+                htmlContent += "</div>";
+                htmlContent += "<br/>";
+
+                bus_id.push(buses[i].id); // keep the id for finding ratings
+            }
+
+            // insert html into bus block
+            var busBlock = document.getElementById("bus_block");
+            busBlock.innerHTML = htmlContent;
+        }
+    }
+    xhr_bus.send();
+
+</script>
+
+</body>

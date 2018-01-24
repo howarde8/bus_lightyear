@@ -1,0 +1,57 @@
+{
+	product.id: '123',
+	product.price_perday: 1200,
+	product.discount : 0.9,
+	product.prepare_day: 5,
+	product.expire_day: 12,
+	product.cancel : "不可以取消",
+	product.service_area: ["苗栗縣","台北市","新北市","新竹市","桃園縣"],
+	product.available_num : 25, // 之後考慮一下怎麼計算 可能減一下booking那邊的資料
+
+
+	bus(id = product.bus_id).img_src : '../pic/busImg/xxx.png';
+	bus.name : "Aloha Bus",
+	bus.category : "Volvo",
+	bus.reg_date : "2017/01/02",
+	bus.safe_facility: 
+		{
+			"滅火器","../pic/material/safe_facility/fire-extinguisher.png",
+			...,
+		},
+	bus.entertainment:
+		{
+			"卡拉OK","../pic/material/entertainment/KTV.png",
+			...,
+		},
+	bus.max_amount : 12,
+	bus.introduction : "這是一部超級巴士",
+	bus.precaution : "注意事項，不要太窮酸",
+	bus.approval : true,
+	bus.publish_date : ["2005~2010","2012~2015"],
+	bus.number: 30,
+	
+	average_stars :  //有點複雜 大概表達一下
+		SUM(comment.rating(comment.bus_id = product.bus_id))/count(comment.bus_id = product.bus_id)
+	total_comment :
+		{
+			{
+				comment.comment : comment1,
+				user_name : user.name1(user.id = comment.user_id)
+				rating : rating1,
+			},
+			{
+				comment.comment : comment2,
+				user_name : user.name2(user.id = comment.user_id)
+				rating : rating2,
+			},
+			{
+				comment.comment : comment3,
+				user_name : user.name3(user.id = comment.user_id)
+				rating : rating3,
+			}
+
+		}
+
+	company(id = bus.company_id).name : "南龍遊覽車公司",
+	company.introduction : "南龍遊覽車，給您最尊爵的享受",
+}
