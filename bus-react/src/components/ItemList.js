@@ -5,12 +5,12 @@ export class ItemList extends React.Component {
 
   handleLoad = () => {
     $.ajax({
-      url: 'localhost:5000/api/bus/random/3',
+      url: '/api/bus/random/3',
       method: 'GET'
     }).then((response) => {
       console.log(response);
     }, (response) => {
-      console.log(response);
+      console.log("Error: " + response);
     }).catch((error) => {
       console.log("catch error " + error);
     });
@@ -20,7 +20,7 @@ export class ItemList extends React.Component {
     this.handleLoad();
     return (
       <div>
-      <p>ItemList</p>
+      {/*<a href="/api/bus/random/3">ItemList</a>*/}
       </div>
     );
   }
