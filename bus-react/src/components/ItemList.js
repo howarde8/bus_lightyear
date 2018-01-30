@@ -41,9 +41,9 @@ export class ItemList extends React.Component {
       return <p>loading...</p>;
     } else { // successful
       const itemList = this.state.products.map((product) =>
-        <li><Item item={product}/></li>
+        <Item item={product}/>
       );
-      return <ul>{itemList}</ul>;
+      return <div id="selectpage">{itemList}</div>;
     }
   }
 
