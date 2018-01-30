@@ -19,7 +19,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node index.js",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon index.js",
     "client": "npm run start --prefix bus-react",
     "dev": "concurrently \"npm run server\" \"npm run client\""
