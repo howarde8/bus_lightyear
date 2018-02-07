@@ -15,29 +15,25 @@ class NavBar extends React.Component{
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">BUS-lightyear</a>
+          <div class="navbar-brand"><img src="../assets/images/BUS_logo.png"/></div>
+          <div class="navbar-brand">
+            BUS-lightyear  
+          </div>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           {/* 左選單 */}
           <ul class="nav navbar-nav">
-            <li class="active"><a href="./index.html">關於我們</a></li>
-            <li><a href="./comepage.html">刊登資料</a></li>
-            <li><a href="./buspage.html">開始探索</a></li>
+            
+            <li><a href="./index.html">台灣遊覽車資訊網站</a></li>
           </ul>
           
           {/* <!-- 右選單 --> */}
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Amos 您好</a></li>
-            <li><a href="#">登出</a></li>
-            <li><a href="#">個人設定</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">繁體中文 <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">繁體中文</a></li>
-                <li><a href="#">English</a></li>
-                <li><a href="#">日本語</a></li>
-              </ul>
-            </li>
+            <li><a href="#">刊登資料</a></li>
+            <li><a href="#">關於我們</a></li>
+            <li><a href="#">臉書粉專</a></li>
+            <li><a href="#">登入</a></li>
+            <li><a href="#">註冊</a></li>
           </ul>
 			
 		    </div>
