@@ -140,7 +140,7 @@ html, body {
 .section3_block{
   margin-top: 5%;
   margin-bottom: 5%;
-  margin-left: 7.5%;
+  margin-left: 5%;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -176,6 +176,11 @@ html, body {
   margin-top: 5%;
   margin-bottom: 5%;
 }
+.section2_subDiv{
+  padding-right:2%;
+  padding-left: 2%;
+  margin-top: -1%;
+}
 .section2_icon {
   width: 90px;
   height: 90px;
@@ -196,25 +201,7 @@ html, body {
 }
 
 
-.intro .container-fluid .row .search-result .block {
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 100%;
-  text-align: center;
-  margin-top: 50px;
-}
-.intro .container-fluid .row .search-result .title {
-  letter-spacing: 10px;
-}
-.intro .container-fluid .row .search-result .content {
-  width: 60%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  letter-spacing: 2px;
-  line-height: 20px;
-}
+
 .intro .container-fluid .row .bus-set.col-sm-4 {
   margin: 40px 0px;
 }

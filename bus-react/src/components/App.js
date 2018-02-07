@@ -84,21 +84,21 @@ class Section2 extends React.Component{
           <div class="col-sm-1">
           <img class="section2_icon" src="https://i.imgur.com/epYOT2a.png" alt=""/>
           </div>
-          <div class="col-sm-3">
+          <div class="col-sm-3 section2_subDiv">
             <h3 class="section2_title">快速搜尋</h3>
             <h5 class="section2_content">輸入地點或是乘車人數立即找到相關結果</h5>
           </div>
           <div class="col-sm-1">      
           <img class="section2_icon" src="https://i.imgur.com/CrImiud.png" alt=""/>
           </div>
-          <div class="col-sm-3">
+          <div class="col-sm-3 section2_subDiv">
             <h3 class="section2_title"> 資訊透明</h3>
             <h5 class="section2_content">完整資訊結合用戶評價系統讓您能夠評估最好的選擇</h5>
           </div>
           <div class="col-sm-1">
           <img class="section2_icon" src="https://i.imgur.com/HrYLeiJ.png" alt=""/>
           </div>
-          <div class="col-sm-3">  
+          <div class="col-sm-3 section2_subDiv">  
             <h3 class="section2_title">線上預訂</h3>
             <h5 class="section2_content">取代繁瑣的電話預訂線上即可完成預訂與交易</h5>
           </div>
@@ -183,9 +183,7 @@ class App extends React.Component {
           <div class="container-fluid">
             <Section1 />
             <Section2 />
-            <Section3 title="更好的選擇" content="巴士光年是專屬台灣的遊覽車搜尋平台，填入關鍵字就能迅速找到您想要的資訊，也可立即網路預訂"/>
-            
-            <Section4 />
+            <Section3 title="明日的旅程，從現在開始" content="點選以下的遊覽車，看看哪些符合您旅行的規格【廣告】"/>
             <Product />
             <Section5 />
             <Footer />
