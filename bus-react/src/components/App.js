@@ -24,14 +24,7 @@ class NavBar extends React.Component{
             <li><a href="./comepage.html">刊登資料</a></li>
             <li><a href="./buspage.html">開始探索</a></li>
           </ul>
-          {/* 搜尋表單 */}
-          {/* <SearchBar/> */}
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="請輸入關鍵字"/>
-            </div>
-            <button type="submit" class="btn btn-default">搜尋</button>
-          </form>
+          
           {/* <!-- 右選單 --> */}
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Amos 您好</a></li>
@@ -62,22 +55,21 @@ class Section1 extends React.Component{
         <div class="row bgc-blue">
             <div class="picture col-sm-12">
               <div class="block">
-                <h2 class="subtitle">台灣遊覽車資訊網站</h2>
                 <h1 class="title">巴士光年</h1>
                 <h4 class="slogan">最快速且方便的遊覽車預訂體驗</h4>
-              </div><img class="bus" src="https://i.imgur.com/R4lcT0e.png" alt=""/>
-              <div class="shadow">
-                <div class="road">
-                  <div class="line"></div>
-                  <div class="line"></div>
-                  <div class="line"></div>
-                  <div class="line"></div>
-                  <div class="line"></div>
-                  <div class="line"></div>
-                  <div class="line"></div>
-                  <div class="line"></div>
+                {/* 搜尋表單 */}
+                {/* <SearchBar/> */}
+                {/* <form class="navbar-form" role="search"> */}
+                <div class="row" style={{marginTop:"3%"}}> 
+                  <div class="col-md-8 form-group col-md-offset-2">
+                    <input type="text" class="form-control" placeholder="從哪裡出發呢？"/>
+                  </div>
+                  <button style={{marginLeft:"-23%",width:"5%"}} type="submit" class="btn btn-default"><i class="fas fa-search fa-lg"></i></button>
                 </div>
+                {/* </form> */}
+                
               </div>
+              
             </div>
             </div>
           
@@ -177,7 +169,7 @@ class App extends React.Component {
     return (
       <div>
         <NavBar/>
-        <div class="intro">
+        <div class="intro" style={{flex:1,flexDirection:"column"}}>
           <div class="container-fluid">
             <Section1 />
             <Section2 title="更好的選擇" content="巴士光年是專屬台灣的遊覽車搜尋平台，填入關鍵字就能迅速找到您想要的資訊，也可立即網路預訂"/>

@@ -6,6 +6,7 @@
   font-family: 微軟正黑體;
   box-sizing: border-box;
   vertical-align: top;
+  border-width: 1;
 }
 
 html, body {
@@ -14,7 +15,10 @@ html, body {
 }
 
 
-
+.myform-div{
+  flex-direction:row;
+  width:"66.7%";
+}
 
 
 .navbar-right{
@@ -24,7 +28,12 @@ html, body {
 .intro .container-fluid .row .picture.col-sm-12 {
   padding: 0px;
   height: 730px;
+  width:100%;
+  background-image: url('../assets/images/home_bg.jpg');
+  background-position:center;
   background-color: #1085A8;
+  -webkit-background-size:cover;
+  background-size:cover;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -36,7 +45,8 @@ html, body {
           transform: translateX(-50%);
   width: 100%;
   text-align: center;
-  margin-top: 80px;
+
+  margin-top: 250px;
   color: #EFEFEF;
 }
 .intro .container-fluid .row .picture.col-sm-12 .block .title {
