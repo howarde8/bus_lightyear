@@ -52,9 +52,10 @@ class Section1 extends React.Component{
   render(){
     return (
       
-        <div class="row bgc-blue">
-            <div class="picture col-sm-12">
-              <div class="block">
+        <div class="row">
+            <div class="picture col-sm-12">    
+            </div>
+            <div class="block">
                 <h1 class="title">巴士光年</h1>
                 <h4 class="slogan">最快速且方便的遊覽車預訂體驗</h4>
                 {/* 搜尋表單 */}
@@ -69,21 +70,49 @@ class Section1 extends React.Component{
                 {/* </form> */}
                 
               </div>
-              
-            </div>
             </div>
           
     
     );
   }
 }
-
 class Section2 extends React.Component{
   render(){
     return(
       <div class="row">
-        <div class="better-choice col-sm-12">
-          <div class="block">
+        <div class="section2_mainDiv"> 
+          <div class="col-sm-1">
+          <img class="section2_icon" src="https://i.imgur.com/epYOT2a.png" alt=""/>
+          </div>
+          <div class="col-sm-3">
+            <h3 class="section2_title">快速搜尋</h3>
+            <h5 class="section2_content">輸入地點或是乘車人數立即找到相關結果</h5>
+          </div>
+          <div class="col-sm-1">      
+          <img class="section2_icon" src="https://i.imgur.com/CrImiud.png" alt=""/>
+          </div>
+          <div class="col-sm-3">
+            <h3 class="section2_title"> 資訊透明</h3>
+            <h5 class="section2_content">完整資訊結合用戶評價系統讓您能夠評估最好的選擇</h5>
+          </div>
+          <div class="col-sm-1">
+          <img class="section2_icon" src="https://i.imgur.com/HrYLeiJ.png" alt=""/>
+          </div>
+          <div class="col-sm-3">  
+            <h3 class="section2_title">線上預訂</h3>
+            <h5 class="section2_content">取代繁瑣的電話預訂線上即可完成預訂與交易</h5>
+          </div>
+        </div>
+    </div>
+    );
+  }
+}
+class Section3 extends React.Component{
+  render(){
+    return(
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="section3_block">
             <h1 class="title">{this.props.title}</h1>
             <h5 class="content">{this.props.content}</h5>
           </div>
@@ -93,26 +122,7 @@ class Section2 extends React.Component{
   }
 }
 
-class Section3 extends React.Component{
-  render(){
-    return(
-      <div class="row">
-      <div class="icon-set col-sm-4"><img class="icon" src="https://i.imgur.com/epYOT2a.png" alt=""/>
-        <h3 class="title">快速搜尋</h3>
-        <h5 class="content">輸入地點或是乘車人數立即找到相關結果</h5>
-      </div>
-      <div class="icon-set col-sm-4"><img class="icon" src="https://i.imgur.com/CrImiud.png" alt=""/>
-        <h3 class="title"> 資訊透明</h3>
-        <h5 class="content">完整資訊結合用戶評價系統讓您能夠評估最好的選擇</h5>
-      </div>
-      <div class="icon-set col-sm-4"><img class="icon" src="https://i.imgur.com/HrYLeiJ.png" alt=""/>
-        <h3 class="title">線上預訂</h3>
-        <h5 class="content">取代繁瑣的電話預訂線上即可完成預訂與交易</h5>
-      </div>
-    </div>
-    );
-  }
-}
+
 class Section4 extends React.Component{
   render(){
     return(
@@ -169,11 +179,12 @@ class App extends React.Component {
     return (
       <div>
         <NavBar/>
-        <div class="intro" style={{flex:1,flexDirection:"column"}}>
+        <div class="intro" style={{display:"flex",flexDirection:"column"}}>
           <div class="container-fluid">
             <Section1 />
-            <Section2 title="更好的選擇" content="巴士光年是專屬台灣的遊覽車搜尋平台，填入關鍵字就能迅速找到您想要的資訊，也可立即網路預訂"/>
-            <Section3 />
+            <Section2 />
+            <Section3 title="更好的選擇" content="巴士光年是專屬台灣的遊覽車搜尋平台，填入關鍵字就能迅速找到您想要的資訊，也可立即網路預訂"/>
+            
             <Section4 />
             <Product />
             <Section5 />

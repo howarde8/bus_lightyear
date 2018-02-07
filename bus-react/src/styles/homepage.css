@@ -6,7 +6,6 @@
   font-family: 微軟正黑體;
   box-sizing: border-box;
   vertical-align: top;
-  border-width: 1;
 }
 
 html, body {
@@ -27,51 +26,38 @@ html, body {
 
 .intro .container-fluid .row .picture.col-sm-12 {
   padding: 0px;
-  height: 730px;
+  height: 700px;
   width:100%;
   background-image: url('../assets/images/home_bg.jpg');
   background-position:center;
-  background-color: #1085A8;
+  background-color: #000000;
   -webkit-background-size:cover;
   background-size:cover;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  opacity: 0.5;
 }
-.intro .container-fluid .row .picture.col-sm-12 .block {
+.intro .container-fluid .row .block {
   left: 50%;
+  position: absolute;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   width: 100%;
   text-align: center;
-
-  margin-top: 250px;
-  color: #EFEFEF;
+  opacity: 1;
+  margin-top: 200px;
+  color: #000000;
 }
-.intro .container-fluid .row .picture.col-sm-12 .block .title {
-  letter-spacing: 25px;
+.intro .container-fluid .row .block .title {
+  letter-spacing: 15px;
   font-size: 72px;
   margin: 30px 0px;
 }
-.intro .container-fluid .row .picture.col-sm-12 .block .subtitle {
-  font-weight: 400;
-  letter-spacing: 5px;
-}
-.intro .container-fluid .row .picture.col-sm-12 .block .slogan {
+.intro .container-fluid .row .block .slogan {
   font-weight: 300;
-  letter-spacing: 10px;
-}
-.intro .container-fluid .row .picture.col-sm-12 .bus {
-  display: inline-block;
-  margin-top: 120px;
-  margin-left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  z-index: 1;
-  cursor: pointer;
-  -webkit-animation: bus-bounce 0.75s linear infinite;
-          animation: bus-bounce 0.75s linear infinite;
+  letter-spacing: 18px;
 }
 .intro .container-fluid .row .picture.col-sm-12 .shadow {
   background: #D8D8D8;
@@ -150,22 +136,32 @@ html, body {
   border-radius: 4px;
   margin-right: 150px;
 }
-.intro .container-fluid .row .better-choice.col-sm-12 .block {
+
+.section3_block{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 7.5%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.section3_block .title{
+  letter-spacing: 10px;
+}
+.section3_block .content{
+  letter-spacing: 2px;
+  line-height: 20px;
+}
+.intro .container-fluid .row .better-choice .col-sm-12 .block {
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
   width: 100%;
   text-align: center;
   margin-top: 50px;
 }
-.intro .container-fluid .row .better-choice.col-sm-12 .block .title {
-  letter-spacing: 10px;
-}
-.intro .container-fluid .row .better-choice.col-sm-12 .block .content {
+
+.intro .container-fluid .row .better-choice .col-sm-12 .block .content {
   width: 60%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
   letter-spacing: 2px;
   line-height: 20px;
 }
@@ -174,24 +170,32 @@ html, body {
   padding: 40px;
   text-align: center;
 }
-.intro .container-fluid .row .icon-set.col-sm-4 .icon {
+.section2_mainDiv{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.section2_icon {
   width: 90px;
   height: 90px;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
 }
-.intro .container-fluid .row .icon-set.col-sm-4 .icon:hover {
+.section2_icon:hover{
   -webkit-transform: translateY(-20%);
           transform: translateY(-20%);
 }
-.intro .container-fluid .row .icon-set.col-sm-4 .title {
+.section2_title {
   font-weight: 700;
   letter-spacing: 4px;
 }
-.intro .container-fluid .row .icon-set.col-sm-4 .content {
+.section2_content {
   letter-spacing: 2px;
   line-height: 25px;
 }
+
+
 .intro .container-fluid .row .search-result .block {
   left: 50%;
   -webkit-transform: translateX(-50%);
