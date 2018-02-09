@@ -51,6 +51,8 @@ class Section1 extends React.Component{
         <div class="row">
             <div class="picture col-sm-12">    
             </div>
+            <div class="cover-block">
+            </div>
             <div class="block">
                 <h1 class="title">巴士光年</h1>
                 <h4 class="slogan">最快速且方便的遊覽車預訂體驗</h4>
@@ -65,7 +67,7 @@ class Section1 extends React.Component{
                 </div>
                 {/* </form> */}
                 
-              </div>
+            </div>
             </div>
           
     
