@@ -3,11 +3,14 @@ import '../styles/App.css';
 import '../styles/homepage.css';
 import { SearchBar } from './SearchBar';
 import { ItemList } from './ItemList'
+import { BusPage } from './BusPage';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 class NavBar extends React.Component{
+
   render(){
     return(
-      <nav class="navbar navbar-default" role="navigation" style={{ marginBottom:0 }}>
+      <nav class="navbar navbar-default" role="navigation" style={{marginBottom: 0}}>
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
             <span class="sr-only">選單切換</span>
@@ -17,16 +20,16 @@ class NavBar extends React.Component{
           </button>
           <div class="navbar-brand"><img src="../assets/images/BUS_logo.png"/></div>
           <div class="navbar-brand">
-            BUS-lightyear  
+            BUS-lightyear
           </div>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           {/* 左選單 */}
           <ul class="nav navbar-nav">
-            
+
             <li><a href="./index.html">台灣遊覽車資訊網站</a></li>
           </ul>
-          
+
           {/* <!-- 右選單 --> */}
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">刊登資料</a></li>
@@ -35,10 +38,10 @@ class NavBar extends React.Component{
             <li><a href="#">登入</a></li>
             <li><a href="#">註冊</a></li>
           </ul>
-			
-		    </div>
-		
-		  </nav>
+
+        </div>
+
+      </nav>
     );
   }
 }
@@ -172,7 +175,7 @@ class Footer extends React.Component{
   }
 }
 
-class App extends React.Component {
+class Main extends React.Component {
   render() {
     return (
       <div>
@@ -188,6 +191,26 @@ class App extends React.Component {
           </div>
         </div>
       </div>
+    );
+  }
+}
+
+class App extends React.Component {
+
+  getMain = () => {
+    return <Redirect to="/"/>;
+  }
+
+  getBusPage = () => {
+    return <Redirect to="/buspage"/>;
+  }
+
+  render() {
+    return (
+      <Switch>
+        <Route exact path="/" component={Main}/>
+        <Route path="/buspage" component={BusPage}/>
+      </Switch>
     );
   }
 }
