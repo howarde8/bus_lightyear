@@ -45,7 +45,7 @@ export class ItemList extends React.Component {
       return <p>loading...</p>;
     } else { // successful
       const itemList = this.state.products.map((product) =>
-        <Item callbackClick={this.clickInChildItem} item={product}/>
+        <Item key={product._id} callbackClick={this.clickInChildItem} item={product}/>
       );
       return <div id="selectpage">{itemList}</div>;
     }
