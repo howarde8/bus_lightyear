@@ -80,7 +80,7 @@ class Section1 extends React.Component{
 class Section2 extends React.Component{
   render(){
     return(
-      <div class="row">
+      <div class="row section2_row">
         <div class="section2_mainDiv"> 
           <div class="col-sm-1">
           <img class="section2_icon" src="https://i.imgur.com/epYOT2a.png" alt=""/>

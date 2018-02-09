@@ -44,7 +44,7 @@ html, body {
   height:700px;
   
   background-color: #000000;
-  opacity: 0.7;
+  opacity: 0.5;
 }
 .intro .container-fluid .row .block {
   left: 50%;
@@ -177,6 +177,11 @@ html, body {
   margin: 50px 0px;
   padding: 40px;
   text-align: center;
+}
+.section2_row{
+  
+  background-color: #ffffff;
+  padding-bottom: 4%;
 }
 .section2_mainDiv{
   margin-left: 5%;
