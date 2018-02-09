@@ -1,9 +1,14 @@
 import React from 'react';
 
 export class Item extends React.Component {
+
+  itemClicked = () => {
+    this.props.callbackClick(this.props.item._id);
+  }
+
   render() {
     return (
-      <div class="bus_card">
+      <div onClick={this.itemClicked} class="bus_card">
         <div class="top">
           <div class="bus_pic"></div>
           <div class="size">

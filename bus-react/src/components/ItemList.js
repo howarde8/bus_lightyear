@@ -9,6 +9,10 @@ export class ItemList extends React.Component {
     products: []
   }
 
+  clickInChildItem = (itemId) => {
+    console.log("Clicked! " + itemId);
+  }
+
   componentDidMount() {
     this.setState({ loadingProducts: true, error: '' });
     this.loadProducts();
@@ -41,7 +45,7 @@ export class ItemList extends React.Component {
       return <p>loading...</p>;
     } else { // successful
       const itemList = this.state.products.map((product) =>
-        <Item item={product}/>
+        <Item callbackClick={this.clickInChildItem} item={product}/>
       );
       return <div id="selectpage">{itemList}</div>;
     }
