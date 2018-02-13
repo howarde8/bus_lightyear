@@ -1,9 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
+import React from 'react'
+import { render } from 'react-dom'
+import { createStore,applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import App from './components/App'
+import reducer from './reducers'
+import logger from 'redux-logger';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+const store = createStore(
+  reducer,
+  applyMiddleware(logger),
+  )
+
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)

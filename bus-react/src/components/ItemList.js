@@ -1,8 +1,9 @@
 import React from 'react';
 import $ from 'jquery';
 import { Item } from './Item';
+import {connect} from 'react-redux';
 
-export class ItemList extends React.Component {
+class ItemList extends React.Component {
   state = {
     loadingProducts: false,
     error: '',
@@ -15,7 +16,8 @@ export class ItemList extends React.Component {
 
   componentDidMount() {
     this.setState({ loadingProducts: true, error: '' });
-    this.loadProducts();
+    console.log("itemsList",this.props.products);
+    // this.loadProducts();
   }
 
   loadProducts = () => {
@@ -59,3 +61,11 @@ export class ItemList extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return{
+    products: state.products
+  }
+}
+
+export default connect(mapStateToProps,)(ItemList);
