@@ -1,4 +1,6 @@
-const initialState = ["test"];
+
+
+const initialState = [];
 
 const products = (state = initialState, action) => {
     switch(action.type){
@@ -8,6 +10,7 @@ const products = (state = initialState, action) => {
         }
         default:
             return state;
+            
     }
 }
 

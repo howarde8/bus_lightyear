@@ -17,7 +17,8 @@ class ItemList extends React.Component {
   componentDidMount() {
     this.setState({ loadingProducts: true, error: '' });
     console.log("itemsList",this.props.products);
-    // this.loadProducts();
+    this.loadProducts();
+    
   }
 
   loadProducts = () => {
@@ -29,8 +30,10 @@ class ItemList extends React.Component {
       this.setState({
         loadingProducts: false,
         error: '',
-        products: response
+        // products: response
       });
+      this.props.dispatch({type:"INIT_ITEMS",items:response});
+      console.log("itemsList",this.props.products);
     }, (response) => {
       console.log("Error: " + response);
       this.setState({ error: response});
@@ -46,10 +49,12 @@ class ItemList extends React.Component {
     } else if (this.state.loadingProducts) {
       return <p>loading...</p>;
     } else { // successful
-      const itemList = this.state.products.map((product) =>
-        <Item key={product._id} callbackClick={this.clickInChildItem} item={product}/>
+      if(this.props.products !== undefined ){
+      const itemList = this.props.products.map((product,index) =>
+        <Item key={index} callbackClick={this.clickInChildItem} item={product}/>
       );
       return <div id="selectpage">{itemList}</div>;
+    }
     }
   }
 
