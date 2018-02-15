@@ -124,17 +124,17 @@ class Section3 extends React.Component{
 }
 
 
-class Section4 extends React.Component{
+class Section4_selection extends React.Component{
   render(){
     return(
-      <div class="row bgc-white">
-      <div class="search-result col-sm-12">
-        <div class="block">
-          <h1 class="title">搜尋結果</h1>
-          <h5 class="content">填入關鍵字就能迅速找到您想要的資訊頁面。</h5>
+      <div class="select_bar">
+        <div class="selcet_btns">
+          <div class="btn">日期</div>
+          <div class="btn">人數限制</div>
+          <div class="btn">廠牌</div>
+          <div class="btn">依「評價」由高至低排序</div>
         </div>
       </div>
-    </div>
     );
   }
 }
@@ -185,6 +185,7 @@ class Main extends React.Component {
             <Section1 />
             <Section2 />
             <Section3 title="明日的旅程，從現在開始" content="點選以下的遊覽車，看看哪些符合您旅行的規格【廣告】"/>
+            <Section4_selection />
             <Product />
             <Section5 />
             <Footer />

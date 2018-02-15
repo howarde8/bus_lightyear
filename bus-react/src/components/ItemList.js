@@ -2,12 +2,11 @@ import React from 'react';
 import $ from 'jquery';
 import { Item } from './Item';
 import {connect} from 'react-redux';
+import {initItems, loadingStateUpdate} from '../actions/item';
 
 class ItemList extends React.Component {
   state = {
-    loadingProducts: false,
     error: '',
-    products: []
   }
 
   clickInChildItem = (itemId) => {
@@ -15,7 +14,7 @@ class ItemList extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({ loadingProducts: true, error: '' });
+    this.props.dispatch(loadingStateUpdate(true));
     console.log("itemsList",this.props.products);
     this.loadProducts();
     
@@ -28,11 +27,10 @@ class ItemList extends React.Component {
     }).then((response) => {
       console.log(response);
       this.setState({
-        loadingProducts: false,
         error: '',
-        // products: response
       });
-      this.props.dispatch({type:"INIT_ITEMS",items:response});
+      this.props.dispatch(loadingStateUpdate(false));
+      this.props.dispatch(initItems(response));
       console.log("itemsList",this.props.products);
     }, (response) => {
       console.log("Error: " + response);
@@ -46,7 +44,7 @@ class ItemList extends React.Component {
     if (this.state.error) {
       console.log("error in getProductsContent");
       return null;
-    } else if (this.state.loadingProducts) {
+    } else if (this.props.loadingProducts) {
       return <p>loading...</p>;
     } else { // successful
       if(this.props.products !== undefined ){
@@ -69,7 +67,8 @@ class ItemList extends React.Component {
 
 const mapStateToProps = (state) => {
   return{
-    products: state.products
+    products: state.products,
+    loadingProducts: state.loadingstate,
   }
 }
 
