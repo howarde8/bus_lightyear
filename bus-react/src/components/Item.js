@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../styles/Item.css';
 export class Item extends React.Component {
 
   itemClicked = () => {
