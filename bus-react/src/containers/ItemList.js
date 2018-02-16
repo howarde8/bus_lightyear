@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import { Item } from './Item';
+import Item from '../components/Item';
 import {connect} from 'react-redux';
 import {initItems, loadingStateUpdate} from '../actions/item';
 
@@ -15,7 +15,6 @@ class ItemList extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(loadingStateUpdate(true));
-    console.log("itemsList",this.props.products);
     this.loadProducts();
     
   }

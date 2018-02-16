@@ -1,6 +1,8 @@
 import React from 'react';
 import '../styles/Item.css';
-export class Item extends React.Component {
+
+
+export default class Item extends React.Component {
 
   itemClicked = () => {
     this.props.callbackClick(this.props.item._id);
