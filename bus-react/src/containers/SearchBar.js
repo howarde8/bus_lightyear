@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import '../styles/homepage.css';
+
 
 class SearchBar extends React.Component {
   render() {
