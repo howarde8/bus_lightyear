@@ -2,7 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import Item from '../components/Item';
 import {connect} from 'react-redux';
-import {initItems, loadingStateUpdate} from '../actions/item';
+import {initItems} from '../actions/item';
 
 class ItemList extends React.Component {
 
@@ -11,17 +11,13 @@ class ItemList extends React.Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(loadingStateUpdate(true));
     this.loadProducts();
-    
   }
-
   loadProducts = () => {
     $.ajax({
       url: '/api/bus/all',
       method: 'GET'
     }).then((response) => {
-      this.props.dispatch(loadingStateUpdate(false));
       this.props.dispatch(initItems(response));
     }, (response) => {
       console.log("Error: " + response);
@@ -54,10 +50,22 @@ class ItemList extends React.Component {
   }
 }
 
+const getVisibleProducts = (products, filter) => {
+  switch (filter.filterType) {
+    case 'SHOW_ALL':
+      return products;
+    case 'FILT_NUMBER':
+      return products.filter(value=>
+        value.description.max_amount > filter.lowBound && 
+        value.description.max_amount <= filter.upBound
+      );
+    default:
+      return products;
+  }
+}
 const mapStateToProps = (state) => {
-  return{
-    products: state.products,
-    loadingProducts: state.loadingstate,
+  return {
+    products: getVisibleProducts(state.get('products'), state.get('visibilityFilter'))
   }
 }
 

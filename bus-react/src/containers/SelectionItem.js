@@ -1,13 +1,14 @@
 
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import {setVisibilityFilter} from '../actions/item';
 
 class SelectionItem extends React.Component{
     numberFilter(low,up){
-      this.props.dispatch({type:"FILT_ITEMS",lowBound:low,upBound:up});
+      this.props.dispatch(setVisibilityFilter({filterType:"FILT_NUMBER",lowBound:low,upBound:up}));
     }
   
-  
+    
     render(){
       return(
         <div class="select_bar">

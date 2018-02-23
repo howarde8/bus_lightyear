@@ -1,9 +1,9 @@
-import { combineReducers } from 'redux'
+import {combineReducers} from 'redux-immutable';
 import products from './products';
-import loadingstate from './loadingstate';
+import visibilityFilter from './visibilityFilter';
 const reducers = combineReducers({
     products,
-    loadingstate,
+    visibilityFilter,
 })
 
 export default reducers
