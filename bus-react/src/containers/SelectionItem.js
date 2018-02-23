@@ -7,13 +7,18 @@ class SelectionItem extends React.Component{
     numberFilter(low,up){
       this.props.dispatch(setVisibilityFilter({filterType:"FILT_NUMBER",lowBound:low,upBound:up}));
     }
-  
-    
+    brandFilter(brand){
+      this.props.dispatch(setVisibilityFilter({filterType:"FILT_BRAND",brand:brand}));
+    }
+    showAll(){
+      this.props.dispatch(setVisibilityFilter({filterType:"SHOW_ALL"}));
+    }
     render(){
       return(
         <div class="select_bar">
           <div class="selcet_btns">
             <div class="btn">日期</div>
+            <div class="btn" onClick={()=>this.showAll()}>顯示全部</div>
             <li class="navbar-header nav navbar-navdropdown">
               <div class="dropdown-toggle btn" data-toggle="dropdown">人數限制</div>
               <ul class="dropdown-menu">
@@ -25,9 +30,9 @@ class SelectionItem extends React.Component{
             <li class="navbar-header nav navbar-navdropdown">
               <div class="dropdown-toggle btn" data-toggle="dropdown">廠牌</div>
               <ul class="dropdown-menu">
-                <li><a>歐美</a></li>
-                <li><a>日製</a></li>
-                <li><a>國產</a></li>
+                <li><a onClick={()=>this.brandFilter("歐美")}>歐美</a></li>
+                <li><a onClick={()=>this.brandFilter("日本製")}>日製</a></li>
+                <li><a onClick={()=>this.brandFilter("國產")}>國產</a></li>
               </ul>
             </li>
             <li class="navbar-header nav navbar-navdropdown">

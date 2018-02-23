@@ -59,6 +59,10 @@ const getVisibleProducts = (products, filter) => {
         value.description.max_amount > filter.lowBound && 
         value.description.max_amount <= filter.upBound
       );
+    case 'FILT_BRAND':
+      return products.filter(value=>
+        value.category === filter.brand
+      );
     default:
       return products;
   }
