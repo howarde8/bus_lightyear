@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Item.css';
-
+import {Redirect} from 'react-router-dom';
 
 export default class Item extends React.Component {
 
@@ -10,7 +10,7 @@ export default class Item extends React.Component {
 
   render() {
     return (
-      <div onClick={this.itemClicked} class="bus_card">
+      <div onClick={()=>this.itemClicked} class="bus_card">
         <div class="top">
           <div class="bus_pic"></div>
           <div class="size">
