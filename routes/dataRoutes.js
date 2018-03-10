@@ -7,6 +7,7 @@ var busSchema = new mongoose.Schema(
         "name": String,
         "company_name": String,
         "company_id": String,
+        "category": String,
         "img_src": String,
         "description": {
             "max_amount": Number,

@@ -1,60 +1,43 @@
 import React from 'react';
 import $ from 'jquery';
-import { Item } from './Item';
+import Item from '../components/Item';
 import {connect} from 'react-redux';
+import {initItems} from '../actions/item';
 
 class ItemList extends React.Component {
-  state = {
-    loadingProducts: false,
-    error: '',
-    products: []
-  }
 
   clickInChildItem = (itemId) => {
     console.log("Clicked! " + itemId);
   }
 
   componentDidMount() {
-    this.setState({ loadingProducts: true, error: '' });
-    console.log("itemsList",this.props.products);
     this.loadProducts();
-    
   }
-
   loadProducts = () => {
     $.ajax({
-      url: '/api/bus/random/6',
+      url: '/api/bus/all',
       method: 'GET'
     }).then((response) => {
-      console.log(response);
-      this.setState({
-        loadingProducts: false,
-        error: '',
-        // products: response
-      });
-      this.props.dispatch({type:"INIT_ITEMS",items:response});
-      console.log("itemsList",this.props.products);
+      this.props.dispatch(initItems(response));
     }, (response) => {
       console.log("Error: " + response);
-      this.setState({ error: response});
     }).catch((error) => {
       console.log("catch error " + error);
     });
   }
 
   getProductsContent = () => {
-    if (this.state.error) {
-      console.log("error in getProductsContent");
-      return null;
-    } else if (this.state.loadingProducts) {
-      return <p>loading...</p>;
-    } else { // successful
+    if(this.props.loadingProducts){
+      return <p>loading..</p>
+    }
+    else{
       if(this.props.products !== undefined ){
+      const filter = this.props.filter
       const itemList = this.props.products.map((product,index) =>
         <Item key={index} callbackClick={this.clickInChildItem} item={product}/>
       );
       return <div id="selectpage">{itemList}</div>;
-    }
+      }
     }
   }
 
@@ -67,9 +50,26 @@ class ItemList extends React.Component {
   }
 }
 
+const getVisibleProducts = (products, filter) => {
+  switch (filter.filterType) {
+    case 'SHOW_ALL':
+      return products;
+    case 'FILT_NUMBER':
+      return products.filter(value=>
+        value.description.max_amount > filter.lowBound && 
+        value.description.max_amount <= filter.upBound
+      );
+    case 'FILT_BRAND':
+      return products.filter(value=>
+        value.category === filter.brand
+      );
+    default:
+      return products;
+  }
+}
 const mapStateToProps = (state) => {
-  return{
-    products: state.products
+  return {
+    products: getVisibleProducts(state.get('products'), state.get('visibilityFilter'))
   }
 }
 
