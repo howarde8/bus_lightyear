@@ -303,12 +303,7 @@ section#comment .comment .comment_comment {
 }
 
 
-
-
-
-
-
-
+/* Ｒ Ｗ Ｄ */
 @media screen and (max-width: 1200px) {
   .container-fluid{
     padding: 0px;
@@ -376,21 +371,6 @@ section#comment .comment .comment_comment {
   }
 }
 @media screen and (max-width: 769px) {
-  nav.navbar.navbar-default.navbar-fixed-top.navbar-top .container .navbar-collapse.collapse {
-    display: none;
-  }
-  nav.navbar.navbar-default.navbar-fixed-top.navbar-top .container .searchbar {
-    width: 300px;
-    margin-left: 30%;
-    margin-top: -42px;
-  }
-  nav.navbar.navbar-default.navbar-fixed-top.navbar-top .container .searchbar .search-block, nav.navbar.navbar-default.navbar-fixed-top.navbar-top .container .searchbar .search-btn {
-    display: inline-block;
-  }
-  nav.navbar.navbar-default.navbar-fixed-top.navbar-top .container .searchbar .search-block {
-    width: 70%;
-  }
-
   .col-lg-4.col-lg-offset-7.col-sm-10.col-sm-offset-1.order {
     height: initial;
   }

@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+* {
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  font-family: 微軟正黑體;
+  box-sizing: border-box;
+  /* border: solid 0.5px black; */
+}
+html, body { width: 100%; overflow-x: hidden;}
+h1{ font-size: 80px;}
+h2{ font-size: 60px;}
+h3{ font-size: 45px;}
+h4{ font-size: 30px;}
+h5{ font-size: 20px;}
+h6{ font-size: 15px;}
+p{ font-size: 15px; letter-spacing: 1px;}
+
+
+
+.booking_area { margin-top: 40px; }
+.booking_area h1 { margin-top: 0px;}
+
+.btn_area { margin-top: 85px; }
+.btn_area .btn_space {
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+}
+.btn_area .btn_space .btn {
+  border: 1px solid #383838;
+  width: 80px;
+}
+.btn_area .btn_space .print_btn {
+  background-color: #1092BA;
+  color: #EFEFEF;
+  border: 0px solid #000;
+}
+
+@media screen and (max-width: 769px) {
+  .btn_area { margin-top: 0px; }
+  .btn_area .btn_space {
+    position: relative;
+    left: 0px;
+  }
+}
+.block {
+  margin-top: 25px;
+  border: 0.8px solid #EBEBEB;
+  padding: 10px;
+}
+
+.user_area .row {
+  vertical-align: middle;
+  margin: 10px -10px;
+  font-size: 16px;
+}
+.user_area .row .title {
+  padding-left: 10px;
+  font-weight: 700;
+}
+.user_area .row .display {
+  padding-left: 0px;
+  font-weight: 300;
+}
+
+.company_area .pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-top: 10px;
+  position: relative;
+  background-image: url(https://i.imgur.com/zqOkQFD.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.company_area p {
+  margin-top: 30px;
+  padding: 0px 20px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+.company_area .btn {
+  margin-top: 10px;
+  background-color: #1092BA;
+  color: #EFEFEF;
+  border: 0px solid #000;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: relative;
+}
+.company_area hr {
+  border: 1px solid #EBEBEB;
+}
+.company_area .display {
+  font-weight: 300;
+}
+
+.pic_area .pic {
+  height: 420px;
+  margin-top: 30px;
+  margin-bottom: 100px;
+  border: 2px solid #EBEBEB;
+  background-image: url(https://i.imgur.com/zqOkQFD.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
