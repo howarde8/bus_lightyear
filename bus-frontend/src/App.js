@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import Homepage from './components/Homepage';
+import Buspage from './components/Buspage';
 
 class App extends Component {
   render() {
     return (
-      <Homepage />
+      <Buspage />
     );
   }
 }
