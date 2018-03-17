@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "immutable": "^3.8.2",
+=======
+    "npm": "^5.7.1",
+>>>>>>> f8aea2c71c732305964dad26c614229190e8de6b
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",

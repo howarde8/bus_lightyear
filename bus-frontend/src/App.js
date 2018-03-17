@@ -5,7 +5,7 @@ import Homepage from './components/Homepage';
 class App extends Component {
   render() {
     return (
-      <Homepage />
+      <Homepage/>
     );
   }
 }
