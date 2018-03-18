@@ -41,9 +41,9 @@ class ItemList extends React.Component {
     }
     else{
       if(this.props.products && this.props.products.length>0){
-      const filter = this.props.filter
-      const itemList = this.props.products.map((product,index) =>
-        <Item key={index} callbackClick={this.clickInChildItem} item={product}/>
+        const filter = this.props.filter
+        const itemList = this.props.products.map((product,index) =>
+          <Item key={index} callbackClick={this.clickInChildItem} item={product}/>
       );
       return <div id="selectpage">{itemList}</div>;
       }

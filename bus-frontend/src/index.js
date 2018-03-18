@@ -11,8 +11,13 @@ import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-ro
 
 import registerServiceWorker from './registerServiceWorker';
 import reducers from './reducers'
+
+//...pages 
 import HomePage from './components/HomePage';
 import Repo from './components/Repo';
+import BusPage from './components/BusPage';
+import CommentPage from './components/CommentPage';
+import Selectpage from './components/SelectPage';
 
 const initialState = {};
 
@@ -36,7 +41,10 @@ ReactDOM.render(
     <ConnectedRouter history={history}>
       <div>
         <Route exact path="/" component={HomePage}/>
-        <Route exact path="/repo" component={Repo}/>
+        <Route path="/repo" component={Repo}/>
+        <Route path="/select" component={Selectpage}/>
+        <Route path="/bus" component={BusPage}/>
+        <Route path="/comment" component={CommentPage}/>
       </div>
     </ConnectedRouter>
   </Provider>, 
