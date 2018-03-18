@@ -1,5 +1,5 @@
 import React from 'react';
-import Item from '../components/Item';
+import Item from './Item';
 import {connect} from 'react-redux';
 import {initItems} from '../actions/item';
 
@@ -10,8 +10,9 @@ class ItemList extends React.Component {
       loadingProducts: true,
     }
   }
-  clickInChildItem = (itemId) => {
-    console.log("Clicked! " + itemId);
+  clickInChildItem = (item) => {
+    this.props.dispatch({type:'SELECT_ORDER',order:item});
+    console.log("Clicked! " + item);
   }
 
   componentDidMount() {

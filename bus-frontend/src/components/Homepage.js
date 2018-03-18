@@ -104,8 +104,8 @@ class HomePage extends React.Component {
             <Section1 />
             <Section2 />
             <Section3 title="明日的旅程，從現在開始" content="點選以下的遊覽車，看看哪些符合您旅行的規格【廣告】"/>
-            <SelectionItem />
-            <ItemList />
+            {/* <SelectionItem />
+            <ItemList /> */}
             <Section5 />
             <Footer />
           </div>
