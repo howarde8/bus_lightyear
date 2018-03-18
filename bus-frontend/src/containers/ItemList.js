@@ -11,18 +11,18 @@ class ItemList extends React.Component {
   }
 
   componentDidMount() {
-    console.log('props',this.props);
+    // console.log('props',this.props);
     this.loadProducts();
   }
   loadProducts = () => {
-    fetch('/api/bus/all',{method:'GET'}).then(
-      (response)=>{
-      this.props.dispatch(initItems(response));
-    },(err)=>{
-      console.log(err);
-    }).catch(
-      e=>console.log(e)
-    );
+    fetch('/api/bus/all',{medtho:'GET'}).then((response) => response.json())
+    .then((responseJson) => {
+      this.props.dispatch(initItems(responseJson));
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+    
     // $.ajax({
     //   url: '/api/bus/all',
     //   method: 'GET'
@@ -77,6 +77,7 @@ const getVisibleProducts = (products, filter) => {
   }
 }
 const mapStateToProps = (state) => {
+  // console.log(state.get('products'));
   return {
     products: getVisibleProducts(state.get('products'), state.get('visibilityFilter'))
   }
