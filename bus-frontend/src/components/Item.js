@@ -1,6 +1,5 @@
 import React from 'react';
-import '../styles/Item.css';
-import {Redirect} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 export default class Item extends React.Component {
 

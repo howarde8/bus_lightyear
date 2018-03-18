@@ -1,23 +1,17 @@
 @charset "UTF-8";
-
 * {
   position: relative;
   margin: 0px;
   padding: 0px;
   font-family: 微軟正黑體;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  /* border: solid 0.5px black; */
+  vertical-align: top;
 }
-html, body { width: 100%; overflow-x: hidden;}
-h1{ font-size: 80px;}
-h2{ font-size: 60px;}
-h3{ font-size: 45px;}
-h4{ font-size: 30px;}
-h5{ font-size: 20px;}
-h6{ font-size: 15px;}
-p{ font-size: 15px; letter-spacing: 1px;}
 
-
+html, body {
+  background-color: #f3f3f1;
+}
 
 #selectpage .select_bar {
   border: solid 1.5px rgba(0, 0, 0, 0.4);
@@ -39,22 +33,19 @@ p{ font-size: 15px; letter-spacing: 1px;}
   border: solid 1.5px rgba(0, 0, 0, 0);
 }
 #selectpage .bus_card {
-  width: 270px;
-  margin-top: 50px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  width: 280px;
   background-color: white;
   -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   border-radius: 10px;
   display: inline-block;
+  margin: 30px 0px 20px 40px;
   cursor: pointer;
 }
 #selectpage .bus_card:hover .top .bus_pic {
   -webkit-transform: scale(1.13);
-          transform: scale(1.13);
+  transform: scale(1.13);
 }
 #selectpage .bus_card:hover .top .size {
   background-color: #36B9C1;
@@ -85,7 +76,7 @@ p{ font-size: 15px; letter-spacing: 1px;}
   background-color: #EFEFEF;
   color: #36B9C1;
   -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -95,7 +86,7 @@ p{ font-size: 15px; letter-spacing: 1px;}
   top: 50%;
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
   width: 120%;
   text-align: center;
   font-weight: 700;
@@ -109,13 +100,7 @@ p{ font-size: 15px; letter-spacing: 1px;}
   margin: 0px;
   font-weight: normal;
 }
-#selectpage .bus_card .bottom .average_stars {
-  font-size: 20px;
-  color: #EEC853;
-  letter-spacing: 4px;
-}
 #selectpage .bus_card .bottom .content {
-  margin-top: 12px;
   font-size: 14px;
   letter-spacing: 2px;
 }
@@ -134,5 +119,3 @@ p{ font-size: 15px; letter-spacing: 1px;}
   left: 0px;
   background-color: #36B9C1;
 }
-
-

@@ -1,11 +1,15 @@
 import React from 'react';
-// import $ from 'jquery';
 import Item from '../components/Item';
 import {connect} from 'react-redux';
 import {initItems} from '../actions/item';
 
 class ItemList extends React.Component {
-
+  constructor(){
+    super();
+    this.state = {
+      loadingProducts: true,
+    }
+  }
   clickInChildItem = (itemId) => {
     console.log("Clicked! " + itemId);
   }
@@ -18,26 +22,16 @@ class ItemList extends React.Component {
     fetch('/api/bus/all',{medtho:'GET'}).then((response) => response.json())
     .then((responseJson) => {
       console.log("res",responseJson);
+      this.setState({loadingProducts:false});
       this.props.dispatch(initItems(responseJson));
     })
     .catch((error) => {
       console.error(error);
     });
-    
-    // $.ajax({
-    //   url: '/api/bus/all',
-    //   method: 'GET'
-    // }).then((response) => {
-    //   this.props.dispatch(initItems(response));
-    // }, (response) => {
-    //   console.log("Error: " + response);
-    // }).catch((error) => {
-    //   console.log("catch error " + error);
-    // });
   }
 
   getProductsContent = () => {
-    if(this.props.loadingProducts){
+    if(this.state.loadingProducts){
       return <p>loading..</p>
     }
     else{
@@ -48,7 +42,7 @@ class ItemList extends React.Component {
         }
       );
       return(
-        <div id="select">
+        <div>
           {itemList}
         </div>
         );
