@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+* {
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  font-family: 微軟正黑體;
+  box-sizing: border-box;
+  /* border: solid 0.5px black; */
+}
+html, body { width: 100%; overflow-x: hidden;}
+h1{ font-size: 80px;}
+h2{ font-size: 60px;}
+h3{ font-size: 45px;}
+h4{ font-size: 30px;}
+h5{ font-size: 20px;}
+h6{ font-size: 15px;}
+p{ font-size: 15px; letter-spacing: 1px;}
+
+
+
+.picture {
+  height: 700px;
+  background-image: url('../assets/images/Homepage_bg.jpg');
+  background-repeat: no-repeat ;
+  background-position: center;
+  background-size: cover;
+}
+.picture .cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+}
+.picture .text_block {
+  margin-top: 250px;
+  text-align: center;
+  color: white;
+}
+.picture .text_block .buspage_title {
+  letter-spacing: 8px;
+  font-weight: 500;
+}
+.picture .text_block .subtitle {
+  margin-top: 20px;
+  letter-spacing: 16px;
+  font-weight: 300;
+}
+.icon_area .icon_block { 
+  height: 100%; 
+  vertical-align: middle;
+}
+.icon_area .icon_block .icon_img{
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  margin-top: 12px;
+  margin-left: 20px;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+.icon_area .icon_block .icon_text{
+  width: 200px;
+  display: inline-block;
+  vertical-align: middle;
+  word-break: break-all;
+}
+.icon_area .icon_block .icon_text .icon_text_title{
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-top: 16px;
+}
+.icon_area .icon_block .icon_text .icon_text_subtitle{
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 20px;
+}
+.bgc_gray{
+  background-color: rgba(0,0,0,0.1);
+}
+.commercial_area .row .text_area{
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.commercial_area .row .text_area .text_title{
+  font-weight: 500;
+  letter-spacing: 8px;
+}
+.commercial_area .row .text_area .text_subtitle{
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+
