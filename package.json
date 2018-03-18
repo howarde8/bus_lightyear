@@ -27,9 +27,9 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "client": "npm run start --prefix bus-react",
+    "client": "npm run start --prefix bus-frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix bus-react && npm run build --prefix bus-react"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix bus-frontend && npm run build --prefix bus-frontend"
   },
   "author": "",
   "license": "ISC"
