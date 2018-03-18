@@ -4,13 +4,14 @@ import { Route } from 'react-router'
 import { Provider } from 'react-redux'
 import logger from 'redux-logger';
 import {fromJS} from 'immutable';
-import createHistory from 'history/createBrowserHistory'
-import {createStore, applyMiddleware, combineReducers } from 'redux'
+import createHistory from 'history/createBrowserHistory';
+import { createStore, applyMiddleware } from 'redux';
+import { combineReducers } from 'redux-immutable';
 import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
 
 import registerServiceWorker from './registerServiceWorker';
 import reducers from './reducers'
-import Homepage from './components/Homepage';
+import HomePage from './components/HomePage';
 import Repo from './components/Repo';
 
 const initialState = {};
@@ -34,7 +35,7 @@ ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <div>
-        <Route exact path="/" component={Homepage}/>
+        <Route exact path="/" component={HomePage}/>
         <Route exact path="/repo" component={Repo}/>
       </div>
     </ConnectedRouter>

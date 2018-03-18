@@ -1,107 +1,122 @@
-import React from 'react';
-// import { relative } from 'path';
+import React, { Component } from 'react';
 import '../styles/Homepage.css';
 
-// const h1 = {fontSize:100};
-// const h4 = {fontSize:30};
+import Footer from './Footer';
+import Navbar from './Navbar';
+import ItemList from '../containers/ItemList';
+import SearchBar from '../containers/SearchBar';
+import SelectionItem from '../containers/SelectionItem';
 
-// const picture ={
-//   position: 'relative',
-//   backgroundImage:"url(https://i.imgur.com/Qj2onou.jpg)",
-//   backgroundRepeat: 'no-repeat',
-//   backgroundPosition: 'center',
-//   backgroundSize: 'cover',
-//   height: 700,
-// };
-// const cover = {
-//   position:'absolute',
-//   width:'100%',
-//   height:'100%',
-//   backgroundColor:'rgba(0,0,0,0.5)',
-// };
-// const text_block = {
-//   position: 'relative',
-//   marginTop:250,
-//   textAlign:'center',
-//   color:'white',
-// };
-// const buspageTitle = {
-//   letterSpacing:12,
-//   fontWeight:400
-// };
-// const subtitle = {
-//   marginTop:20,
-//   letterSpacing:8,
-//   fontWeight:300
-// };
-// const icon_area = {
-//   position: relative,
-//   height: 150,
-//   backgroundColor:'rgba(0,0,0,0.1)'
-// };
-// const icon_block = {
-//   position: relative,
-//   height: '100%',
-//   borderWidth: 5,
-//   borderColor: 'black',
-//   backgroundColor:'red'
-// };
-
-class Homepage extends React.Component {
-  
-  render() {
+class Section1 extends React.Component{
+  render(){
     return (
-      <div class="homepage">
-        <div class="container-fluid">
-          <div class="row picture">
-              <div class="cover"></div>
-              <div class="text_block">
-                <h1 class="buspage_title">巴士光年</h1>
-                <h4 class="subtitle">最快速且方便的遊覽車預訂體驗</h4>
-              </div>
+      
+        <div class="row">
+            <div class="picture col-sm-12">    
+            </div>
+            <div class="cover-block">
+            </div>
+            <div class="block">
+                <h1 class="title">巴士光年</h1>
+                <h4 class="slogan">最快速且方便的遊覽車預訂體驗</h4>
+                {/* 搜尋表單 */}
+                <SearchBar/>
+                {/* <form class="navbar-form" role="search"> */}
+                
+                {/* </form> */}
+                
+            </div>
+            </div>
+          
+    
+    );
+  }
+}
+class Section2 extends React.Component{
+  render(){
+    return(
+      <div class="row section2_row">
+        <div class="section2_mainDiv"> 
+          <div class="col-sm-1">
+          <img class="section2_icon" src="https://i.imgur.com/epYOT2a.png" alt=""/>
+          </div>
+          <div class="col-sm-3 section2_subDiv">
+            <h3 class="section2_title">快速搜尋</h3>
+            <h5 class="section2_content">輸入地點或是乘車人數立即找到相關結果</h5>
+          </div>
+          <div class="col-sm-1">      
+          <img class="section2_icon" src="https://i.imgur.com/CrImiud.png" alt=""/>
+          </div>
+          <div class="col-sm-3 section2_subDiv">
+            <h3 class="section2_title"> 資訊透明</h3>
+            <h5 class="section2_content">完整資訊結合用戶評價系統讓您能夠評估最好的選擇</h5>
+          </div>
+          <div class="col-sm-1">
+          <img class="section2_icon" src="https://i.imgur.com/HrYLeiJ.png" alt=""/>
+          </div>
+          <div class="col-sm-3 section2_subDiv">  
+            <h3 class="section2_title">線上預訂</h3>
+            <h5 class="section2_content">取代繁瑣的電話預訂線上即可完成預訂與交易</h5>
           </div>
         </div>
-        <div class="container">
-          <div class="row icon_area">
-            <div class="col-xs-4 icon_block">
-              <img src="https://i.imgur.com/epYOT2a.png" class="icon_img" alt=""/>
-              {/* ../assets/icons/search.png */}
-              <div class="icon_text">
-                <h4 class="icon_text_title">快速搜尋</h4>
-                <h6 class="icon_text_subtitle">輸入您的出發地立即找到相關結果</h6>
-              </div>
-            </div>
-            <div class="col-xs-4 icon_block">
-              <img src="https://i.imgur.com/CrImiud.png" class="icon_img" alt=""/>
-              {/* ../assets/icons/folder.png */}
-              <div class="icon_text">
-                <h4 class="icon_text_title">資訊透明</h4>
-                <h6 class="icon_text_subtitle">完整資訊結合用戶評價讓您評估出最好的選擇</h6>
-              </div>
-            </div>
-            <div class="col-xs-4 icon_block">
-              <img src="https://i.imgur.com/HrYLeiJ.png" class="icon_img" alt=""/>
-              {/* ../assets/icons/smartpay.png */}
-              <div class="icon_text">
-                <h4 class="icon_text_title">線上預訂</h4>
-                <h6 class="icon_text_subtitle">取代繁瑣的電話預訂線上即可完成預訂</h6>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="bgc_gray">
-          <div class="container commercial_area">
-            <div class="row">
-              <div class="text_area">
-                <h2 class="text_title">明日的旅程，現在開始</h2>
-                <h4 class="text_subtitle">點選以下的遊覽車，看看哪些符合您旅行的規格【廣告】</h4>
-              </div>
-            </div>
+    </div>
+    );
+  }
+}
+class Section3 extends React.Component{
+  render(){
+    return(
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="section3_block">
+            <h1 class="title">{this.props.title}</h1>
+            <h5 class="content">{this.props.content}</h5>
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Homepage;
+
+
+
+class Section5 extends React.Component{
+  render(){
+    return(
+      <div class="row bgc-white">
+      <div class="button-area col-sm-4 col-sm-offset-8">
+        <button class="more-button">更多選擇</button>
+      </div>
+    </div>
+    );
+  }
+}
+
+
+class HomePage extends React.Component {
+  render() {
+    return (
+      <div>
+        <Navbar/>
+        <div class="intro" style={{display:"flex",flexDirection:"column"}}>
+          <div class="container-fluid">
+            <Section1 />
+            <Section2 />
+            <Section3 title="明日的旅程，從現在開始" content="點選以下的遊覽車，看看哪些符合您旅行的規格【廣告】"/>
+            <SelectionItem />
+            <ItemList />
+            <Section5 />
+            <Footer />
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default HomePage;
+
+
+
+
