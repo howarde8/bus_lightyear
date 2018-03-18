@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Selectpage.css';
 
-class Selectpage extends React.Component {
+class SelectPage extends React.Component {
   
   render() {
     return (
@@ -105,4 +105,4 @@ class Selectpage extends React.Component {
   }
 }
 
-export default Selectpage;
+export default SelectPage;

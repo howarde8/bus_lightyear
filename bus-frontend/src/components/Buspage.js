@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/Buspage.css';
 // import { relative } from 'path';
 
-class Buspage extends React.Component {
+class BusPage extends React.Component {
   
   render() {
     return (
@@ -156,4 +156,4 @@ class Buspage extends React.Component {
   }
 }
 
-export default Buspage;
+export default BusPage;

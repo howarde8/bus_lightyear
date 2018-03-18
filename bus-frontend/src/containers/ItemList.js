@@ -17,6 +17,7 @@ class ItemList extends React.Component {
   loadProducts = () => {
     fetch('/api/bus/all',{medtho:'GET'}).then((response) => response.json())
     .then((responseJson) => {
+      console.log("res",responseJson);
       this.props.dispatch(initItems(responseJson));
     })
     .catch((error) => {
@@ -42,8 +43,9 @@ class ItemList extends React.Component {
     else{
       if(this.props.products && this.props.products.length>0){
         const filter = this.props.filter
-        const itemList = this.props.products.map((product,index) =>
+        const itemList = this.props.products.map((product,index) =>{
           <Item key={index} callbackClick={this.clickInChildItem} item={product}/>
+        }
       );
       return <div id="selectpage">{itemList}</div>;
       }

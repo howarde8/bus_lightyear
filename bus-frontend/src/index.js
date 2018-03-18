@@ -17,7 +17,7 @@ import HomePage from './components/HomePage';
 import Repo from './components/Repo';
 import BusPage from './components/BusPage';
 import CommentPage from './components/CommentPage';
-import Selectpage from './components/SelectPage';
+import SelectPage from './components/SelectPage';
 
 const initialState = {};
 
@@ -42,7 +42,7 @@ ReactDOM.render(
       <div>
         <Route exact path="/" component={HomePage}/>
         <Route path="/repo" component={Repo}/>
-        <Route path="/select" component={Selectpage}/>
+        <Route path="/select" component={SelectPage}/>
         <Route path="/bus" component={BusPage}/>
         <Route path="/comment" component={CommentPage}/>
       </div>
