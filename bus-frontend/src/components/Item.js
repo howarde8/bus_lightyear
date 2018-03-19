@@ -1,13 +1,11 @@
 import React from 'react';
-import { push } from 'react-router-redux';
-import { connect } from 'react-redux';
+
 
 class Item extends React.Component {
 
   itemClicked = () => {
     // console.log(this.props.item);
     this.props.callbackClick(this.props.item);
-    this.props.dispatch(push('/bus'));
   }
 
   render() {
@@ -42,4 +40,4 @@ class Item extends React.Component {
 //   }
 // }
 
-export default connect()(Item)
+export default Item
