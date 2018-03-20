@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import ItemList from '../containers/ItemList';
 import SearchBar from '../containers/SearchBar';
 import SelectionItem from '../containers/SelectionItem';
+import SelectPage from '../components/SelectPage';
 
 class Section1 extends React.Component{
   render(){
@@ -104,8 +105,7 @@ class HomePage extends React.Component {
             <Section1 />
             <Section2 />
             <Section3 title="明日的旅程，從現在開始" content="點選以下的遊覽車，看看哪些符合您旅行的規格【廣告】"/>
-            {/* <SelectionItem />
-            <ItemList /> */}
+            <SelectPage/>
             <Section5 />
             <Footer />
           </div>
