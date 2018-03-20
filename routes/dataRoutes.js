@@ -45,11 +45,20 @@ var ratingSchema = new mongoose.Schema(
 mongoose.model("rating", ratingSchema);
 
 module.exports = app => {
-    app.get("/api/bus/all", (req, res) => {
-        mongoose.model("bus").find(function(err, buses) {
-            res.send(buses);
-        });
-    });
+  // for demo ==========
+  const demoData = require("../demoTempData");
+
+  app.get("/api/bus/all", (req, res) => {
+    console.log("testBUS");
+    res.send(demoData.bus);
+  })
+  // for demo end
+
+    // app.get("/api/bus/all", (req, res) => {
+    //     mongoose.model("bus").find(function(err, buses) {
+    //         res.send(buses);
+    //     });
+    // });
 
     app.get("/api/bus/:id", (req, res) => {
         var id = req.params.id;
