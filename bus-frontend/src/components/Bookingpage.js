@@ -1,7 +1,7 @@
 import React from 'react';
-import '../styles/Bookingpage.css';
+import '../styles/BookingPage.css';
 
-class Bookingpage extends React.Component {
+class BookingPage extends React.Component {
   
   render() {
     return (
@@ -87,4 +87,4 @@ class Bookingpage extends React.Component {
   }
 }
 
-export default Bookingpage;
+export default BookingPage;
