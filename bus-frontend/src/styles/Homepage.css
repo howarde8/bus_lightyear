@@ -9,10 +9,15 @@
   /*border: solid 0.5px black;*/
 }
 
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-}
+html, body { width: 100%; overflow-x: hidden;}
+h1{ font-size: 80px;}
+h2{ font-size: 60px;}
+h3{ font-size: 45px;}
+h4{ font-size: 30px;}
+h5{ font-size: 20px;}
+h6{ font-size: 15px;}
+p{ font-size: 15px; letter-spacing: 1px;}
+
 
 
 .myform-div{
@@ -181,7 +186,7 @@ html, body {
 }
 .section2_row{
   background-color: #ffffff;
-  padding-bottom: 4%;
+  padding-bottom: 2%;
 }
 .section2_mainDiv{
   margin-left: 5%;

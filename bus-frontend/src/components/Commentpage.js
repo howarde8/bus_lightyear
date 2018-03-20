@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Commentpage.css';
+import '../styles/CommentPage.css';
 
 class CommentPage extends React.Component {
   

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/Homepage.css';
+import '../styles/HomePage.css';
 
 import Footer from './Footer';
 import Navbar from './Navbar';
@@ -69,7 +69,7 @@ class Section3 extends React.Component{
       <div className="row">
         <div className="col-sm-12">
           <div className="section3_block">
-            <h1 className="title">{this.props.title}</h1>
+            <h3 className="title">{this.props.title}</h3>
             <h5 className="content">{this.props.content}</h5>
           </div>
         </div>

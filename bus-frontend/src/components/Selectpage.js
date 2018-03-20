@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Selectpage.css';
+import '../styles/SelectPage.css';
 import '../containers/ItemList';
 import ItemList from '../containers/ItemList';
 import SelectionItem from '../containers/SelectionItem';
