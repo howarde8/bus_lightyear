@@ -18,6 +18,7 @@ import Repo from './components/Repo';
 import BusPage from './components/BusPage';
 import CommentPage from './components/CommentPage';
 import SelectPage from './components/SelectPage';
+import BookingPage from './components/BookingPage';
 
 const initialState = {};
 
@@ -45,6 +46,7 @@ ReactDOM.render(
         <Route path="/select" component={SelectPage}/>
         <Route path="/bus" component={BusPage}/>
         <Route path="/comment" component={CommentPage}/>
+        <Route path="/booking" component={BookingPage}/>
       </div>
     </ConnectedRouter>
   </Provider>, 
