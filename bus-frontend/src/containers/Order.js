@@ -46,10 +46,4 @@ class Order extends React.Component{
   }
 }
 
-const mapStateToProps = (state) => {
-  return{
-    order: state.get('order'),
-  }
-}
-
 export default connect()(Order);

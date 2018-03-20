@@ -2,10 +2,12 @@ import React from 'react';
 import '../styles/BusPage.css';
 import NavBar from './Navbar';
 import Order from '../containers/Order';
+import { connect } from 'react-redux';
 
 class BusPage extends React.Component {
   
   render() {
+    const BusData = this.props.order;
     return (
       <div className="buspage">
         <NavBar/>
@@ -65,24 +67,24 @@ class BusPage extends React.Component {
 
             {/* ＭＡＩＮ ＩＮＦＯ */}   
               <section id="main-info">
-                <h3 className="name"> 遊覽車標題（Ｘ人座Ｙ牌遊覽車） </h3>
+                <h3 className="name">{BusData.name}</h3>
                 <h5 className="fw total_comments"> Ｘ 則評價</h5>
                 <h5 className="fw average_stars"> ★★★★★</h5>
-                <h5 className="fw max_amount">最高乘載人數：ＸＸ 人</h5>
+                <h5 className="fw max_amount">最高乘載人數：{BusData.description.max_amount} 人</h5>
                 <h5 className="fw availablable_num">尚有 Ｘ 台</h5>
               </section>
 
             {/* ＣＯＮＴＥＮＴ＿ＩＮＴＲＯＤＵＣＴＩＯＮ */} 
               <section className="content">
                 <h4 className="title">簡介</h4>
-                <p className="introduction mb20"> 這裡要放簡介</p>
+                <p className="introduction mb20">{BusData.description.introduction}</p>
               </section>
 
             {/* ＣＯＮＴＥＮＴ＿ＰＲＥＣＡＵＴＩＯＮ */} 
               <section className="content">
                 <h4 className="title">注意事項</h4>
                 <div className="block">
-                  <p className="precaution mb20">這裡要放注意事項</p>
+                  <p className="precaution mb20">{BusData.description.precaution}</p>
                 </div>
               </section>
 
@@ -95,7 +97,7 @@ class BusPage extends React.Component {
             {/* ＣＯＮＴＥＮＴ＿ＣＡＮＣＬＥ */} 
               <section className="content">
                 <h4 className="title">退訂方案</h4>
-                <p className="cancel mb20">這裡要放退訂方案</p>
+                <p className="cancel mb20">{BusData.description.subscription_cancel}</p>
               </section>
 
             {/* ＡＣＣＥＳＳＯＲＹ */} 
@@ -122,7 +124,7 @@ class BusPage extends React.Component {
                 <div className="container-fluid">
                   <div className="row">
                     <div className="block col-sm-9">
-                      <h3 className="title company_name"> 這裡放公司名稱</h3>
+                      <h3 className="title company_name">{BusData.company_name}</h3>
                       <h5 className="average_stars">★★★★★</h5>
                       <h6 className="total_comment text-muted"> ＸＸ 則評論</h6>
                       <h6 className="approval text-muted">這裡放認證</h6>
@@ -157,5 +159,10 @@ class BusPage extends React.Component {
     )
   }
 }
+const mapStateToProps = (state) => {
+  return{
+    order: state.get('order'),
+  }
+}
+export default connect(mapStateToProps)(BusPage);
 
-export default BusPage;
