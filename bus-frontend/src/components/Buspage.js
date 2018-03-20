@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Buspage.css';
+import '../styles/BusPage.css';
 import NavBar from './Navbar';
 import Order from '../containers/Order';
 
