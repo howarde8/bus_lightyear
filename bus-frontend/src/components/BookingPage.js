@@ -1,11 +1,13 @@
 import React from 'react';
 import '../styles/BookingPage.css';
+import Navbar from './Navbar';
 
 class BookingPage extends React.Component {
   
   render() {
     return (
       <div id="booking_page">
+        <Navbar/>
         <div className="container">
           <div className="row">
             <div className="col-sm-8 col-xs-12 booking_area"> 

@@ -1,7 +1,11 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
 
 class Order extends React.Component{
+  onClick = () =>{
+    this.props.dispatch(push('/booking'));
+  }
   render(){
     return(
       <div className="col-lg-3 col-lg-offset-8 col-sm-10 col-sm-offset-1 order">
@@ -31,7 +35,7 @@ class Order extends React.Component{
           </div>
         </div>
         <div className="row">
-          <div className="btn order-btn col-xs-8 col-xs-offset-2">開始預定</div>
+          <div onClick={this.onClick} className="btn order-btn col-xs-8 col-xs-offset-2">開始預定</div>
           <div className="reminder col-xs-8 col-xs-offset-2">
             <h6 className="text-muted">您暫時不會被收費</h6>
           </div>
