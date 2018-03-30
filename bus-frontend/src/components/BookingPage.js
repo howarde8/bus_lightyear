@@ -1,10 +1,18 @@
 import React from 'react';
 import '../styles/BookingPage.css';
 import Navbar from './Navbar';
-
+import { connect } from 'react-redux';
+import Footer from './Footer';
 class BookingPage extends React.Component {
   
   render() {
+    const BookingData = this.props.order;
+    const IMG = {
+      width: '100%',      
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover'
+    };
     return (
       <div id="booking_page">
         <Navbar/>
@@ -12,7 +20,7 @@ class BookingPage extends React.Component {
           <div className="row">
             <div className="col-sm-8 col-xs-12 booking_area"> 
               <h4 className="booking_id">訂單編號： J578578</h4>
-              <h1 className="bus_name">臺北市雙層巴士</h1>
+              <h1 className="bus_name">{BookingData.name}</h1>
             </div>
             <div className="col-sm-4 col-xs-12 btn_area">  
               <div className="btn_space">
@@ -48,7 +56,7 @@ class BookingPage extends React.Component {
                 <hr/>
                 <div className="row">
                   <div className="title col-xs-4">乘車地址   </div>
-                  <div className="display user_id col-xs-7">新竹縣寶山鄉基八一路87號</div>
+                  <div className="display user_id col-xs-7">新竹縣寶山鄉高峰路87號</div>
                 </div>
                 <hr/>
                 <div className="row">
@@ -60,10 +68,12 @@ class BookingPage extends React.Component {
             <div className="col-sm-5 company_area">
               <div className="block">
                 <div className="row">
-                  <div className="pic col-sm-12"></div>
+                  <div className="pic col-sm-12">
+                    <img src={BookingData.company_src} style={{...IMG}} alt=""/>
+                  </div>
                 </div>
                 <div className="row">
-                  <p className="col-sm-12">這裡放公司的簡介，然後限制字數（80）</p>
+                  <p className="col-sm-12">{BookingData.description.introduction}</p>
                 </div>
                 <div className="row">
                   <div className="btn">查看更多</div>
@@ -79,8 +89,8 @@ class BookingPage extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="col-sm-12 pic_area">
-              <div className="pic"></div>
+            <div className="col-sm-12 pic_area" style={{overflow: 'hidden'}}>
+              <img src={BookingData.img_src} style={{...IMG}} alt=""/>
             </div>
           </div>
         </div>
@@ -88,5 +98,9 @@ class BookingPage extends React.Component {
     )
   }
 }
-
-export default BookingPage;
+const mapStateToProps = (state) => {
+  return{
+    order: state.get('order'),
+  }
+}
+export default connect(mapStateToProps)(BookingPage);

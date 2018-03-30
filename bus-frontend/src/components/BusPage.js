@@ -1,18 +1,21 @@
 import React from 'react';
 import '../styles/BusPage.css';
+
 import NavBar from './Navbar';
 import Order from '../containers/Order';
+import Footer from './Footer';
 import { connect } from 'react-redux';
-
 class BusPage extends React.Component {
-  
   render() {
     const BusData = this.props.order;
+    const IMG = { width: '100%',height:'100%',margin:'0',padding:'0',borderRadius:5};
     return (
       <div className="buspage">
         <NavBar/>
         <div className="container-fluid">
-          <div className="col-lg-7 col-sm-12 col-lg-offset-1 picture"></div>
+          <div className="col-lg-7 col-sm-12 col-lg-offset-1 picture" style={{marginTop:20}}>
+            <img src={BusData.img_src} style={{...IMG}} alt=""/>
+          </div>
           <Order/>
           {/* Ｏ Ｒ Ｄ Ｅ Ｒ  */} 
           {/* <div className="col-lg-3 col-lg-offset-8 col-sm-10 col-sm-offset-1 order">
@@ -68,10 +71,10 @@ class BusPage extends React.Component {
             {/* ＭＡＩＮ ＩＮＦＯ */}   
               <section id="main-info">
                 <h3 className="name">{BusData.name}</h3>
-                <h5 className="fw total_comments"> Ｘ 則評價</h5>
+                <h5 className="fw total_comments"> 32 則評價</h5>
                 <h5 className="fw average_stars"> ★★★★★</h5>
                 <h5 className="fw max_amount">最高乘載人數：{BusData.description.max_amount} 人</h5>
-                <h5 className="fw availablable_num">尚有 Ｘ 台</h5>
+                <h5 className="fw availablable_num">尚有 2 台</h5>
               </section>
 
             {/* ＣＯＮＴＥＮＴ＿ＩＮＴＲＯＤＵＣＴＩＯＮ */} 
@@ -91,7 +94,7 @@ class BusPage extends React.Component {
             {/* ＣＯＮＴＥＮＴ＿ＰＲＥＰＡＲＥ */} 
               <section className="content">
                 <h4 className="title">可訂狀態</h4>
-                <p className="prepare_day mb20">這裡要放可訂狀態</p>
+                <p className="prepare_day mb20">{BusData.description.subscription}</p>
               </section>
 
             {/* ＣＯＮＴＥＮＴ＿ＣＡＮＣＬＥ */} 
@@ -126,14 +129,14 @@ class BusPage extends React.Component {
                     <div className="block col-sm-9">
                       <h3 className="title company_name">{BusData.company_name}</h3>
                       <h5 className="average_stars">★★★★★</h5>
-                      <h6 className="total_comment text-muted"> ＸＸ 則評論</h6>
-                      <h6 className="approval text-muted">這裡放認證</h6>
-                      <h6 className="reg_date text-muted">這裡放刊登時間</h6>
+                      <h6 className="total_comment text-muted"> 32 則評論</h6>
+                      <h6 className="approval text-muted">已認證</h6>
+                      <h6 className="reg_date text-muted">2018/05/05</h6>
                     </div>
-                    <div className="block col-sm-3"><img src="" alt=""/></div>
+                    <div className="block col-sm-3"><img src={BusData.company_src} alt=""/></div>
                   </div>
                   <div className="row"> 
-                    <p className="info col-sm-12">這裡放公司簡介</p>
+                    <p className="info col-sm-12">{BusData.description.introduction}</p>
                     <div className="owner-btn btn">其他車源</div>
                     {/* <input id="search_bar" type="search" style="font-size: 15px;" color="$color_gray" placeholder=" 搜尋評價"/> */}
                   </div>
@@ -142,18 +145,37 @@ class BusPage extends React.Component {
             
             {/* ＣＯＭＭＥＮＴ */} 
               <section id="comment"> 
-                <div className="comment" > <img className="user_img_src" src="" alt=""/>
+                <div className="comment" > <img className="user_img_src" src="https://i.imgur.com/hQ4xYzI.png" alt=""/>
                   <div className="user_info">
-                    <h5 className="user_id">用戶帳號</h5>
-                    <div className="comment_date text-muted">用戶註冊日期</div>
+                    <h5 className="user_id">j5630300127</h5>
+                    <div className="comment_date text-muted">2018.06.10</div>
                   </div>
                   <div className="comment_comment">
-                    <p> 用戶的評價......現在還沒綁定資料庫 </p>
+                    <p> You would be silly to not take this choice, even if just for a few days while visiting Taiwan. It's something else, like another world. I can't even explain how great this vehicle is. Book it now!</p>
+                  </div>
+                </div>
+                <div className="comment" > <img className="user_img_src" src="https://i.imgur.com/B6NANJq.jpg" alt=""/>
+                  <div className="user_info">
+                    <h5 className="user_id">Louis_Hsiao</h5>
+                    <div className="comment_date text-muted">2018.06.09</div>
+                  </div>
+                  <div className="comment_comment">
+                    <p>遊覽車很乾淨，設備很齊全，而且座椅很舒服，司機態度很親切，已經開始期待下次的旅程。</p>
+                  </div>
+                </div>
+                <div className="comment" > <img className="user_img_src" src="https://i.imgur.com/nSaVOsb.jpg" alt=""/>
+                  <div className="user_info">
+                    <h5 className="user_id">jojogogogo</h5>
+                    <div className="comment_date text-muted">2018.06.08</div>
+                  </div>
+                  <div className="comment_comment">
+                    <p>  Awwsome! Just order now!</p>
                   </div>
                 </div>
               </section>
             </div>
           </div>
+          <Footer />
         </div> 
       </div>
     )

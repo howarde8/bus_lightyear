@@ -43,15 +43,16 @@ class SelectionItem extends React.Component{
               <div className="dropdown-toggle btn" data-toggle="dropdown">人數限制</div>
               <ul className="dropdown-menu">
                 <li><a onClick={()=>this.numberFilter(0,10)}>10人以下</a></li>
-                <li><a onClick={()=>this.numberFilter(10,40)}>10~40人</a></li>
-                <li><a onClick={()=>this.numberFilter(40,999)}>40人以上</a></li>
+                <li><a onClick={()=>this.numberFilter(10,40)}>11~40人</a></li>
+                <li><a onClick={()=>this.numberFilter(40,999)}>41人以上</a></li>
               </ul>
             </li>
             <li className="navbar-header nav navbar-navdropdown">
               <div className="dropdown-toggle btn" data-toggle="dropdown">廠牌</div>
               <ul className="dropdown-menu">
-                <li><a onClick={()=>this.brandFilter("歐美")}>歐美</a></li>
-                <li><a onClick={()=>this.brandFilter("日本製")}>日製</a></li>
+                <li><a onClick={()=>this.brandFilter("歐美牌")}>歐美牌</a></li>
+                <li><a onClick={()=>this.brandFilter("日牌")}>日牌</a></li>
+                <li><a onClick={()=>this.brandFilter("中國牌")}>中國牌</a></li>
                 <li><a onClick={()=>this.brandFilter("國產")}>國產</a></li>
               </ul>
             </li>

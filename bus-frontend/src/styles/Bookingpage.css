@@ -38,6 +38,10 @@ p{ font-size: 15px; letter-spacing: 1px;}
   border: 0px solid #000;
 }
 
+.change_btn{
+  margin-right: 10px;
+}
+
 @media screen and (max-width: 769px) {
   .btn_area { margin-top: 0px; }
   .btn_area .btn_space {
@@ -66,22 +70,19 @@ p{ font-size: 15px; letter-spacing: 1px;}
 }
 
 .company_area .pic {
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
-  position: absolute;
+  width: 200px;
+  margin-top: 20px;
+  overflow: hidden;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  margin-top: 10px;
   position: relative;
-  background-image: url(https://i.imgur.com/zqOkQFD.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 .company_area p {
-  margin-top: 30px;
+  margin-top: 20px;
   padding: 0px 20px;
   font-weight: 300;
   letter-spacing: 2px;
@@ -103,9 +104,15 @@ p{ font-size: 15px; letter-spacing: 1px;}
 .company_area .display {
   font-weight: 300;
 }
-
+.pic_area {
+  margin-top: 30px;
+  margin-bottom: 100px;
+  overflow: hidden;
+  border: 2px solid #EBEBEB;
+  border-radius: 5px;
+  padding: 0px;
+}
 .pic_area .pic {
-  height: 420px;
   margin-top: 30px;
   margin-bottom: 100px;
   border: 2px solid #EBEBEB;

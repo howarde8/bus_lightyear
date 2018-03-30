@@ -12,7 +12,7 @@ const Navbar = () => {
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
         </button>
-        <div className="navbar-brand"><img src="../assets/images/BUS_logo.png"/></div>
+        <div className="navbar-brand"><img src="https://i.imgur.com/1zL5YTz.png" style={{width:50,height:50,top:-15}}/></div>
         <div className="navbar-brand">
             BUS-lightyear
         </div>
@@ -27,7 +27,7 @@ const Navbar = () => {
         {/* <!-- 右選單 --> */}
         <ul className="nav navbar-nav navbar-right">
             <li><a href="#">刊登資料</a></li>
-            <li><a href="#">關於我們</a></li>
+            <li><a href="#">後台管理</a></li>
             <li><a href="#">臉書粉專</a></li>
             <li><a href="#">登入</a></li>
             <li><a href="#">註冊</a></li>
