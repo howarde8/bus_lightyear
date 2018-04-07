@@ -3,10 +3,8 @@ import '../styles/HomePage.css';
 
 import Footer from './Footer';
 import Navbar from './Navbar';
-import ItemList from '../containers/ItemList';
 import SearchBar from '../containers/SearchBar';
-import SelectionItem from '../containers/SelectionItem';
-import SelectPage from '../components/SelectPage';
+import SelectPage from '../containers/SelectPage';
 
 
 class Jumbotron extends React.Component{

@@ -1,7 +1,6 @@
 import React from 'react';
 import Item from '../components/Item';
-import {connect} from 'react-redux';
-import {initItems} from '../actions/item';
+import { initItems } from '../actions/item';
 import { push } from 'react-router-redux';
 
 class ItemList extends React.Component {
@@ -11,14 +10,12 @@ class ItemList extends React.Component {
       loadingProducts: true,
     }
   }
-  clickInChildItem = (item) => {
+  clickInChildItem = ( item ) => {
     this.props.dispatch({type:'SELECT_ORDER',order:item});
     this.props.dispatch(push('/bus'));
     console.log("Clicked! " + item);
   }
-
   componentDidMount() {
-    // console.log('props',this.props);
     this.loadProducts();
   }
   loadProducts = () => {
@@ -32,6 +29,8 @@ class ItemList extends React.Component {
       console.error(error);
     });
   }
+  
+  
 
   getProductsContent = () => {
     if(this.state.loadingProducts){
@@ -62,28 +61,4 @@ class ItemList extends React.Component {
   }
 }
 
-const getVisibleProducts = (products, filter) => {
-  switch (filter.filterType) {
-    case 'SHOW_ALL':
-      return products;
-    case 'FILT_NUMBER':
-      return products.filter(value=>
-        value.description.max_amount > filter.lowBound && 
-        value.description.max_amount <= filter.upBound
-      );
-    case 'FILT_BRAND':
-      return products.filter(value=>
-        value.category === filter.brand
-      );
-    default:
-      return products;
-  }
-}
-const mapStateToProps = (state) => {
-  // console.log(state.get('products'));
-  return {
-    products: getVisibleProducts(state.get('products'), state.get('visibilityFilter'))
-  }
-}
-
-export default connect(mapStateToProps,)(ItemList);
+export default ItemList;

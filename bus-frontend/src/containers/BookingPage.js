@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/BookingPage.css';
-import Navbar from './Navbar';
+import Navbar from '../components/Navbar';
 import { connect } from 'react-redux';
-import Footer from './Footer';
+import Footer from '../components/Footer';
 class BookingPage extends React.Component {
   
   render() {

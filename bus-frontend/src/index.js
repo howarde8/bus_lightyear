@@ -15,10 +15,10 @@ import reducers from './reducers'
 //...pages 
 import HomePage from './components/HomePage';
 import Repo from './components/Repo';
-import BusPage from './components/BusPage';
-import CommentPage from './components/CommentPage';
-import SelectPage from './components/SelectPage';
-import BookingPage from './components/BookingPage';
+import BusPage from './containers/BusPage';
+import CommentPage from './containers/CommentPage';
+import SelectPage from './containers/SelectPage';
+import BookingPage from './containers/BookingPage';
 
 const initialState = {};
 

@@ -1,8 +1,7 @@
 // import 'react-dates/initialize';
 // import 'react-dates/lib/css/_datepicker.css';
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import {setVisibilityFilter} from '../actions/item';
+import { setVisibilityFilter } from '../actions/item';
 // import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 
 class SelectionItem extends React.Component{
@@ -70,4 +69,4 @@ class SelectionItem extends React.Component{
     }
   }
 
-export default connect()(SelectionItem);
+export default SelectionItem;

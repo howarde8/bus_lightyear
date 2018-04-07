@@ -1,9 +1,9 @@
 import React from 'react';
 import '../styles/BusPage.css';
 
-import NavBar from './Navbar';
-import Order from '../containers/Order';
-import Footer from './Footer';
+import NavBar from '../components/Navbar';
+import Order from './Order';
+import Footer from '../components/Footer';
 import { connect } from 'react-redux';
 class BusPage extends React.Component {
   render() {
