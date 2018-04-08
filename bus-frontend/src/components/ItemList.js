@@ -1,7 +1,5 @@
 import React from 'react';
 import Item from '../components/Item';
-import { initItems } from '../actions/item';
-import { push } from 'react-router-redux';
 
 class ItemList extends React.Component {
   constructor(){
@@ -11,8 +9,10 @@ class ItemList extends React.Component {
     }
   }
   clickInChildItem = ( item ) => {
-    this.props.dispatch({type:'SELECT_ORDER',order:item});
-    this.props.dispatch(push('/bus'));
+    // this.props.dispatch({type:'SELECT_ORDER',order:item});
+    // this.props.dispatch(push('/bus'));
+    this.props.selectItem(item);
+    this.props.link('/bus');
     console.log("Clicked! " + item);
   }
   componentDidMount() {
@@ -23,7 +23,7 @@ class ItemList extends React.Component {
     .then((responseJson) => {
       console.log("res",responseJson);
       this.setState({loadingProducts:false});
-      this.props.dispatch(initItems(responseJson));
+      this.props.initItems(responseJson);
     })
     .catch((error) => {
       console.error(error);

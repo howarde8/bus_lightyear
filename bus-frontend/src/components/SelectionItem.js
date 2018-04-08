@@ -1,7 +1,7 @@
 // import 'react-dates/initialize';
 // import 'react-dates/lib/css/_datepicker.css';
 import React, { Component } from 'react';
-import { setVisibilityFilter } from '../actions/item';
+import { filtBrand, filtNumber, showAll } from '../actions/visibilityFilter';
 // import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 
 class SelectionItem extends React.Component{
@@ -14,13 +14,13 @@ class SelectionItem extends React.Component{
       }
     }
     numberFilter(low,up){
-      this.props.dispatch(setVisibilityFilter({filterType:"FILT_NUMBER",lowBound:low,upBound:up}));
+      this.props.setVisibilityFilter(filtNumber(low,up));
     }
     brandFilter(brand){
-      this.props.dispatch(setVisibilityFilter({filterType:"FILT_BRAND",brand:brand}));
+      this.props.setVisibilityFilter(filtBrand(brand));
     }
     showAll(){
-      this.props.dispatch(setVisibilityFilter({filterType:"SHOW_ALL"}));
+      this.props.setVisibilityFilter(showAll());
     }
     render(){
       return(

@@ -5,10 +5,11 @@ export const initItems = (items) => {
       items:items,
   };
 }
-export const setVisibilityFilter = (filterObject) => {
-  return {
-    type: 'SET_VISIBILITY_FILTER',
-    filter:filterObject,
+
+export const selectItem = ( item ) => {
+  return{
+    type: 'SELECT_ORDER',
+    order: item,
   }
 }
 /* filterObject content 
