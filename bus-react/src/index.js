@@ -12,7 +12,7 @@ import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-ro
 import registerServiceWorker from './registerServiceWorker';
 import reducers from './reducers'
 
-//...pages
+//...pages 
 import HomePage from './components/HomePage';
 import Repo from './components/Repo';
 import BusPage from './containers/BusPage';
@@ -33,9 +33,10 @@ const store = createStore(
   }),
   fromJS(initialState),
   applyMiddleware(logger,middleware),
-)
+  )
 
 // store.dispatch(push('/repo'));
+
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
@@ -48,7 +49,7 @@ ReactDOM.render(
         <Route path="/booking" component={BookingPage}/>
       </div>
     </ConnectedRouter>
-  </Provider>,
+  </Provider>, 
   document.getElementById('root')
 );
 registerServiceWorker();

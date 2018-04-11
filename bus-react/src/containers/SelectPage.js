@@ -8,14 +8,14 @@ import { bindActionCreators } from 'redux';
 import { selectItem, initItems } from '../actions/item';
 import { setVisibilityFilter } from '../actions/visibilityFilter'
 class SelectPage extends React.Component {
-
+  
   render(){
     return(
       <div id="selectpage">
-        <SelectionItem
+        <SelectionItem 
           setVisibilityFilter={this.props.setVisibilityFilter}
         />
-        <ItemList
+        <ItemList 
           products={this.props.filterProducts}
           initItems={this.props.initItems}
           selectItem={this.props.selectItem}
@@ -28,21 +28,21 @@ class SelectPage extends React.Component {
 
 
 const getVisibleProducts = (products, filter) => {
-//   switch (filter.filterType) {
-//     case 'SHOW_ALL':
-//       return products;
-//     case 'FILT_NUMBER':
-//       return products.filter(value=>
-//         value.description.max_amount > filter.lowBound &&
-//         value.description.max_amount <= filter.upBound
-//       );
-//     case 'FILT_BRAND':
-//       return products.filter(value=>
-//         value.category === filter.brand
-//       );
-//     default:
-//       return products;
-//   }
+  switch (filter.filterType) {
+    case 'SHOW_ALL':
+      return products;
+    case 'FILT_NUMBER':
+      return products.filter(value=>
+        value.description.max_amount > filter.lowBound && 
+        value.description.max_amount <= filter.upBound
+      );
+    case 'FILT_BRAND':
+      return products.filter(value=>
+        value.category === filter.brand
+      );
+    default:
+      return products;
+  }
 }
 const mapStateToProps =  (state ) => {
   return{
