@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 // import '../styles/HomePage.css';
 
-// import Footer from './Footer';
-// import Navbar from './Navbar';
-// import SearchBar from '../containers/SearchBar';
+import Footer from './Footer';
+import Navbar from './Navbar';
+import SearchBar from '../containers/SearchBar';
 // import SelectPage from '../containers/SelectPage';
 
 // ... global stylish
@@ -188,7 +188,7 @@ class HomePage extends React.Component {
     const introStyle = { width: '100%', overflowX: 'hidden' };
     return (
       <div>
-
+        <Navbar />
         <div className="intro" style={introStyle}>
           <div className="container-fluid" style={noPadding}>
             <Jumbotron title="巴士光年" subtitle="最快速且方便的遊覽車預訂體驗"/>
@@ -208,7 +208,7 @@ class HomePage extends React.Component {
             <Section3 title="明日的旅程，從現在開始" content="點選以下的遊覽車，看看哪些符合您旅行的規格【評價】"/>
 
             <Section5 />
-
+            <Footer />
           </div>
         </div>
       </div>
