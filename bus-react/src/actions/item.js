@@ -12,6 +12,6 @@ export const selectItem = ( item ) => {
     order: item,
   }
 }
-/* filterObject content
+/* filterObject content 
 {filterType:"FILT_NUMBER",lowBound:low,upBound:up}
 */

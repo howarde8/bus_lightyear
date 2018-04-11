@@ -23,7 +23,7 @@ const noPadding = {
 
 class Jumbotron extends React.Component{
   render(){
-    const title = {
+    const title = { 
       ...h1,
       letterSpacing : 15,
     };
@@ -63,18 +63,18 @@ class Jumbotron extends React.Component{
             <h1 style={title}>{this.props.title}</h1>
             <h4 style={slogan}>{this.props.subtitle}</h4>
               {/* 搜尋表單 */}
-              <SearchBar />
+              <SearchBar/>
               {/* <form className="navbar-form" role="search"> */}
               {/* </form> */}
-          </div>
-        </div>
+          </div> 
+        </div>     
       </div>
     );
   }
 }
 class ThreeIcon extends React.Component{
   render(){
-
+    
     const rowStyle = {
       paddingBottom : '2%',
     }
@@ -116,16 +116,16 @@ class ThreeIcon extends React.Component{
         <img src={this.props.icon1_src} style={iconStyle} alt=""/>
         </div>
         <div className="col-sm-3" style={paddingLeftBy8}>
-          <div className="textblock" style={textblock}>
+          <div className="textblock" style={textblock}> 
             <h3 className="title" style={titleStyle}>{this.props.icon1_title}</h3>
             <h5 className="content" style={contentStyle}>{this.props.icon1_content}</h5>
           </div>
         </div>
-        <div className="col-sm-1">
+        <div className="col-sm-1">      
         <img src={this.props.icon2_src} style={iconStyle} alt=""/>
         </div>
         <div className="col-sm-3" style={paddingLeftBy8}>
-          <div className="textblock" style={textblock}>
+          <div className="textblock" style={textblock}> 
             <h3 className="title" style={titleStyle}>{this.props.icon2_title}</h3>
             <h5 className="content" style={contentStyle}>{this.props.icon2_content}</h5>
           </div>
@@ -134,7 +134,7 @@ class ThreeIcon extends React.Component{
         <img className="icon" src={this.props.icon3_src} style={iconStyle} alt=""/>
         </div>
         <div className="col-sm-3" style={paddingLeftBy8}>
-          <div className="textblock" style={textblock}>
+          <div className="textblock" style={textblock}> 
             <h3 className="title" style={titleStyle}>{this.props.icon3_title}</h3>
             <h5 className="content" style={contentStyle}>{this.props.icon3_content}</h5>
           </div>
@@ -145,7 +145,7 @@ class ThreeIcon extends React.Component{
 }
 class Section3 extends React.Component{
   render(){
-
+    
     const titleStyle = {
       ...h3,
       letterSpacing : 10,
@@ -188,7 +188,7 @@ class HomePage extends React.Component {
     const introStyle = { width: '100%', overflowX: 'hidden' };
     return (
       <div>
-        <Navbar />
+        <Navbar/>
         <div className="intro" style={introStyle}>
           <div className="container-fluid" style={noPadding}>
             <Jumbotron title="巴士光年" subtitle="最快速且方便的遊覽車預訂體驗"/>
@@ -206,7 +206,7 @@ class HomePage extends React.Component {
               icon3_content="取代繁瑣的電話預訂，線上即可完成預訂"
             />
             <Section3 title="明日的旅程，從現在開始" content="點選以下的遊覽車，看看哪些符合您旅行的規格【評價】"/>
-            <SelectPage />
+            <SelectPage/>
             <Section5 />
             <Footer />
           </div>
@@ -216,3 +216,7 @@ class HomePage extends React.Component {
   }
 }
 export default HomePage;
+
+
+
+

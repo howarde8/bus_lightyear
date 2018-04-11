@@ -26,7 +26,7 @@ class SelectionItem extends React.Component{
       return(
         <div className="select_bar">
           <div className="selcet_btns">
-            {/* <div style={{zIndex:9999}}>
+            {/* <div style={{zIndex:9999}}> 
             <DateRangePicker
               startDate={this.state.startDate} // momentPropTypes.momentObj or null,
               startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
@@ -62,7 +62,7 @@ class SelectionItem extends React.Component{
                 <li><a>依「價格」由低至高</a></li>
               </ul>
             </li>
-
+            
           </div>
         </div>
       );

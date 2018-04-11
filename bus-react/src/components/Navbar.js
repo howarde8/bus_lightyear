@@ -3,7 +3,7 @@ import React from 'react';
 
 const Navbar = () => {
     return(
-
+    
     <nav className="navbar navbar-default" role="navigation" style={{marginBottom: 0}}>
         <div className="navbar-header">
         <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">

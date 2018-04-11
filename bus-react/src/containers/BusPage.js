@@ -17,7 +17,7 @@ class BusPage extends React.Component {
             <img src={BusData.img_src} style={{...IMG}} alt=""/>
           </div>
           <Order/>
-          {/* Ｏ Ｒ Ｄ Ｅ Ｒ  */}
+          {/* Ｏ Ｒ Ｄ Ｅ Ｒ  */} 
           {/* <div className="col-lg-3 col-lg-offset-8 col-sm-10 col-sm-offset-1 order">
             <div className="container-fluid">
               <div className="row">
@@ -39,7 +39,7 @@ class BusPage extends React.Component {
                 </div>
                 <div className="click-area col-xs-offset-1 col-xs-10">
                   <h6 className="text">上車地點</h6>
-                  <div className="order-block">
+                  <div className="order-block"> 
                     <h6 className="pickup_address text-muted">地址</h6>
                   </div>
                 </div>
@@ -52,13 +52,13 @@ class BusPage extends React.Component {
               </div>
             </div>
           </div> */}
-          {/* Ｏ Ｒ Ｄ Ｅ Ｒ  */}
+          {/* Ｏ Ｒ Ｄ Ｅ Ｒ  */} 
 
-          {/* Ｉ Ｎ Ｆ Ｏ  */}
+          {/* Ｉ Ｎ Ｆ Ｏ  */} 
           <div className="row">
             <div className="info col-lg-6 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
 
-            {/* ＧＵＩＤＥ ＬＩＮＥ */}
+            {/* ＧＵＩＤＥ ＬＩＮＥ */}   
               <section id="guide-line">
                 <ul className="nav">
                   <a className="nav-link" href="#main-info">概述</a>
@@ -68,7 +68,7 @@ class BusPage extends React.Component {
                 </ul>
               </section>
 
-            {/* ＭＡＩＮ ＩＮＦＯ */}
+            {/* ＭＡＩＮ ＩＮＦＯ */}   
               <section id="main-info">
                 <h3 className="name">{BusData.name}</h3>
                 <h5 className="fw total_comments"> 32 則評價</h5>
@@ -77,13 +77,13 @@ class BusPage extends React.Component {
                 <h5 className="fw availablable_num">尚有 2 台</h5>
               </section>
 
-            {/* ＣＯＮＴＥＮＴ＿ＩＮＴＲＯＤＵＣＴＩＯＮ */}
+            {/* ＣＯＮＴＥＮＴ＿ＩＮＴＲＯＤＵＣＴＩＯＮ */} 
               <section className="content">
                 <h4 className="title">簡介</h4>
                 <p className="introduction mb20">{BusData.description.introduction}</p>
               </section>
 
-            {/* ＣＯＮＴＥＮＴ＿ＰＲＥＣＡＵＴＩＯＮ */}
+            {/* ＣＯＮＴＥＮＴ＿ＰＲＥＣＡＵＴＩＯＮ */} 
               <section className="content">
                 <h4 className="title">注意事項</h4>
                 <div className="block">
@@ -91,23 +91,23 @@ class BusPage extends React.Component {
                 </div>
               </section>
 
-            {/* ＣＯＮＴＥＮＴ＿ＰＲＥＰＡＲＥ */}
+            {/* ＣＯＮＴＥＮＴ＿ＰＲＥＰＡＲＥ */} 
               <section className="content">
                 <h4 className="title">可訂狀態</h4>
                 <p className="prepare_day mb20">{BusData.description.subscription}</p>
               </section>
 
-            {/* ＣＯＮＴＥＮＴ＿ＣＡＮＣＬＥ */}
+            {/* ＣＯＮＴＥＮＴ＿ＣＡＮＣＬＥ */} 
               <section className="content">
                 <h4 className="title">退訂方案</h4>
                 <p className="cancel mb20">{BusData.description.subscription_cancel}</p>
               </section>
 
-            {/* ＡＣＣＥＳＳＯＲＹ */}
+            {/* ＡＣＣＥＳＳＯＲＹ */} 
               <section id="accessory">
                 <h4 className="title">設備與安全措施</h4>
                 <div className="top">
-                  <div className="entertainment">
+                  <div className="entertainment"> 
                     <h5>設施</h5>
                     <div className="block"> <img className="icon" src="" alt=""/>
                       <h6 className="icon-name">icon名稱</h6>
@@ -122,7 +122,7 @@ class BusPage extends React.Component {
                 </div>
               </section>
 
-            {/* ＯＷＮＥＲ */}
+            {/* ＯＷＮＥＲ */} 
               <section id="owner">
                 <div className="container-fluid">
                   <div className="row">
@@ -135,16 +135,16 @@ class BusPage extends React.Component {
                     </div>
                     <div className="block col-sm-3"><img src={BusData.company_src} alt=""/></div>
                   </div>
-                  <div className="row">
+                  <div className="row"> 
                     <p className="info col-sm-12">{BusData.description.introduction}</p>
                     <div className="owner-btn btn">其他車源</div>
                     {/* <input id="search_bar" type="search" style="font-size: 15px;" color="$color_gray" placeholder=" 搜尋評價"/> */}
                   </div>
                 </div>
               </section>
-
-            {/* ＣＯＭＭＥＮＴ */}
-              <section id="comment">
+            
+            {/* ＣＯＭＭＥＮＴ */} 
+              <section id="comment"> 
                 <div className="comment" > <img className="user_img_src" src="https://i.imgur.com/hQ4xYzI.png" alt=""/>
                   <div className="user_info">
                     <h5 className="user_id">j5630300127</h5>
@@ -176,7 +176,7 @@ class BusPage extends React.Component {
             </div>
           </div>
           <Footer />
-        </div>
+        </div> 
       </div>
     )
   }
@@ -187,3 +187,4 @@ const mapStateToProps = (state) => {
   }
 }
 export default connect(mapStateToProps)(BusPage);
+

@@ -1,60 +1,54 @@
 import React from 'react';
-import $ from 'jquery';
-import { Item } from './Item';
-import {connect} from 'react-redux';
+import Item from '../components/Item';
 
 class ItemList extends React.Component {
-  state = {
-    loadingProducts: false,
-    error: '',
-    products: []
+  constructor(){
+    super();
+    this.state = {
+      loadingProducts: true,
+    }
   }
-
-  clickInChildItem = (itemId) => {
-    console.log("Clicked! " + itemId);
+  clickInChildItem = ( item ) => {
+    // this.props.dispatch({type:'SELECT_ORDER',order:item});
+    // this.props.dispatch(push('/bus'));
+    this.props.selectItem(item);
+    this.props.link('/bus');
+    console.log("Clicked! " + item);
   }
-
   componentDidMount() {
-    this.setState({ loadingProducts: true, error: '' });
-    console.log("itemsList",this.props.products);
     this.loadProducts();
-    
   }
-
   loadProducts = () => {
-    $.ajax({
-      url: '/api/bus/random/6',
-      method: 'GET'
-    }).then((response) => {
-      console.log(response);
-      this.setState({
-        loadingProducts: false,
-        error: '',
-        // products: response
-      });
-      this.props.dispatch({type:"INIT_ITEMS",items:response});
-      console.log("itemsList",this.props.products);
-    }, (response) => {
-      console.log("Error: " + response);
-      this.setState({ error: response});
-    }).catch((error) => {
-      console.log("catch error " + error);
+    fetch('/api/bus/all',{medtho:'GET'}).then((response) => response.json())
+    .then((responseJson) => {
+      console.log("res",responseJson);
+      this.setState({loadingProducts:false});
+      this.props.initItems(responseJson);
+    })
+    .catch((error) => {
+      console.error(error);
     });
   }
+  
+  
 
   getProductsContent = () => {
-    if (this.state.error) {
-      console.log("error in getProductsContent");
-      return null;
-    } else if (this.state.loadingProducts) {
-      return <p>loading...</p>;
-    } else { // successful
-      if(this.props.products !== undefined ){
-      const itemList = this.props.products.map((product,index) =>
-        <Item key={index} callbackClick={this.clickInChildItem} item={product}/>
-      );
-      return <div id="selectpage">{itemList}</div>;
+    if(this.state.loadingProducts){
+      return <p>loading..</p>
     }
+    else{
+      if(this.props.products && this.props.products.length>0){
+        const filter = this.props.filter
+        const itemList = this.props.products.map((product,index) =>{
+          return(<Item key={index} callbackClick={this.clickInChildItem} item={product}/>)
+        }
+      );
+      return(
+        <div>
+          {itemList}
+        </div>
+        );
+      }
     }
   }
 
@@ -67,10 +61,4 @@ class ItemList extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return{
-    products: state.products
-  }
-}
-
-export default connect(mapStateToProps,)(ItemList);
+export default ItemList;
