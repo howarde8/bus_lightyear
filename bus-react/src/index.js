@@ -36,7 +36,6 @@ const store = createStore(
 )
 
 // store.dispatch(push('/repo'));
-
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
