@@ -28,21 +28,21 @@ class SelectPage extends React.Component {
 
 
 const getVisibleProducts = (products, filter) => {
-  switch (filter.filterType) {
-    case 'SHOW_ALL':
-      return products;
-    case 'FILT_NUMBER':
-      return products.filter(value=>
-        value.description.max_amount > filter.lowBound && 
-        value.description.max_amount <= filter.upBound
-      );
-    case 'FILT_BRAND':
-      return products.filter(value=>
-        value.category === filter.brand
-      );
-    default:
-      return products;
-  }
+//   switch (filter.filterType) {
+//     case 'SHOW_ALL':
+//       return products;
+//     case 'FILT_NUMBER':
+//       return products.filter(value=>
+//         value.description.max_amount > filter.lowBound &&
+//         value.description.max_amount <= filter.upBound
+//       );
+//     case 'FILT_BRAND':
+//       return products.filter(value=>
+//         value.category === filter.brand
+//       );
+//     default:
+//       return products;
+//   }
 }
 const mapStateToProps =  (state ) => {
   return{

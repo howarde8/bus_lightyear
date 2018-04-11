@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Footer from './Footer';
 import Navbar from './Navbar';
 import SearchBar from '../containers/SearchBar';
-// import SelectPage from '../containers/SelectPage';
+import SelectPage from '../containers/SelectPage';
 
 // ... global stylish
 const h1 = { fontSize : 80 };
@@ -63,7 +63,7 @@ class Jumbotron extends React.Component{
             <h1 style={title}>{this.props.title}</h1>
             <h4 style={slogan}>{this.props.subtitle}</h4>
               {/* 搜尋表單 */}
-
+              <SearchBar />
               {/* <form className="navbar-form" role="search"> */}
               {/* </form> */}
           </div>
@@ -206,7 +206,7 @@ class HomePage extends React.Component {
               icon3_content="取代繁瑣的電話預訂，線上即可完成預訂"
             />
             <Section3 title="明日的旅程，從現在開始" content="點選以下的遊覽車，看看哪些符合您旅行的規格【評價】"/>
-
+            <SelectPage />
             <Section5 />
             <Footer />
           </div>
