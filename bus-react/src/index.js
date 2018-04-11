@@ -14,7 +14,7 @@ import reducers from './reducers'
 
 //...pages
 import HomePage from './components/HomePage';
-// import Repo from './components/Repo';
+import Repo from './components/Repo';
 // import BusPage from './containers/BusPage';
 // import CommentPage from './containers/CommentPage';
 // import SelectPage from './containers/SelectPage';
