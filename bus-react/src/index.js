@@ -15,10 +15,10 @@ import reducers from './reducers'
 //...pages
 import HomePage from './components/HomePage';
 import Repo from './components/Repo';
-// import BusPage from './containers/BusPage';
-// import CommentPage from './containers/CommentPage';
-// import SelectPage from './containers/SelectPage';
-// import BookingPage from './containers/BookingPage';
+import BusPage from './containers/BusPage';
+import CommentPage from './containers/CommentPage';
+import SelectPage from './containers/SelectPage';
+import BookingPage from './containers/BookingPage';
 
 const initialState = {};
 
@@ -41,6 +41,11 @@ ReactDOM.render(
     <ConnectedRouter history={history}>
       <div>
         <Route exact path="/" component={HomePage}/>
+        <Route path="/repo" component={Repo}/>
+        <Route path="/select" component={SelectPage}/>
+        <Route path="/bus" component={BusPage}/>
+        <Route path="/comment" component={CommentPage}/>
+        <Route path="/booking" component={BookingPage}/>
       </div>
     </ConnectedRouter>
   </Provider>,
