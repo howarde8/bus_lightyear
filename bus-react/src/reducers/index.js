@@ -1,8 +1,11 @@
-import { combineReducers } from 'redux'
+// import {combineReducers} from 'redux-immutable';
 import products from './products';
-
-const reducers = combineReducers({
+import visibilityFilter from './visibilityFilter';
+import order from './order';
+const reducers = {
     products,
-})
+    visibilityFilter,
+    order,
+}
 
 export default reducers
