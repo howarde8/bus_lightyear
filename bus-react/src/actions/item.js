@@ -5,6 +5,7 @@ export const initItems = (items) => {
         items:items,
     };
 }
+<<<<<<< HEAD
 export const setVisibilityFilter = (filterObject) => {
     return {
       type: 'SET_VISIBILITY_FILTER',
@@ -14,3 +15,11 @@ export const setVisibilityFilter = (filterObject) => {
 /* filterObject content 
   {filterType:"FILT_NUMBER",lowBound:low,upBound:up}
 */
+=======
+export const loadingStateUpdate = (key) =>{
+    return{
+        type:"UPDATE_LOADING_STATE",
+        key:key,
+    }
+}
+>>>>>>> add action

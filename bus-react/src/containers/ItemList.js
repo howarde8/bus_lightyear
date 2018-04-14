@@ -68,8 +68,14 @@ const getVisibleProducts = (products, filter) => {
   }
 }
 const mapStateToProps = (state) => {
+<<<<<<< HEAD:bus-react/src/containers/ItemList.js
   return {
     products: getVisibleProducts(state.get('products'), state.get('visibilityFilter'))
+=======
+  return{
+    products: state.products,
+    loadingProducts: state.loadingstate,
+>>>>>>> add action:bus-react/src/components/ItemList.js
   }
 }
 
