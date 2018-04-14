@@ -1,17 +1,16 @@
 
 export const initItems = (items) => {
-  return{
-      type:"INIT_ITEMS",
-      items:items,
-  };
+    return{
+        type:"INIT_ITEMS",
+        items:items,
+    };
 }
-
-export const selectItem = ( item ) => {
-  return{
-    type: 'SELECT_ORDER',
-    order: item,
-  }
+export const setVisibilityFilter = (filterObject) => {
+    return {
+      type: 'SET_VISIBILITY_FILTER',
+      filter:filterObject,
+    }
 }
 /* filterObject content 
-{filterType:"FILT_NUMBER",lowBound:low,upBound:up}
+  {filterType:"FILT_NUMBER",lowBound:low,upBound:up}
 */

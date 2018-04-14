@@ -1,9 +1,7 @@
 import React from 'react';
-import { render } from 'react-dom'
-import {createStore,applyMiddleware } from 'redux'
-import { Provider } from 'react-redux';
-import App from './components/App'
-import reducers from './reducers'
+import ReactDOM from 'react-dom'
+import { Route } from 'react-router'
+import { Provider } from 'react-redux'
 import logger from 'redux-logger';
 import {fromJS} from 'immutable';
 import createHistory from 'history/createBrowserHistory';
@@ -12,19 +10,34 @@ import { combineReducers } from 'redux-immutable';
 import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
 
 import registerServiceWorker from './registerServiceWorker';
-import { BrowserRouter } from 'react-router-dom';
-import {fromJS} from 'immutable';
+import reducers from './reducers'
+
+//...pages 
+import HomePage from './components/HomePage';
+import Repo from './components/Repo';
+import BusPage from './containers/BusPage';
+import CommentPage from './containers/CommentPage';
+import SelectPage from './containers/SelectPage';
+import BookingPage from './containers/BookingPage';
 
 const initialState = {};
 
+const history = createHistory()
+// Build the middleware for intercepting and dispatching navigation actions
+const middleware = routerMiddleware(history)
+
 const store = createStore(
-  reducers,
+  combineReducers({
+    ...reducers,
+    router: routerReducer,
+  }),
   fromJS(initialState),
-  applyMiddleware(logger),
+  applyMiddleware(logger,middleware),
   )
 
-// console.log('123',store.getState().get('products'));
-render(
+// store.dispatch(push('/repo'));
+
+ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <div>

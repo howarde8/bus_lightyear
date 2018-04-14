@@ -44,7 +44,7 @@ module.exports = {
     },
     {
       "id": "5a27db9f734d1d64c8d1973a",
-      "name": "雄獅41人座大型巴士",
+      "name": "雄獅41人座大型巴士",  
       "company_name": "雄獅旅行社股份有限公司",
       "company_id": "None",
       "category": "日牌",
@@ -170,7 +170,7 @@ module.exports = {
     },
     {
       "id": "5a27db9f734d1d64c8d1973a",
-      "name": "ego29人座中型巴士",
+      "name": "ego29人座中型巴士",   
       "company_name": "e-go 臺灣租車旅遊集團",
       "company_id": "None",
       "category": "國產",
