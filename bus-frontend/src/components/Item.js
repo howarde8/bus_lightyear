@@ -3,7 +3,7 @@ import React from 'react';
 class Item extends React.Component {
 
   itemClicked = () => {
-    console.log(this.props.item);
+    // console.log(this.props.item);
     this.props.callbackClick(this.props.item);
   }
 
