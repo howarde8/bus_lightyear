@@ -13,7 +13,7 @@ import registerServiceWorker from './registerServiceWorker';
 import reducers from './reducers'
 
 //...pages 
-import HomePage from './components/HomePage/index';
+import HomePage from './components/HomePage';
 import Repo from './components/Repo';
 import BusPage from './containers/BusPage';
 import CommentPage from './containers/CommentPage';
