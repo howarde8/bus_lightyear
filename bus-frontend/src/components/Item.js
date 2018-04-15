@@ -3,12 +3,12 @@ import React from 'react';
 class Item extends React.Component {
 
   itemClicked = () => {
-    // console.log(this.props.item);
+    console.log(this.props.item);
     this.props.callbackClick(this.props.item);
   }
 
   render() {
-    const {price = "none" } = this.props.item.order || {};
+    const { price = "none" } = this.props.item.order || {};
     return (
       <div onClick={this.itemClicked} className="bus_card">
         <div className="top">
