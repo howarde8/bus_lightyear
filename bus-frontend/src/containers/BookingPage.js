@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 class BookingPage extends React.Component {
   
   render() {
+    console.log('test');
     const BookingData = this.props.order;
     const IMG = {
       width: '100%',      
