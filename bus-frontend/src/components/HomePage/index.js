@@ -1,77 +1,21 @@
 import React, { Component } from 'react';
-// import '../styles/HomePage.css';
+import Jumbotron from './Jumbotron';
+import Footer from '../Footer';
+import Navbar from '../Navbar';
+import SelectPage from '../../containers/SelectPage';
+import { Styles } from '../../styles/style';
 
-import Footer from './Footer';
-import Navbar from './Navbar';
-import SearchBar from '../containers/SearchBar';
-import SelectPage from '../containers/SelectPage';
+// ... global stylish temporary existed in here ...
+const h1 = Styles.h1;
+const h2 = Styles.h2
+const h3 = Styles.h3;
+const h4 = Styles.h4;
+const h5 = Styles.h5;
+const h6 = Styles.h6;
+const p  = Styles.p;
+const noPadding = Styles.noPadding;
 
-// ... global stylish
-const h1 = { fontSize : 80 };
-const h2 = { fontSize : 60 };
-const h3 = { fontSize : 45 };
-const h4 = { fontSize : 30 };
-const h5 = { fontSize : 20 };
-const h6 = { fontSize : 15 };
-const p  = { fontSize : 15, letterSpacing : 1 };
-const noPadding = {
-  paddingTop : 0,
-  paddingBottom : 0,
-  paddingLeft : 0,
-  paddingRight : 0,
-}
 
-class Jumbotron extends React.Component{
-  render(){
-    const title = { 
-      ...h1,
-      letterSpacing : 15,
-    };
-    const slogan = {
-      ...h4,
-      marginTop : 20,
-      fontWeight : 300,
-      letterSpacing : 18
-    };
-    const IMG = {
-      width : '100%',
-      height : 650,
-      backgroundImage : "url('https://i.imgur.com/Qj2onou.jpg')",
-      backgroundRepeat : 'no-repeat',
-      backgroundPosition : 'center',
-      backgroundSize : 'cover'
-    };
-    const coverBlock = {
-      zIndex : '1',
-      position : 'absolute',
-      width : '100%',
-      height : '100%',
-      backgroundColor : '#000000',
-      opacity : '0.3',
-    };
-    const textBlock = {
-      zIndex : '2',
-      marginTop : 200,
-      color : 'white',
-      textAlign : 'center',
-    };
-    return (
-      <div className="row">
-        <div className="col-xs-12" style={IMG}>
-          <div style={coverBlock} ></div>
-          <div style={textBlock}>
-            <h1 style={title}>{this.props.title}</h1>
-            <h4 style={slogan}>{this.props.subtitle}</h4>
-              {/* 搜尋表單 */}
-              <SearchBar/>
-              {/* <form className="navbar-form" role="search"> */}
-              {/* </form> */}
-          </div> 
-        </div>     
-      </div>
-    );
-  }
-}
 class ThreeIcon extends React.Component{
   render(){
     
