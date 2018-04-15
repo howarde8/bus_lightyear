@@ -152,6 +152,8 @@ class HomePage extends React.Component {
             <Section3 title="明日的旅程，從現在開始" content="點選以下的遊覽車，看看哪些符合您旅行的規格【評價】"/>
             <SelectPage/>
             <Section5 />
+          </div>
+          <div className="container-fluid" style={noPadding}>
             <Footer />
           </div>
         </div>

@@ -20,6 +20,7 @@ import CommentPage from './containers/CommentPage';
 import SelectPage from './containers/SelectPage';
 import BookingPage from './containers/BookingPage';
 import BackendPage from './containers/BackendPage';
+import PublishPage1_Company from './containers/PublishPage1_Company';
 
 const initialState = {};
 
@@ -49,6 +50,7 @@ ReactDOM.render(
         <Route path="/bus" component={BusPage}/>
         <Route path="/comment" component={CommentPage}/>
         <Route path="/booking" component={BookingPage}/>
+        <Route path="/publish_1_company" component={PublishPage1_Company}/>
       </div>
     </ConnectedRouter>
   </Provider>, 

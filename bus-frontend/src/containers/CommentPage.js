@@ -1,11 +1,37 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
 import '../styles/CommentPage.css';
 
+// ... global stylish
+const h1 = { fontSize : 80 };
+const h2 = { fontSize : 60 };
+const h3 = { fontSize : 45 };
+const h4 = { fontSize : 30 };
+const h5 = { fontSize : 20 };
+const h6 = { fontSize : 15 };
+const p  = { fontSize : 15, letterSpacing : 1 };
+const noPadding = {
+  paddingTop : 0,
+  paddingBottom : 0,
+  paddingLeft : 0,
+  paddingRight : 0,
+}
+
+
 class CommentPage extends React.Component {
-  
   render() {
+    const starStyle = {
+      color: '#EEC853',
+      letterSpacing: 10
+    };
+    const starBtnStyle = {
+      border: 'none',
+      backgroundColor: 'transparent',
+      marginLeft: 10
+    };
     return (
       <div id="comment_page">
+        <Navbar/>
         <div className="container">
           <div className="row">
             <div className="col-sm-10 col-sm-offset-1 col-xs-12 comment">
@@ -13,22 +39,22 @@ class CommentPage extends React.Component {
               <h4 className="subtitle">您的車主也撰寫評價後，我們才會分享您的意見。</h4>
               <hr/>
               <div className="star_area">
-                <h4>非常好</h4>
-                <div className="star-btn">
-                  <h1>★</h1>
-                </div>
-                <div className="star-btn">
-                  <h1>★</h1>
-                </div>
-                <div className="star-btn">
-                  <h1>★</h1>
-                </div>
-                <div className="star-btn">
-                  <h1>★</h1>
-                </div>
-                <div className="star-btn">
-                  <h1>★</h1>
-                </div>
+                <h5>非常好</h5>
+                <button className="star-btn" style={starBtnStyle}>
+                  <h2 style={starStyle}>★</h2>
+                </button>
+                <button className="star-btn" style={starBtnStyle}>
+                  <h2 style={starStyle}>★</h2>
+                </button>
+                <button className="star-btn" style={starBtnStyle}>
+                  <h2 style={starStyle}>★</h2>
+                </button>
+                <button className="star-btn" style={starBtnStyle}>
+                  <h2 style={starStyle}>★</h2>
+                </button>
+                <button className="star-btn" style={starBtnStyle}>
+                  <h2 style={starStyle}>★</h2>
+                </button>
               </div>
               <h2 className="title">撰寫公開評價</h2>
               <h4 className="subtitle">請告訴未來乘客您下歡e-go遊覽車的哪些方面，以及任何他們需要知道的其他資訊。</h4>
@@ -50,7 +76,7 @@ class CommentPage extends React.Component {
                 </li>
               </ul>
               <hr/>
-              <div className="btn btn_finish"> 完成》 </div>
+              <div className="btn btn_finish"> 完成 </div>
             </div>
           </div>
         </div>

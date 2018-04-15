@@ -11,7 +11,7 @@ const Navbar = () => {
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
         </button>
-        <div className="navbar-brand"><img src="https://i.imgur.com/1zL5YTz.png" style={{width:50,height:50,top:-15}}/></div>
+        <div className="navbar-brand"><img src="https://i.imgur.com/1zL5YTz.png" style={{width:50,height:50,top:-15}} /></div>
         <div className="navbar-brand">
             BUS-lightyear
         </div>
@@ -20,7 +20,7 @@ const Navbar = () => {
         {/* 左選單 */}
         <ul className="nav navbar-nav">
 
-            <li><a href="./index.html">台灣遊覽車資訊網站</a></li>
+            <li><a href="./">台灣遊覽車資訊網站</a></li>
         </ul>
 
         {/* <!-- 右選單 --> */}

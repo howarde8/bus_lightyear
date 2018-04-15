@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/SelectPage.css';
 import ItemList from '../components/ItemList';
 import SelectionItem from '../components/SelectionItem';
 import { connect } from 'react-redux';
@@ -7,6 +6,15 @@ import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { selectItem, initItems } from '../actions/item';
 import { setVisibilityFilter } from '../actions/visibilityFilter'
+
+// ... global stylish
+const noPadding = {
+  paddingTop : 0,
+  paddingBottom : 0,
+  paddingLeft : 0,
+  paddingRight : 0,
+}
+
 class SelectPage extends React.Component {
   
   render(){
