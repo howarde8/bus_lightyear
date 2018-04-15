@@ -1,29 +1,16 @@
 import React from 'react';
-import ItemList from '../components/ItemList';
-import SelectionItem from '../components/SelectionItem';
+import '../styles/SelectPage.css';
+import ProductList from '../components/ProductList';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { selectItem, initItems } from '../actions/item';
 import { setVisibilityFilter } from '../actions/visibilityFilter'
-
-// ... global stylish
-const noPadding = {
-  paddingTop : 0,
-  paddingBottom : 0,
-  paddingLeft : 0,
-  paddingRight : 0,
-}
-
-class SelectPage extends React.Component {
-  
+class ProductPage extends React.Component {
   render(){
     return(
-      <div id="selectpage">
-        <SelectionItem 
-          setVisibilityFilter={this.props.setVisibilityFilter}
-        />
-        <ItemList 
+      <div id="productpage">
+        <ProductList 
           products={this.props.filterProducts}
           initItems={this.props.initItems}
           selectItem={this.props.selectItem}
@@ -33,8 +20,6 @@ class SelectPage extends React.Component {
     )
   }
 }
-
-
 const getVisibleProducts = (products, filter) => {
   switch (filter.filterType) {
     case 'SHOW_ALL':
@@ -65,4 +50,4 @@ const mapDispatchToProps = ( dispatch ) => {
     initItems : bindActionCreators(initItems, dispatch),
   }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(SelectPage)
+export default connect(mapStateToProps,mapDispatchToProps)(ProductPage)

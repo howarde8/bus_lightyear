@@ -23,9 +23,12 @@ class SelectionItem extends React.Component{
       this.props.setVisibilityFilter(showAll());
     }
     render(){
+      const selectBtnStyle = {
+        marginLeft: 0
+      }
       return(
         <div className="select_bar">
-          <div className="selcet_btns">
+          <div className="selcet_btns" style={selectBtnStyle}>
             {/* <div style={{zIndex:9999}}> 
             <DateRangePicker
               startDate={this.state.startDate} // momentPropTypes.momentObj or null,

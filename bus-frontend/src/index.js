@@ -19,6 +19,8 @@ import BusPage from './containers/BusPage';
 import CommentPage from './containers/CommentPage';
 import SelectPage from './containers/SelectPage';
 import BookingPage from './containers/BookingPage';
+import BackendPage from './containers/BackendPage';
+import PublishPage1_Company from './containers/PublishPage1_Company';
 
 const initialState = {};
 
@@ -42,11 +44,13 @@ ReactDOM.render(
     <ConnectedRouter history={history}>
       <div>
         <Route exact path="/" component={HomePage}/>
+        <Route exact path="/backend" component={BackendPage}/>
         <Route path="/repo" component={Repo}/>
         <Route path="/select" component={SelectPage}/>
         <Route path="/bus" component={BusPage}/>
         <Route path="/comment" component={CommentPage}/>
         <Route path="/booking" component={BookingPage}/>
+        <Route path="/publish_1_company" component={PublishPage1_Company}/>
       </div>
     </ConnectedRouter>
   </Provider>, 
