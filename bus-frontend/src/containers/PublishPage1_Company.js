@@ -72,7 +72,7 @@ class PublishPage1_Company extends React.Component {
               </div>
               <div class="quest_area" style={mT40Style}>
                 <h4 class="quest_name" style={questStyle}>公司簡介</h4>
-                <textarea rows="4" placeholder="撰寫公開簡介" style={textAreaStyle}></textarea>
+                <textarea rows="4" placeholder="撰寫公開簡介" ></textarea>
               </div>
               <h6 class="remind"> <span class="red" style={redStyle}>* </span><span>為必填</span></h6>
               <input class="btn btn_finish" type="submit" value="完成"/>
