@@ -8,16 +8,12 @@ class Item extends React.Component {
   }
 
   render() {
-<<<<<<< HEAD:bus-frontend/src/components/Item.js
-    const { price = "none" } = this.props.item.order || {};
-=======
     const {price = "none" } = this.props.item.order || {};
     const busCardStyle = {
       width : 270,
       marginLeft: 0,
       marginRight: 10
     }
->>>>>>> PublishPage:bus-react/src/components/Item.js
     return (
       <div onClick={this.itemClicked} className="bus_card" style={busCardStyle}>
         <div className="top">
