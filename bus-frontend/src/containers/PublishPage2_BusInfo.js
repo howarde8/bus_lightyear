@@ -18,7 +18,7 @@ const noPadding = {
 }
 
 
-class PublishPage1_Company extends React.Component {
+class PublishPage2_BusInfo extends React.Component {
   render() {
     const barStyle = {
       height: 16,
@@ -26,7 +26,7 @@ class PublishPage1_Company extends React.Component {
       overflow: 'hidden'
     };
     const progressStyle = {
-      width: '5%',
+      width: '25%',
       height: '100%',
       position: 'absolute',
       left: -2,
@@ -37,8 +37,7 @@ class PublishPage1_Company extends React.Component {
       borderRadius: 5
     }
     const whiteStyle = {
-      backgroundColor: 'white',
-      height: 1000
+      backgroundColor: 'white'
     };
     const mT40Style = {
       marginTop: 40
@@ -53,8 +52,8 @@ class PublishPage1_Company extends React.Component {
       fontWeight: 300
     };
     const questStyle = {
-      fontWeight: 400,
       ...h5,
+      fontWeight: 400,
       letterSpacing: 1.5,
       color: 'rgba(0, 0, 0, 0.6)'
     };
@@ -69,14 +68,22 @@ class PublishPage1_Company extends React.Component {
       borderRadius: 3,
       backgroundColor: '#fff'
     };
-    const textAreaStyle = {
-      width: '100%',
-      padding: 10,
-      border: '1px solid rgba(0, 0, 0, 0.3)',
-      borderRadius: 5,
+    const brandStyle = {
+      width: '60%',
+      height: 40,
+      backgroundColor: 'white',
       ...h5,
       fontWeight: 300,
-      color: 'rgba(0, 0, 0, 0.5)'
+      color: 'rgba(0, 0, 0, 0.5)',
+      border: '1px solid rgba(0, 0, 0, 0.3)',
+      borderRadius: 3,
+      paddingLeft: 10
+    };
+    const rangeStyle = {
+      width: '60%',
+      outline: 'none',
+      background: '#DC4F48',
+      transition: '0.2s'
     };
     const redStyle = {
       color: 'red'
@@ -86,6 +93,8 @@ class PublishPage1_Company extends React.Component {
       height: 50,
       paddingTop: 10,
       paddingLeft: 20,
+      marginTop: 30,
+      marginBottom: 60,
       backgroundColor: '#1092BA',
       color: 'white',
       ...h5,
@@ -94,40 +103,47 @@ class PublishPage1_Company extends React.Component {
     };
     const rightStyle = {
       position: 'absolute',
-      right: 0
+      right: 0 
     };
     return (
       <div id="publish_page_1" style={whiteStyle}>
         <Navbar/>
         <div className="container-fluid">
           <div className="row" style={barStyle}>
-           <div className="progess" style={progressStyle}>0%</div>
+           <div className="progess" style={progressStyle}>25%</div>
           </div>
         </div>
         <div className="container" style={{...noPadding}}>
           <div className="row" style={mT40Style}>
-            <div class="col-sm-5 col-sm-offset-1 col-xs-12 data_area" style={{...noPadding}}>
-              <h3 class="title" style={titleStyle}>哈囉 <span class="user_name">user_name</span>！歡迎成立您的公司帳號。</h3>
+            <div class="col-sm-5 col-sm-offset-1 col-xs-12 data_arae" style={{...noPadding}}>
+              <h3 class="title" style={titleStyle}>現在，就開始發布您的遊覽車吧。</h3>
               <div class="quest_area" style={mT40Style}>
-                <h5 class="quest_name" style={questStyle}>公司名稱<span class="red" style={redStyle}> *</span></h5>
+              <h5 class="quest_name" style={questStyle}>首先請選擇您的遊覽車品牌產地<span class="red" style={redStyle}> *</span></h5>
+              <select name="YourBrand" style={brandStyle}>
+                <option value="Taiwan">台灣牌</option>
+                <option value="China">中國牌</option>
+                <option value="US">歐美牌</option>
+                <option value="Japan">日本牌</option>
+              </select>
+              <h6 class="subtitle" style={subTitleStyle}>選擇您的遊覽車車輛品牌之國產地區</h6>
+              </div>
+              <div class="quest_area" style={mT40Style}>
+                <h5 class="quest_name" style={questStyle}>您可輸入遊覽車的品牌名稱</h5>
                 <input class="quest_answer" type="text" style={inputStyle}/>
-                <h6 class="subtitle" style={subTitleStyle}>請輸入您的公司對經濟部的正式登記名稱，提升用戶對您的信任度。</h6>
+                <h6 class="subtitle" style={subTitleStyle}>範例：Volvo, TOYOTA, 裕隆, etc...</h6>
               </div>
               <div class="quest_area" style={mT40Style}>
-                <h5 class="quest_name" style={questStyle}>公司電話<span class="red" style={redStyle}> *</span></h5>
-                <input class="quest_answer" type="tel" style={inputStyle}/>
+                <h5 class="quest_name" style={questStyle}>最多可容納多少乘客？<span class="red" style={redStyle}> *</span></h5>
+                <input class="quest_range" type="range" min="0" max="100" step="1" value="0" style={rangeStyle}/>
               </div>
               <div class="quest_area" style={mT40Style}>
-                <h5 class="quest_name" style={questStyle}>營業地址<span class="red" style={redStyle}> *</span></h5>
-                <input class="quest_answer" type="text" style={inputStyle}/>
+                <h5 class="quest_name" style={questStyle}>該車種的出租數量有多少台？<span class="red" style={redStyle}> *</span></h5>
+                <input class="quest_range" type="range" min="0" max="100" step="1" value="0" style={rangeStyle}/>
               </div>
-              <div class="quest_area" style={mT40Style}>
-                <h5 class="quest_name" style={questStyle}>公司簡介</h5>
-                <textarea rows="4" placeholder="撰寫公開簡介" style={textAreaStyle}></textarea>
-              </div>
-              <h6 class="remind"> <span class="red" style={redStyle}>* </span><span>為必填</span></h6>
+              <h6 class="remind" style={subTitleStyle}> <span class="red" style={redStyle}>*</span><span>為必填</span></h6>
               <hr/>
-              <a class="btn btn_finish" href="./publish_2_bus_info" style={{...btnStyle,...rightStyle}}>下一頁</a>
+              <a class="btn btn_finish" href="./publish_1_company" style={btnStyle}> 返回 </a>
+              <a class="btn btn_finish" href="./publish_3_accessory" style={{...btnStyle,...rightStyle}}> 下一頁 </a>
             </div>
             <img class="col-sm-5 col-xs-0" src="https://i.imgur.com/5rPk2bu.png" alt=""/>
           </div>
@@ -137,4 +153,4 @@ class PublishPage1_Company extends React.Component {
   }
 }
 
-export default PublishPage1_Company;
+export default PublishPage2_BusInfo;

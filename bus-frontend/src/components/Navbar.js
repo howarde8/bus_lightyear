@@ -71,7 +71,7 @@ const Navbar = () => {
 
         {/* <!-- 右選單 --> */}
         <ul className="nav navbar-nav navbar-right">
-            <li><a href="#">刊登資料</a></li>
+            <li><a href="./publish_1_company">刊登資料</a></li>
             <li><a href="./backend">後台管理</a></li>
             <li><a href="#">臉書粉專</a></li>
             <li><a href="#"><LoginModal/></a></li>
