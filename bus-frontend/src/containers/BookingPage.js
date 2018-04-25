@@ -13,6 +13,13 @@ class BookingPage extends React.Component {
       backgroundPosition: 'center',
       backgroundSize: 'cover'
     };
+    const blockStyle = {
+      border: '2px solid gray',
+      borderRadius: 5
+    }
+    const hrStyle = {
+      borderBottom: '2px solid gray'
+    }
     return (
       <div id="booking_page">
         <Navbar/>
@@ -30,8 +37,8 @@ class BookingPage extends React.Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-sm-7 user_area"> 
-              <div className="block">
+            <div className="col-sm-7 user_area" > 
+              <div className="block" style={blockStyle}>
                 <div className="row">
                   <div className="title col-xs-4">預訂帳號    </div>
                   <div className="display user_id col-xs-7">j5630300127</div>
@@ -40,7 +47,7 @@ class BookingPage extends React.Component {
                   <div className="title col-xs-4">聯絡電話    </div>
                   <div className="display user_id col-xs-7">+886-911-151-127</div>
                 </div>
-                <hr/>
+                <hr style={hrStyle}/>
                 <div className="row">
                   <div className="title col-xs-4">乘車時間   </div>
                   <div className="display user_id col-xs-7">2018/02/28(四) 
@@ -53,12 +60,12 @@ class BookingPage extends React.Component {
                     <div className="display">17:00</div>
                   </div>
                 </div>
-                <hr/>
+                <hr style={hrStyle}/>
                 <div className="row">
                   <div className="title col-xs-4">乘車地址   </div>
                   <div className="display user_id col-xs-7">新竹縣寶山鄉高峰路87號</div>
                 </div>
-                <hr/>
+                <hr style={hrStyle}/>
                 <div className="row">
                   <div className="title col-xs-4">行程描述  </div>
                   <div className="display user_id col-xs-7">由寶山雙胞胎井出發 --> 北浦擂茶 --> 南寮腳踏車 --> 新竹火車站 --> 寶山鄉基八一路 </div>
@@ -66,7 +73,7 @@ class BookingPage extends React.Component {
               </div>
             </div>
             <div className="col-sm-5 company_area">
-              <div className="block">
+              <div className="block" style={blockStyle}>
                 <div className="row">
                   <div className="pic col-sm-12">
                     <img src={BookingData.company_src} style={{...IMG}} alt=""/>
@@ -78,7 +85,7 @@ class BookingPage extends React.Component {
                 <div className="row">
                   <div className="btn">查看更多</div>
                 </div>
-                <hr/>
+                <hr style={hrStyle}/>
                 <div className="row">
                   <div className="title col-xs-4">聯絡電話</div>
                   <div className="display user_id col-xs-7">+886-3567-8111</div>

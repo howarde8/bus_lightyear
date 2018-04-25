@@ -46,10 +46,16 @@ class LoginModal extends React.Component{
         )
     }
 }
-
+const navbarStyle = {
+    width: '100%',
+    height: 50,
+    marginBottom: 0,
+    position:'fixed',
+    zIndex: 30000
+}
 const Navbar = () => {
     return(
-    <nav className="navbar navbar-default" role="navigation" style={{marginBottom: 0}}>
+    <nav className="navbar navbar-default" role="navigation" style={navbarStyle}>
         <div className="navbar-header">
         <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
             <span className="sr-only">選單切換</span>

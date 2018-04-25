@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
-import '../styles/SelectPage.css';
 import ProductPage from './ProductPage';
 
 // ... global stylish

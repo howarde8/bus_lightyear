@@ -5,20 +5,9 @@ import Navbar from '../Navbar';
 import SelectPage from '../../containers/SelectPage';
 import { Styles } from '../../styles/style';
 
-// ... global stylish temporary existed in here ...
-const h1 = Styles.h1;
-const h2 = Styles.h2
-const h3 = Styles.h3;
-const h4 = Styles.h4;
-const h5 = Styles.h5;
-const h6 = Styles.h6;
-const p  = Styles.p;
-const noPadding = Styles.noPadding;
-
 
 class ThreeIcon extends React.Component{
   render(){
-    
     const rowStyle = {
       paddingBottom : '2%',
     }
@@ -40,12 +29,12 @@ class ThreeIcon extends React.Component{
       width : '72%'
     };
     const titleStyle = {
-      ...h4,
+      ...Styles.h4,
       fontWeight : 400,
       letterSpacing : 3,
     };
     const contentStyle = {
-      ...h6,
+      ...Styles.h6,
       marginTop : 10,
       letterSpacing : 1,
       lineHeight : 1.5
@@ -89,13 +78,12 @@ class ThreeIcon extends React.Component{
 }
 class Section3 extends React.Component{
   render(){
-    
-    const titleStyle = {
-      ...h3,
+     const titleStyle = {
+      ...Styles.h3,
       letterSpacing : 10,
     };
     const contentStyle = {
-      ...h5,
+      ...Styles.h5,
       marginTop : 10,
       fontWeight : 400,
       letterSpacing : 2,
@@ -116,25 +104,40 @@ class Section3 extends React.Component{
     );
   }
 }
-class Section5 extends React.Component{
+class Button extends React.Component{
   render(){
+    const btnStyle = {
+      width: 120,
+      height: 50,
+      backgroundColor: Styles.color.blue,
+      color: 'white',
+      ...Styles.h5,
+      fontWeight: 300,
+      letterSpacing: 5,
+      borderRadius: 5
+    }
+    const btnPositionStyle = {
+      position: 'absolute',
+      right: 0
+    }
     return(
-      <div className="row bgc-white">
-      <div className="button-area col-sm-4 col-sm-offset-8">
-        <button className="more-button">更多選擇</button>
-      </div>
+    <div className="row bgc-white" style={{height:100}}>
+      <button className="more-button" style={{...btnStyle,...btnPositionStyle}}>更多選擇</button>
     </div>
     );
   }
 }
 class HomePage extends React.Component {
   render() {
-    const introStyle = { width: '100%', overflowX: 'hidden' };
+    const introStyle = { 
+      width: '100%', 
+      overflowX: 'hidden' 
+    };
     return (
       <div>
         <Navbar/>
         <div className="intro" style={introStyle}>
-          <div className="container-fluid" style={noPadding}>
+          <div className="container-fluid" style={Styles.noPadding}>
             <Jumbotron title="巴士光年" subtitle="最快速且方便的遊覽車預訂體驗"/>
           </div>
           <div className="container">
@@ -151,9 +154,9 @@ class HomePage extends React.Component {
             />
             <Section3 title="明日的旅程，從現在開始" content="點選以下的遊覽車，看看哪些符合您旅行的規格【評價】"/>
             <SelectPage/>
-            <Section5 />
+            <Button />
           </div>
-          <div className="container-fluid" style={noPadding}>
+          <div className="container-fluid" style={Styles.noPadding}>
             <Footer />
           </div>
         </div>
