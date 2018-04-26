@@ -2,15 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import { Route } from 'react-router'
 import { Provider } from 'react-redux'
+import createSagaMiddleware from 'redux-saga'
 import logger from 'redux-logger';
-import {fromJS} from 'immutable';
+import { fromJS } from 'immutable';
 import createHistory from 'history/createBrowserHistory';
 import { createStore, applyMiddleware } from 'redux';
 import { combineReducers } from 'redux-immutable';
 import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
 
 import registerServiceWorker from './registerServiceWorker';
-import reducers from './reducers'
+import reducers from './reducers';
+import rootSaga from './sagas'
 
 //...pages 
 import HomePage from './components/HomePage';
@@ -36,6 +38,7 @@ const initialState = {};
 const history = createHistory()
 // Build the middleware for intercepting and dispatching navigation actions
 const middleware = routerMiddleware(history)
+const sagaMiddleware = createSagaMiddleware()
 
 const store = createStore(
   combineReducers({
@@ -43,9 +46,9 @@ const store = createStore(
     router: routerReducer,
   }),
   fromJS(initialState),
-  applyMiddleware(logger,middleware),
+  applyMiddleware(logger, middleware, sagaMiddleware),
   )
-
+sagaMiddleware.run(rootSaga)
 // store.dispatch(push('/repo'));
 
 ReactDOM.render(
