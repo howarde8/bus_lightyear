@@ -104,7 +104,8 @@ export function * loginFlow () {
       // ...we send Redux appropiate actions
       yield put({type: SET_AUTH, newAuthState: true}) // User is logged in (authorized)
       yield put({type: CHANGE_FORM, newFormState: {username: '', password: ''}}) // Clear form
-      forwardTo('/dashboard') // Go to dashboard page
+      // forwardTo('/dashboard') // Go to dashboard page
+      yield put(push('/dashboard'));
     }
   }
 }
@@ -120,7 +121,8 @@ export function * logoutFlow () {
     yield put({type: SET_AUTH, newAuthState: false})
 
     yield call(logout)
-    forwardTo('/')
+    // forwardTo('/')
+    yield put(push('/'));
   }
 }
 
@@ -142,7 +144,8 @@ export function * registerFlow () {
     if (wasSuccessful) {
       yield put({type: SET_AUTH, newAuthState: true}) // User is logged in (authorized) after being registered
       yield put({type: CHANGE_FORM, newFormState: {username: '', password: ''}}) // Clear form
-      forwardTo('/dashboard') // Go to dashboard page
+      // forwardTo('/dashboard') // Go to dashboard page
+      yield put(push('/dashboard'));
     }
   }
 }
