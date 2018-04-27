@@ -13,10 +13,10 @@ app.use(cors());
 
 // cookie session
 app.use(
-    cookieSession({
-        maxAge: 30 * 24 * 60 * 60 * 1000, // should be microsecond
-        keys: [keys.cookieKey]
-    })
+  cookieSession({
+    maxAge: 30 * 24 * 60 * 60 * 1000, // should be microsecond
+    keys: [keys.cookieKey]
+  })
 );
 app.use(passport.initialize());
 app.use(passport.session());
@@ -25,21 +25,23 @@ require("./routes/authRoutes")(app);
 require("./routes/dataRoutes")(app);
 // app.use(express.static('html'));
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
   // Express will serve up production assets
   // like our main.js file, or main.css file!
-  app.use(express.static('bus-frontend/build'));
+  app.use(express.static("bus-frontend/build"));
 
   // Express will serve up the index.html file
   // if it doesn't recognize the route
-  const path = require('path');
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'bus-frontend', 'build', 'index.html'));
+  const path = require("path");
+  app.get("*", (req, res) => {
+    res.sendFile(
+      path.resolve(__dirname, "bus-frontend", "build", "index.html")
+    );
   });
 }
 
 // mongodb relatives
-// mongoose.connect(keys.mongoURI);
+mongoose.connect(keys.mongoURI);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
