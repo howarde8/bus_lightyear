@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/BusPage.css';
-
 import NavBar from '../components/Navbar';
 import Order from './Order';
 import Footer from '../components/Footer';

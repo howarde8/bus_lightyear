@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+import PublishNavbar from '../components/PublishNavbar';
 
 
 // ... global stylish
@@ -21,6 +21,7 @@ const noPadding = {
 class PublishPage1_Company extends React.Component {
   render() {
     const barStyle = {
+      marginTop: 50,
       height: 16,
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       overflow: 'hidden'
@@ -98,7 +99,7 @@ class PublishPage1_Company extends React.Component {
     };
     return (
       <div id="publish_page_1" style={whiteStyle}>
-        <Navbar/>
+        <PublishNavbar/>
         <div className="container-fluid">
           <div className="row" style={barStyle}>
            <div className="progess" style={progressStyle}>0%</div>

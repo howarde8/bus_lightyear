@@ -53,11 +53,11 @@ class Footer extends React.Component{
       <div className="row bgc-blue" style={blueStyle}>
         <div className="email col-md-12">
           <h2 className="section-heading" style={headingStyle}>最快速的訂車體驗</h2>
-          <h4 className="section-subheading" style={subheadingStyle}>想收到最划算的旅遊資訊嗎？</h4>
+          <h4 className="section-subheading" style={subheadingStyle}>想收到最新的旅遊交通資訊嗎？</h4>
           <input className="form-control" type="email" placeholder="email" style={emailStyle}/>
           <button className="btn btn-default" style={btnStyle}>送出</button>
           <p style={rightStyle}>© 巴士光年團隊 2018-2019 All Right Reserve</p>
-          <a href="https://www.facebook.com/j5630300127" style={linkStyle}> <img src="https://i.imgur.com/TUIFT9I.png" style={iconStyle}/></a>
+          <a href="https://www.facebook.com/j5630300127" target="_blank" style={linkStyle}> <img src="https://i.imgur.com/TUIFT9I.png" style={iconStyle}/></a>
         </div>
       </div>
       );

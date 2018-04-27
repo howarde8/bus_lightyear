@@ -29,6 +29,7 @@ import PublishPage6_Price from './containers/PublishPage6_Price';
 import PublishPage7_Rule from './containers/PublishPage7_Rule';
 import PublishPage8_Finish from './containers/PublishPage8_Finish';
 import ProductPage from './containers/ProductPage';
+import Article_Consumer from './components/Article_Consumer';
 
 
 const initialState = {};
@@ -68,6 +69,7 @@ ReactDOM.render(
         <Route path="/publish_6_price" component={PublishPage6_Price}/>
         <Route path="/publish_7_rule" component={PublishPage7_Rule}/>
         <Route path="/publish_8_finish" component={PublishPage8_Finish}/>
+        <Route path="/article_consumer" component={Article_Consumer}/>
       </div>
     </ConnectedRouter>
   </Provider>, 

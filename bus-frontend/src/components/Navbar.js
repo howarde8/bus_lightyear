@@ -49,7 +49,7 @@ class LoginModal extends React.Component{
 const navbarStyle = {
     width: '100%',
     height: 50,
-    marginBottom: 0,
+    border: 'none',
     position:'fixed',
     zIndex: 30000
 }
