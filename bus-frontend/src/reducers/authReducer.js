@@ -11,6 +11,8 @@ import {
 } from '../actions/constants'
 import auth from '../auth'
 
+const FAKE_LOGOUT = 'FAKE_LOGOUT';
+const FAKE_LOGIN = 'FAKE_LOGIN';
 // The initial application state
 let initialState = {
   formState: {
@@ -19,7 +21,8 @@ let initialState = {
   },
   error: '',
   currentlySending: false,
-  loggedIn: auth.loggedIn()
+  loggedIn: auth.loggedIn(),
+  loggedFlag: false,
 }
 
 // Takes care of changing the application state
@@ -35,6 +38,10 @@ function authReducer (state = initialState, action) {
       return {...state, error: action.error}
     case CLEAR_ERROR:
       return {...state, error: ''}
+    case FAKE_LOGOUT:
+      return {...state, loggedFlag: false}
+    case FAKE_LOGIN:
+      return {...state, loggedFlag: true}
     default:
       return state
   }

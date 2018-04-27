@@ -70,10 +70,7 @@ export default class Modal extends React.Component {
     }
   }
   onOverlayClick = () => {
-    this.setState({ hidden: 'hidden'});
-    if(typeof this.props.onClose === 'function'){
-      this.props.onClose();
-    }
+    this.onClickDismiss();
   }
   
   onDialogClick = (event) => {
@@ -82,19 +79,60 @@ export default class Modal extends React.Component {
   buttonClick = () => {
     this.setState({ hidden: 'visible'});
   }
+  onLoginClick = () => {
+    this.props.dispatch({type:'FAKE_LOGIN'});
+    this.setState({ hidden: 'hidden'});
+  }
+  onClickDismiss = () => {
+    this.setState({ hidden: 'hidden'});
+    if(typeof this.props.onClose === 'function'){
+      this.props.onClose();
+    }
+  }
   render() {
     return (
       <div>
         <div onClick={this.buttonClick} style={this.props.titleStyle}>{this.props.title}</div>
         <div style={{...modelStyle, visibility:this.state.hidden}}>
-        <div className="modal-overlay-div" style={overlayStyle} />
-        <div className="modal-content-div" style={contentStyle} onClick={this.onOverlayClick}>
-          <div className="modal-dialog-div" style={dialogStyle} onClick={this.onDialogClick}>
-            {this.props.children || 'nothing now'}
-          </div>
+          <div className="modal-overlay-div" style={overlayStyle} />
+          <div className="modal-content-div" style={contentStyle} onClick={this.onOverlayClick}>
+            <div className="modal-dialog-div" style={dialogStyle} onClick={this.onDialogClick}>
+            <div class="login_cover_off">
+              <div class="login_cover"></div>
+              <div class="login_window">
+                <div class="close_window"> 
+                  <div onClick={this.onClickDismiss} class="text">Ｘ</div>
+                </div>
+                <div class="facebook_login button"> 
+                  <div class="icon"></div>
+                  <div class="text">使用facebook帳號登入</div>
+                </div>
+                <div class="google_login button"> 
+                  <div class="icon"></div>
+                  <div class="text">使用Google帳號登入</div>
+                </div>
+                <div class="text_or">————————— 或 —————————</div>
+                <div class="email_input button"> 
+                  <input placeholder="電子郵件地址"/>
+                </div>
+                <div class="password_input button"> 
+                  <input type="password" placeholder="密碼"/>
+                  <div class="icon"></div>
+                </div>
+                <div class="login_forgot">忘記密碼？</div>
+                <div class="login_button button"> 
+                  <div onClick={this.onLoginClick} class="text">登入</div>
+                </div>
+                <hr/>
+                <h4>還沒有帳號嗎？</h4>
+                <div class="change_to_signup"> 
+                  <div class="text">註冊 </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            </div>
         </div>
-        </div>
-        
       </div>
     );
   }

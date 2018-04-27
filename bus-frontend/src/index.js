@@ -49,7 +49,12 @@ const store = createStore(
   applyMiddleware(logger, middleware, sagaMiddleware),
   )
 sagaMiddleware.run(rootSaga)
-// store.dispatch(push('/repo'));
+
+
+// ... my fucking testing area
+// console.log(store.getState().get('authReducer'));
+// const { loggedFlag } = store.getState().get('authReducer');
+// console.log(loggedFlag);
 
 ReactDOM.render(
   <Provider store={store}>
