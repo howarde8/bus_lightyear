@@ -21,7 +21,15 @@ import SelectPage from './containers/SelectPage';
 import BookingPage from './containers/BookingPage';
 import BackendPage from './containers/BackendPage';
 import PublishPage1_Company from './containers/PublishPage1_Company';
+import PublishPage2_BusInfo from './containers/PublishPage2_BusInfo';
+import PublishPage3_Accessory from './containers/PublishPage3_Accessory';
+import PublishPage4_Promote from './containers/PublishPage4_Promote';
+import PublishPage5_Calendar from './containers/PublishPage5_Calendar';
+import PublishPage6_Price from './containers/PublishPage6_Price';
+import PublishPage7_Rule from './containers/PublishPage7_Rule';
+import PublishPage8_Finish from './containers/PublishPage8_Finish';
 import ProductPage from './containers/ProductPage';
+
 
 const initialState = {};
 
@@ -53,6 +61,13 @@ ReactDOM.render(
         <Route path="/booking" component={BookingPage}/>
         <Route path="/product" component={ProductPage}/>
         <Route path="/publish_1_company" component={PublishPage1_Company}/>
+        <Route path="/publish_2_bus_info" component={PublishPage2_BusInfo}/>
+        <Route path="/publish_3_accessory" component={PublishPage3_Accessory}/>
+        <Route path="/publish_4_promote" component={PublishPage4_Promote}/>
+        <Route path="/publish_5_calendar" component={PublishPage5_Calendar}/>
+        <Route path="/publish_6_price" component={PublishPage6_Price}/>
+        <Route path="/publish_7_rule" component={PublishPage7_Rule}/>
+        <Route path="/publish_8_finish" component={PublishPage8_Finish}/>
       </div>
     </ConnectedRouter>
   </Provider>, 

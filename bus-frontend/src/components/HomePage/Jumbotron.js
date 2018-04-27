@@ -16,9 +16,11 @@ export default class Jumbotron extends React.Component{
     this.setState({ fontSize: Styles.h1.fontSize });
   }
   render(){
-    const title = { 
+    const titleStyle = { 
       fontSize : this.state.fontSize,
       letterSpacing : 15,
+      transitionDuration: '0.3s',
+      userSelect: 'none'
     };
     const slogan = {
       ...Styles.h4, 
@@ -53,7 +55,7 @@ export default class Jumbotron extends React.Component{
         <div className="col-xs-12" style={IMG}>
           <div style={coverBlock} ></div>
           <div style={textBlock}>
-            <h1 onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut} style={title}>{this.props.title}</h1>
+            <h1 onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut} style={titleStyle}>{this.props.title}</h1>
             <h4 style={slogan}>{this.props.subtitle}</h4>
               {/* 搜尋表單 */}
               <SearchBar/>

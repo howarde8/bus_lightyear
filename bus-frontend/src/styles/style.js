@@ -12,8 +12,23 @@ export const Styles = {
     paddingTop : 0,
     paddingBottom : 0,
     paddingLeft : 0,
-    paddingRight : 0,
+    paddingRight : 0
   },
+  noMargin : {
+    marginTop : 0,
+    marginBottom : 0,
+    marginLeft : 0,
+    marginRight : 0
+  },
+  border : {
+    border: '1px solid rgba(0, 0, 0, 1)'
+  },
+  color : {
+    yellow: '#EEC853',
+    blue: '#1092BA'
+
+  }
+
 };
 
 

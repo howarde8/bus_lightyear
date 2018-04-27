@@ -23,12 +23,35 @@ const noMargin = {
 };
 
 class Product extends React.Component {
-
+  constructor(){
+    super();
+    this.state = {
+      height: '105%',
+      weight: '105%',
+      backgroundColor : '#EFEFEF',
+      color : '#36B9C1',
+    }
+  }
+  onMouseOver = () => {
+    this.setState({ 
+      height: '120%',
+      weight: '120%',
+      backgroundColor : '#36B9C1',
+      color: '#EFEFEF'
+    });
+  }
+  onMouseOut = () => {
+    this.setState({ 
+      height: '105%',
+      weight: '105%',
+      backgroundColor : '#EFEFEF',
+      color : '#36B9C1',
+    });
+  }
   itemClicked = () => {
     // console.log(this.props.item);
     this.props.callbackClick(this.props.item);
   }
-
   render() {
     const {price = "none" } = this.props.item.order || {};
     const cardStyle={
@@ -41,14 +64,15 @@ class Product extends React.Component {
       borderRadius: 10,
       overflow : 'hidden',
       boxShadow : '0px 0px 12px rgba(0, 0, 0, 0.2)',
-      cursor: 'pointer'
     };
     const topStyle = {
       height : 200,
       overflow : 'hidden'
     };
     const buspicStyle = { 
-      height : '110%' 
+      height : this.state.height,
+      weight: this.state.weight,
+      transitionDuration: '0.5s'
     };
     const sizeStyle = {
       width : 55,
@@ -57,8 +81,9 @@ class Product extends React.Component {
       position : 'absolute',
       top : 15,
       right : 15,
-      backgroundColor : '#EFEFEF',
-      color : '#36B9C1',
+      backgroundColor : this.state.backgroundColor,
+      color : this.state.color,
+      transitionDuration: '0.5s',
       boxShadow : '0px 0px 12px rgba(0, 0, 0, 0.2)'
     };
     const maxamountStyle = {
@@ -75,7 +100,7 @@ class Product extends React.Component {
       paddingRight : 15
     };
     const busnameStyle = {
-      fontSize: 24,
+      ...h4,
       ...noPadding,
       ...noMargin,
       fontWeight: 500
@@ -112,9 +137,9 @@ class Product extends React.Component {
     };
     return (
       <div class="bus_card_area col-lg-3 col-md-4 col-sm-6 col-xs-12"> 
-        <div onClick={this.itemClicked} className="bus_card" style={cardStyle}>
+        <div className="bus_card" onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut} style={cardStyle}>
           <div className="top" style={topStyle}>
-            <img className="bus_pic" style={buspicStyle} src={this.props.item.img_src} alt=""/>
+            <img className="bus_pic"  style={buspicStyle} src={this.props.item.img_src} alt=""/>
             <div className="size" style={sizeStyle}>
               <div className="max_amount" style={maxamountStyle}>{this.props.item.description.max_amount}人</div>
             </div>
@@ -129,7 +154,7 @@ class Product extends React.Component {
               <div className="stock"> 已預訂 <span className="availablable_num" style={blueStyle}>2/7 台</span></div>
             </p>
             <div class="btn_area" style={btnAreaStyle}>
-              <div class="btn edit_btn" style={btnStyle}>編輯</div>
+              <div onClick={this.itemClicked} class="btn edit_btn" style={btnStyle}>編輯</div>
               <div class="btn delete_btn" style={btnStyle}>刪除</div>
             </div>
           </div>

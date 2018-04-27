@@ -175,7 +175,6 @@ class BusPage extends React.Component {
               </section>
             </div>
           </div>
-          <Footer />
         </div> 
       </div>
     )
