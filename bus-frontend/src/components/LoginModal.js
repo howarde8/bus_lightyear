@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {changeForm, loginRequest, registerRequest} from '../actions/auth'
 
 const overlayStyle = {
   position: 'fixed',
@@ -42,7 +43,7 @@ const dialogStyle = {
 const modelStyle = {
   visibility : 'hidden',
 }
-export default class Modal extends React.Component {
+export default class LoginModal extends React.Component {
   constructor() {
     super();
 
@@ -80,8 +81,13 @@ export default class Modal extends React.Component {
     this.setState({ hidden: 'visible'});
   }
   onLoginClick = () => {
-    this.props.dispatch({type:'FAKE_LOGIN'});
     this.setState({ hidden: 'hidden'});
+    const { username, password } = this.props.formState;
+    this.props.dispatch(loginRequest({username, password}));
+  }
+  onRegisterClick = () => {
+    const { username, password } = this.props.formState;
+    this.props.dispatch(registerRequest({username, password}))
   }
   onClickDismiss = () => {
     this.setState({ hidden: 'hidden'});
@@ -89,6 +95,20 @@ export default class Modal extends React.Component {
       this.props.onClose();
     }
   }
+
+  // typing session
+  _changeUsername = (event) => {
+    this._emitChange({...this.props.formState, username: event.target.value})
+  }
+
+  _changePassword = (event) => {
+    this._emitChange({...this.props.formState, password: event.target.value})
+  }
+
+  _emitChange = (newFormState) => {
+    this.props.dispatch(changeForm(newFormState))
+  }
+
   render() {
     return (
       <div>
@@ -113,10 +133,10 @@ export default class Modal extends React.Component {
                 </div>
                 <div class="text_or">————————— 或 —————————</div>
                 <div class="email_input button"> 
-                  <input placeholder="電子郵件地址"/>
+                  <input placeholder="電子郵件地址" value={this.props.formState.username} onChange={this._changeUsername} />
                 </div>
                 <div class="password_input button"> 
-                  <input type="password" placeholder="密碼"/>
+                  <input type="password" placeholder="密碼" value={this.props.formState.password} onChange={this._changePassword} />
                   <div class="icon"></div>
                 </div>
                 <div class="login_forgot">忘記密碼？</div>
@@ -126,7 +146,7 @@ export default class Modal extends React.Component {
                 <hr/>
                 <h4>還沒有帳號嗎？</h4>
                 <div class="change_to_signup"> 
-                  <div class="text">註冊 </div>
+                  <div class="text" onClick={this.onRegisterClick}>註冊 </div>
                 </div>
               </div>
             </div>

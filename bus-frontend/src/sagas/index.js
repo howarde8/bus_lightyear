@@ -49,10 +49,9 @@ export function * authorize ({username, password, isRegistering}) {
 
     return response
   } catch (error) {
-    console.log('hi')
     // If we get an error we send Redux the appropiate action and return
     yield put({type: REQUEST_ERROR, error: error.message})
-
+    alert(error.message);
     return false
   } finally {
     // When done, we tell Redux we're not in the middle of a request any more
@@ -105,7 +104,7 @@ export function * loginFlow () {
       yield put({type: SET_AUTH, newAuthState: true}) // User is logged in (authorized)
       yield put({type: CHANGE_FORM, newFormState: {username: '', password: ''}}) // Clear form
       // forwardTo('/dashboard') // Go to dashboard page
-      yield put(push('/dashboard'));
+      // yield put(push('/dashboard'));
     }
   }
 }
@@ -122,7 +121,6 @@ export function * logoutFlow () {
 
     yield call(logout)
     // forwardTo('/')
-    yield put(push('/'));
   }
 }
 
@@ -145,7 +143,6 @@ export function * registerFlow () {
       yield put({type: SET_AUTH, newAuthState: true}) // User is logged in (authorized) after being registered
       yield put({type: CHANGE_FORM, newFormState: {username: '', password: ''}}) // Clear form
       // forwardTo('/dashboard') // Go to dashboard page
-      yield put(push('/dashboard'));
     }
   }
 }

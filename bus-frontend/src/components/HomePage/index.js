@@ -4,7 +4,7 @@ import Footer from '../Footer';
 import Navbar from '../Navbar';
 import SelectPage from '../../containers/SelectPage';
 import { Styles } from '../../styles/style';
-
+import { connect } from 'react-redux';
 
 class ThreeIcon extends React.Component{
   render(){
@@ -164,7 +164,13 @@ class HomePage extends React.Component {
     );
   }
 }
-export default HomePage;
+const mapStateToProps = ( state ) => {
+  return{
+    authData : state.get('authReducer')
+  }
+}
+
+export default connect(mapStateToProps,null)(HomePage);
 
 
 

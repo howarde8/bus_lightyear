@@ -32,7 +32,6 @@ import PublishPage7_Rule from './containers/PublishPage7_Rule';
 import PublishPage8_Finish from './containers/PublishPage8_Finish';
 import ProductPage from './containers/ProductPage';
 
-
 const initialState = {};
 
 const history = createHistory()
@@ -50,9 +49,9 @@ const store = createStore(
   )
 sagaMiddleware.run(rootSaga)
 
-
+/
 // ... my fucking testing area
-// console.log(store.getState().get('authReducer'));
+console.log(store.getState());
 // const { loggedFlag } = store.getState().get('authReducer');
 // console.log(loggedFlag);
 
