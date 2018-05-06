@@ -29,6 +29,11 @@ import {
  */
 export function * authorize ({username, password, isRegistering}) {
   // We send an action that tells Redux we're sending a request
+  if(!username || !password){
+    yield put({type: REQUEST_ERROR, error: 'wrong input'});
+    alert('please confirm your info');
+    return;
+  }
   yield put({type: SENDING_REQUEST, sending: true})
 
   // We then try to register or log in the user, depending on the request

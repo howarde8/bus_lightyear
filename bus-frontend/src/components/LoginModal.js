@@ -117,36 +117,36 @@ export default class LoginModal extends React.Component {
           <div className="modal-overlay-div" style={overlayStyle} />
           <div className="modal-content-div" style={contentStyle} onClick={this.onOverlayClick}>
             <div className="modal-dialog-div" style={dialogStyle} onClick={this.onDialogClick}>
-            <div class="login_cover_off">
-              <div class="login_cover"></div>
-              <div class="login_window">
-                <div class="close_window"> 
-                  <div onClick={this.onClickDismiss} class="text">Ｘ</div>
+            <div className="login_cover_off">
+              <div className="login_cover"></div>
+              <div className="login_window">
+                <div className="close_window"> 
+                  <div onClick={this.onClickDismiss} className="text">Ｘ</div>
                 </div>
-                <div class="facebook_login button"> 
-                  <div class="icon"></div>
-                  <div class="text">使用facebook帳號登入</div>
+                <div className="facebook_login button"> 
+                  <div className="icon"></div>
+                  <div className="text">使用facebook帳號登入</div>
                 </div>
-                <div class="google_login button"> 
-                  <div class="icon"></div>
-                  <div class="text">使用Google帳號登入</div>
+                <div className="google_login button"> 
+                  <div className="icon"></div>
+                  <div className="text">使用Google帳號登入</div>
                 </div>
-                <div class="text_or">————————— 或 —————————</div>
-                <div class="email_input button"> 
+                <div className="text_or">————————— 或 —————————</div>
+                <div className="email_input button"> 
                   <input placeholder="電子郵件地址" value={this.props.formState.username} onChange={this._changeUsername} />
                 </div>
-                <div class="password_input button"> 
+                <div className="password_input button"> 
                   <input type="password" placeholder="密碼" value={this.props.formState.password} onChange={this._changePassword} />
-                  <div class="icon"></div>
+                  <div className="icon"></div>
                 </div>
-                <div class="login_forgot">忘記密碼？</div>
-                <div class="login_button button"> 
-                  <div onClick={this.onLoginClick} class="text">登入</div>
+                <div className="login_forgot">忘記密碼？</div>
+                <div className="login_button button"> 
+                  <div onClick={this.onLoginClick} className="text">登入</div>
                 </div>
                 <hr/>
                 <h4>還沒有帳號嗎？</h4>
-                <div class="change_to_signup"> 
-                  <div class="text" onClick={this.onRegisterClick}>註冊 </div>
+                <div className="change_to_signup"> 
+                  <div className="text" onClick={this.onRegisterClick}>註冊 </div>
                 </div>
               </div>
             </div>
