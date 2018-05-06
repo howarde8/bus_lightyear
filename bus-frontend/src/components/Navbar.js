@@ -15,7 +15,6 @@ class Navbar extends React.Component{
 
         // true 表示要登出
         this.props.dispatch(logout());
-        // this.props.dispatch({type:'FAKE_LOGOUT'});
     }
     render(){
         const AuthComponent = this.props.authData.loggedIn ? "登出" : <LoginModal title={'登入'} dispatch={this.props.dispatch} formState={this.props.authData.formState}/>;
@@ -55,11 +54,6 @@ class Navbar extends React.Component{
     )
     }
 }
-const mapStateToProps = (state) => {
-    return{
-        // loggedFlag: state.get('authReducer').loggedFlag,
-        authData : state.get('authReducer'),
-    }
-}
 
-export default connect(mapStateToProps,null)(Navbar);
+
+export default Navbar;

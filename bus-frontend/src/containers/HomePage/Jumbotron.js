@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SearchBar from '../../containers/SearchBar';
+import SearchBar from '../SearchBar';
 import { Styles } from '../../styles/style';
 
 export default class Jumbotron extends React.Component{

@@ -15,8 +15,11 @@ import reducers from './reducers';
 import rootSaga from './sagas'
 
 //...pages 
-import HomePage from './components/HomePage';
+
 import Repo from './components/Repo';
+import Article_Consumer from './components/Article_Consumer';
+
+import HomePage from './containers/HomePage';
 import BusPage from './containers/BusPage';
 import CommentPage from './containers/CommentPage';
 import SelectPage from './containers/SelectPage';
@@ -31,7 +34,7 @@ import PublishPage6_Price from './containers/PublishPage6_Price';
 import PublishPage7_Rule from './containers/PublishPage7_Rule';
 import PublishPage8_Finish from './containers/PublishPage8_Finish';
 import ProductPage from './containers/ProductPage';
-import Article_Consumer from './components/Article_Consumer';
+
 
 const initialState = {};
 
