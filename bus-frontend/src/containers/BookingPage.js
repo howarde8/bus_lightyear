@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/BookingPage.css';
-import Navbar from '../components/Navbar';
+import NavBar from '../components/Navbar';
 import { connect } from 'react-redux';
 import Footer from '../components/Footer';
 class BookingPage extends React.Component {
@@ -22,7 +22,7 @@ class BookingPage extends React.Component {
     }
     return (
       <div id="booking_page">
-        <Navbar/>
+        <NavBar authData={this.props.authData} dispatch={this.props.dispatch}/>
         <div className="container">
           <div className="row">
             <div className="col-sm-8 col-xs-12 booking_area"> 
@@ -108,6 +108,7 @@ class BookingPage extends React.Component {
 const mapStateToProps = (state) => {
   return{
     order: state.get('order'),
+    authData : state.get('authReducer')
   }
 }
 export default connect(mapStateToProps)(BookingPage);

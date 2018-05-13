@@ -1,7 +1,7 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+import NavBar from '../components/Navbar';
 import '../styles/CommentPage.css';
-
+import { connect } from 'react-redux';
 // ... global stylish
 const h1 = { fontSize : 80 };
 const h2 = { fontSize : 60 };
@@ -31,7 +31,7 @@ class CommentPage extends React.Component {
     };
     return (
       <div id="comment_page">
-        <Navbar/>
+        <NavBar authData={this.props.authData} dispatch={this.props.dispatch}/>
         <div className="container">
           <div className="row">
             <div className="col-sm-10 col-sm-offset-1 col-xs-12 comment">
@@ -84,5 +84,10 @@ class CommentPage extends React.Component {
     )
   }
 }
+const mapStateToProps = ( state ) => {
+  return{
+    authData : state.get('authReducer')
+  }
+}
 
-export default CommentPage;
+export default connect(mapStateToProps,null)(CommentPage);

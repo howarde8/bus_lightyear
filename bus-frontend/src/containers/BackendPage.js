@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import NavBar from '../components/Navbar';
 import ProductPage from './ProductPage';
 
 // ... global stylish
@@ -64,7 +65,7 @@ class BackendPage extends React.Component {
 
     return (
       <div>
-        <Navbar/>
+        <NavBar authData={this.props.authData} dispatch={this.props.dispatch}/>
         <div className="intro" style={introStyle}>
           <div className="container">
             <div class="area col-xs-12" style={areaStyle}>
@@ -81,7 +82,13 @@ class BackendPage extends React.Component {
     );
   }
 }
-export default BackendPage;
+const mapStateToProps = ( state ) => {
+  return{
+    authData : state.get('authReducer')
+  }
+}
+
+export default connect(mapStateToProps,null)(BackendPage);
 
 
 

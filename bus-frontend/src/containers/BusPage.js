@@ -10,7 +10,7 @@ class BusPage extends React.Component {
     const IMG = { width: '100%',height:'100%',margin:'0',padding:'0',borderRadius:5};
     return (
       <div className="buspage">
-        <NavBar/>
+        <NavBar authData={this.props.authData} dispatch={this.props.dispatch}/>
         <div className="container-fluid">
           <div className="col-lg-7 col-sm-12 col-lg-offset-1 picture" style={{marginTop:20}}>
             <img src={BusData.img_src} style={{...IMG}} alt=""/>
@@ -182,6 +182,7 @@ class BusPage extends React.Component {
 const mapStateToProps = (state) => {
   return{
     order: state.get('order'),
+    authData : state.get('authReducer'),
   }
 }
 export default connect(mapStateToProps)(BusPage);
