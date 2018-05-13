@@ -44,7 +44,7 @@ const dialogStyle = {
 const modelStyle = {
   visibility : 'hidden',
 }
-export default class LoginModal extends React.Component {
+export default class SignupModal extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -160,23 +160,45 @@ export default class LoginModal extends React.Component {
     }
     const inputStyle = {
       border: '0.5px solid rgba(0, 0, 0, 0.3)',
-      paddingLeft: 10
+      paddingLeft: 10,
+      height: 40
     }
-    const forgotStyle = {
-      float: 'right',
-      right: 20,
-      marginTop: 10, 
-      ...Styles.p,
-      color: 'rgba(0,0,0,0.6)'
-    }
-    const loginStyle = {
+    const containerStyle = {
+      display: 'block',
+      width: 350,
+      textAlign: 'left',
+      float: 'left',
+      marginLeft: 20,
+      paddingLeft: 20,
+      marginTop: 10,
+      cursor: 'pointer',
+      userSelect: 'none',
+      fontWeight: 300,
+      ...Styles.p
+    };
+    const checkboxStyle = {
+      position: 'absolute',
+      cursor: 'pointer',
+      top: 1,
+      left: 0
+    };
+    const checkmarkStyle = {
+      display: 'none',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: 30,
+      height: 30,
+      backgroundColor: '#eee'
+    };
+    const signupStyle = {
       backgroundColor: Styles.color.blue,
       ...Styles.h5,
       color: 'white'
     }
     const textStyle = {
       display: 'inline-block',
-      left: -90
+      left: -60
     }
     const switchStyle = {
       float: 'right',
@@ -208,40 +230,47 @@ export default class LoginModal extends React.Component {
                 <div class="row" style={{...Styles.noMargin}}>
                   <button class="facebook_login button" style={{...btnStyle,...fbStyle}}> 
                     <div class="icon" style={{...iconStyle,...fbIconStyle}}></div>
-                    <div class="text" style={btnTextStyle}>使用facebook帳號登入</div>
+                    <div class="text" style={btnTextStyle}>使用facebook帳號註冊</div>
                   </button>
                 </div>
                 <div class="row" style={{...Styles.noMargin}}>
                   <button class="google_login button" style={btnStyle}> 
                     <div class="icon" style={{...iconStyle,...googleIconStyle}}></div>
-                    <div class="text" style={btnTextStyle}>使用Google帳號登入</div>
+                    <div class="text" style={btnTextStyle}>使用Google帳號註冊</div>
                   </button>
                 </div>
                 <div class="row" style={{...Styles.noMargin}}>
                   <div class="text_or" style={orStyle}>——————————— 或 ———————————</div>
                 </div>
                 <div class="row" style={{...Styles.noMargin}}>
-                  <div class="email_input button"> 
-                    <input placeholder="電子郵件地址" style={{...btnStyle,...inputStyle}}/>
-                  </div>
+                  <input type="text" placeholder="姓名" style={{...btnStyle,...inputStyle}}/>
+                </div>
+                <div class="row" style={{...Styles.noMargin}}>
+                  <input type="gender" placeholder="生日" style={{...btnStyle,...inputStyle}} />
+                </div>
+                <div class="row" style={{...Styles.noMargin}}>
+                  <input type="email" placeholder="電子郵件地址" style={{...btnStyle,...inputStyle}}/>
                 </div>
                 <div class="row" style={{...Styles.noMargin}}>
                   <input type="password" placeholder="密碼" style={{...btnStyle,...inputStyle}} />
                 </div>
                 <div class="row" style={{...Styles.noMargin}}>
-                  <div class="login_forgot" style={forgotStyle}><a href="#">忘記密碼？</a></div>
+                  <label class="text-muted" style={containerStyle} value="recorder"> 我想收到巴士光年的遊覽車宣傳、特別優惠、旅遊靈感與政策更新等相關資訊。我隨時可以選擇不要再收到這些資訊。
+                      <input type="checkbox"  style={checkboxStyle}/>
+                      <span class="checkmark" style={checkmarkStyle}></span>
+                  </label>
                 </div>
                 <div class="row" style={{...Styles.noMargin}}>
                   <div class="login_button button"> 
-                    <button onClick={this.onLoginClick} class="text" style={{...btnStyle,...loginStyle}} >登入</button>
+                    <button onClick={this.onLoginClick} class="text" style={{...btnStyle,...signupStyle}} >註冊</button>
                   </div>
                 </div>
                 <div class="row" style={{...Styles.noMargin}}>
                   <div class="text_or" style={orStyle}>—————————————————————————</div>
                 </div>
                 <div class="row" style={{...Styles.noMargin}}>
-                  <div class="text-muted" style={textStyle}>還沒有帳號嗎？</div>
-                  <button class="text" onClick={this.onRegisterClick} style={switchStyle}>註冊</button>
+                  <div class="text-muted" style={textStyle}>已經有巴士光年帳號了？</div>
+                  <button class="text" onClick={this.onRegisterClick} style={switchStyle}>登入</button>
                 </div>
               </div>
             </div>
