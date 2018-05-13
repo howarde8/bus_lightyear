@@ -217,7 +217,7 @@ export default class LoginModal extends React.Component {
                   <button onClick={this.onLoginClick} class="text" style={{...btnStyle,...loginStyle}} >登入</button>
                 </div>
                 <div class="text_or" style={orStyle}>—————————————————————————</div>
-                <button class="text" style={switchStyle}>註冊</button>
+                <button class="text" onClick={this.onRegisterClick} style={switchStyle}>註冊</button>
               </div>
             </div>
             </div>
