@@ -1,21 +1,23 @@
 import React from 'react';
-import LoginModal from '../components/Modal';
+import LoginModal from '../components/LoginModal';
 import { connect } from 'react-redux';
-
+import {logout, clearError} from '../actions/auth'
 
 class Navbar extends React.Component{
     componentDidUpdate(){
         console.log('update',this.props);
     }
     onClick = () => {
-        if(!this.props.loggedFlag){ // false, 表示沒有登入 需要登入 
+        if(!this.props.authData.loggedIn){ // false, 表示沒有登入 需要登入 
+            this.props.dispatch(clearError())
             return;
         } 
+
         // true 表示要登出
-        this.props.dispatch({type:'FAKE_LOGOUT'});
+        this.props.dispatch(logout());
     }
     render(){
-        const AuthComponent = this.props.loggedFlag ? "登出" : <LoginModal title={'登入'} dispatch={this.props.dispatch}/>;
+        const AuthComponent = this.props.authData.loggedIn ? "登出" : <LoginModal title={'登入'} dispatch={this.props.dispatch} formState={this.props.authData.formState}/>;
         return(
         <nav className="navbar navbar-default" role="navigation" style={{marginBottom: 0}}>
             <div className="navbar-header">
@@ -52,10 +54,6 @@ class Navbar extends React.Component{
     )
     }
 }
-const mapStateToProps = (state) => {
-    return{
-        loggedFlag: state.get('authReducer').loggedFlag,
-    }
-}
 
-export default connect(mapStateToProps,null)(Navbar);
+
+export default Navbar;

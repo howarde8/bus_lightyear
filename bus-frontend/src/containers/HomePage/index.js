@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Jumbotron from './Jumbotron';
-import Footer from '../Footer';
-import Navbar from '../Navbar';
-import SelectPage from '../../containers/SelectPage';
+import Footer from '../../components/Footer';
+import Navbar from '../../components/Navbar';
+import SelectPage from '../SelectPage';
 import { Styles } from '../../styles/style';
-
+import { connect } from 'react-redux';
 
 class ThreeIcon extends React.Component{
   render(){
@@ -135,7 +135,7 @@ class HomePage extends React.Component {
     };
     return (
       <div>
-        <Navbar/>
+        <Navbar authData={this.props.authData} dispatch={this.props.dispatch}/>
         <div className="intro" style={introStyle}>
           <div className="container-fluid" style={Styles.noPadding}>
             <Jumbotron title="巴士光年" subtitle="最快速且方便的遊覽車預訂體驗"/>
@@ -164,7 +164,13 @@ class HomePage extends React.Component {
     );
   }
 }
-export default HomePage;
+const mapStateToProps = ( state ) => {
+  return{
+    authData : state.get('authReducer')
+  }
+}
+
+export default connect(mapStateToProps,null)(HomePage);
 
 
 

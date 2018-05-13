@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+<<<<<<< HEAD:bus-frontend/src/components/Modal.js
 import { Styles } from '../styles/style';
+=======
+import {changeForm, loginRequest, registerRequest} from '../actions/auth'
+>>>>>>> f1b387860b14fe696059220ba428e706d1080e4d:bus-frontend/src/components/LoginModal.js
 
 const overlayStyle = {
   position: 'fixed',
@@ -43,7 +47,7 @@ const dialogStyle = {
 const modelStyle = {
   visibility : 'hidden',
 }
-export default class Modal extends React.Component {
+export default class LoginModal extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -77,8 +81,13 @@ export default class Modal extends React.Component {
     this.setState({ hidden: 'visible'});
   }
   onLoginClick = () => {
-    this.props.dispatch({type:'FAKE_LOGIN'});
     this.setState({ hidden: 'hidden'});
+    const { username, password } = this.props.formState;
+    this.props.dispatch(loginRequest({username, password}));
+  }
+  onRegisterClick = () => {
+    const { username, password } = this.props.formState;
+    this.props.dispatch(registerRequest({username, password}))
   }
   onClickDismiss = () => {
     this.setState({ hidden: 'hidden'});
@@ -86,6 +95,20 @@ export default class Modal extends React.Component {
       this.props.onClose();
     }
   }
+
+  // typing session
+  _changeUsername = (event) => {
+    this._emitChange({...this.props.formState, username: event.target.value})
+  }
+
+  _changePassword = (event) => {
+    this._emitChange({...this.props.formState, password: event.target.value})
+  }
+
+  _emitChange = (newFormState) => {
+    this.props.dispatch(changeForm(newFormState))
+  }
+
   render() {
     const windowStyle = {
       top: '-10%',
@@ -170,6 +193,7 @@ export default class Modal extends React.Component {
         <div style={{...modelStyle, visibility:this.state.hidden}}>
           <div className="modal-overlay-div" style={overlayStyle} />
           <div className="modal-content-div" style={contentStyle} onClick={this.onOverlayClick}>
+<<<<<<< HEAD:bus-frontend/src/components/Modal.js
             <div className="modal-dialog-div" style={{...dialogStyle,...windowStyle}} onClick={this.onDialogClick}>
             <div class="login_cover_off" >
               <div class="login_cover"></div>
@@ -195,6 +219,39 @@ export default class Modal extends React.Component {
                 <div class="login_forgot" style={forgotStyle}>忘記密碼？</div>
                 <div class="login_button button"> 
                   <button onClick={this.onLoginClick} class="text" style={{...btnStyle,...loginStyle}} >登入</button>
+=======
+            <div className="modal-dialog-div" style={dialogStyle} onClick={this.onDialogClick}>
+            <div className="login_cover_off">
+              <div className="login_cover"></div>
+              <div className="login_window">
+                <div className="close_window"> 
+                  <div onClick={this.onClickDismiss} className="text">Ｘ</div>
+                </div>
+                <div className="facebook_login button"> 
+                  <div className="icon"></div>
+                  <div className="text">使用facebook帳號登入</div>
+                </div>
+                <div className="google_login button"> 
+                  <div className="icon"></div>
+                  <div className="text">使用Google帳號登入</div>
+                </div>
+                <div className="text_or">————————— 或 —————————</div>
+                <div className="email_input button"> 
+                  <input placeholder="電子郵件地址" value={this.props.formState.username} onChange={this._changeUsername} />
+                </div>
+                <div className="password_input button"> 
+                  <input type="password" placeholder="密碼" value={this.props.formState.password} onChange={this._changePassword} />
+                  <div className="icon"></div>
+                </div>
+                <div className="login_forgot">忘記密碼？</div>
+                <div className="login_button button"> 
+                  <div onClick={this.onLoginClick} className="text">登入</div>
+                </div>
+                <hr/>
+                <h4>還沒有帳號嗎？</h4>
+                <div className="change_to_signup"> 
+                  <div className="text" onClick={this.onRegisterClick}>註冊 </div>
+>>>>>>> f1b387860b14fe696059220ba428e706d1080e4d:bus-frontend/src/components/LoginModal.js
                 </div>
                 <div class="text_or" style={orStyle}>—————————————————————————</div>
                 <button class="text" style={switchStyle}>註冊</button>

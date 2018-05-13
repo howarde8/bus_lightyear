@@ -1,5 +1,5 @@
 import React from 'react';
-import Modal from '../components/Modal';
+import Modal from '../components/LoginModal';
 import { Styles } from '../styles/style';
 
 const navbarStyle = {
