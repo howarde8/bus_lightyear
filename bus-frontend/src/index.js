@@ -17,7 +17,6 @@ import rootSaga from './sagas'
 //...pages 
 
 import Repo from './components/Repo';
-import Article_Consumer from './components/Article_Consumer';
 
 import HomePage from './containers/HomePage';
 import BusPage from './containers/BusPage';
@@ -34,14 +33,11 @@ import PublishPage6_Price from './containers/PublishPage6_Price';
 import PublishPage7_Rule from './containers/PublishPage7_Rule';
 import PublishPage8_Finish from './containers/PublishPage8_Finish';
 import ProductPage from './containers/ProductPage';
-<<<<<<< HEAD
 import Article_Consumer from './components/Article_Consumer';
 import Article_Privacy from './components/Article_Privacy';
 import Article_Service from './components/Article_Service';
 
 
-=======
->>>>>>> f1b387860b14fe696059220ba428e706d1080e4d
 
 
 const initialState = {};
