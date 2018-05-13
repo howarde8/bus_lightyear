@@ -27,7 +27,8 @@ class Navbar extends React.Component{
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
             </button>
-            <div className="navbar-brand"><img src="https://i.imgur.com/1zL5YTz.png" style={{width:50,height:50,top:-15}} /></div>
+            <div className="navbar-brand"><img src="https://i.imgur.com/hwI0Cjh.png" style={{width:50,height:50,top:-15}} /></div>
+            {/* https://i.imgur.com/1zL5YTz.png */}
             <div className="navbar-brand">
                 BUS-lightyear
             </div>
