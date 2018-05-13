@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Styles } from '../styles/style';
 
 const overlayStyle = {
   position: 'fixed',
@@ -32,7 +33,7 @@ const dialogStyle = {
   verticalAlign: 'middle',
   boxSizing: 'border-box',
   maxWidth: 'auto',
-  maxHeight: '70%',
+  maxHeight: '100%',
   marginTop : '10%',
   cursor: 'default',
   borderRadius: 4,
@@ -45,15 +46,11 @@ const modelStyle = {
 export default class Modal extends React.Component {
   constructor() {
     super();
-
     this.state = {
       modalIsOpen: false,
       hidden : 'hidden',
     };
-
   }
-
-
   listenKeyboard = (event) => {
     if (event.key === 'Escape' || event.keyCode === 27) {
       this.props.onClose();
@@ -90,44 +87,117 @@ export default class Modal extends React.Component {
     }
   }
   render() {
+    const windowStyle = {
+      top: '-10%',
+    }
+    const Xstyle = {
+      display: 'inline-block',
+      float: 'right',
+      marginTop: 8,
+      transform: 'translateX(-100%)',
+      ...Styles.h5,
+      fontWwight: 400,
+      cursor: 'pointer',
+      userSelect: 'none',
+    }
+    const btnStyle = {
+      width: '90%',
+      height: 60,
+      marginTop: 8,
+      borderRadius: 5
+    }
+    const fbStyle = {
+      backgroundColor: '#3B5998',
+      color: 'white'
+    }
+    const iconStyle = {
+      display: 'inline-block',
+      width: 40,
+      height: 40,
+      float: 'left',
+      marginLeft: 10,
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover'
+    }
+    const fbIconStyle = {
+      backgroundImage: 'url(https://i.imgur.com/32njHZy.png)'
+    }
+    const googleIconStyle = {
+      backgroundImage: 'url(https://i.imgur.com/B2G8HAn.png)'
+    }
+    const btnTextStyle = {
+      display: 'inline-block',
+      marginTop: 10,
+      ...Styles.h6
+    }
+    const orStyle = {
+      color: 'rgba(0,0,0,0.6)',
+      marginTop: 10,
+      marginBottom: 4
+    }
+    const inputStyle = {
+      border: '0.5px solid rgba(0, 0, 0, 0.3)',
+      paddingLeft: 10
+    }
+    const forgotStyle = {
+      float: 'right',
+      right: 20,
+      marginTop: 10, 
+      ...Styles.p,
+      color: 'rgba(0,0,0,0.6)'
+    }
+    const loginStyle = {
+      backgroundColor: Styles.color.blue,
+      ...Styles.h5,
+      color: 'white'
+    }
+    const switchStyle = {
+      float: 'right',
+      right: 20,
+      marginBottom: 20,
+      padding: 8,
+      paddingLeft: 20,
+      paddingRight: 20,
+      ...Styles.h6,
+      border: '3px solid #1092BA',
+      color: Styles.color.blue,
+      borderRadius: 5
+    }
     return (
       <div>
         <div onClick={this.buttonClick} style={this.props.titleStyle}>{this.props.title}</div>
         <div style={{...modelStyle, visibility:this.state.hidden}}>
           <div className="modal-overlay-div" style={overlayStyle} />
           <div className="modal-content-div" style={contentStyle} onClick={this.onOverlayClick}>
-            <div className="modal-dialog-div" style={dialogStyle} onClick={this.onDialogClick}>
-            <div class="login_cover_off">
+            <div className="modal-dialog-div" style={{...dialogStyle,...windowStyle}} onClick={this.onDialogClick}>
+            <div class="login_cover_off" >
               <div class="login_cover"></div>
               <div class="login_window">
-                <div class="close_window"> 
-                  <div onClick={this.onClickDismiss} class="text">Ｘ</div>
+                <div class="row">
+                  <div class="close_window"> 
+                    <div onClick={this.onClickDismiss} class="text" style={Xstyle}>Ｘ</div>
+                  </div>
                 </div>
-                <div class="facebook_login button"> 
-                  <div class="icon"></div>
-                  <div class="text">使用facebook帳號登入</div>
-                </div>
-                <div class="google_login button"> 
-                  <div class="icon"></div>
-                  <div class="text">使用Google帳號登入</div>
-                </div>
-                <div class="text_or">————————— 或 —————————</div>
+                <button class="facebook_login button" style={{...btnStyle,...fbStyle}}> 
+                  <div class="icon" style={{...iconStyle,...fbIconStyle}}></div>
+                  <div class="text" style={btnTextStyle}>使用facebook帳號登入</div>
+                </button>
+                <button class="google_login button" style={btnStyle}> 
+                  <div class="icon" style={{...iconStyle,...googleIconStyle}}></div>
+                  <div class="text" style={btnTextStyle}>使用Google帳號登入</div>
+                </button>
+                <div class="text_or" style={orStyle}>———————————— 或 ————————————</div>
                 <div class="email_input button"> 
-                  <input placeholder="電子郵件地址"/>
+                  <input placeholder="電子郵件地址" style={{...btnStyle,...inputStyle}}/>
                 </div>
-                <div class="password_input button"> 
-                  <input type="password" placeholder="密碼"/>
-                  <div class="icon"></div>
-                </div>
-                <div class="login_forgot">忘記密碼？</div>
+                <input type="password" placeholder="密碼" style={{...btnStyle,...inputStyle}} />
+                <div class="login_forgot" style={forgotStyle}>忘記密碼？</div>
                 <div class="login_button button"> 
-                  <div onClick={this.onLoginClick} class="text">登入</div>
+                  <button onClick={this.onLoginClick} class="text" style={{...btnStyle,...loginStyle}} >登入</button>
                 </div>
-                <hr/>
-                <h4>還沒有帳號嗎？</h4>
-                <div class="change_to_signup"> 
-                  <div class="text">註冊 </div>
-                </div>
+                <div class="text_or" style={orStyle}>—————————————————————————</div>
+                <button class="text" style={switchStyle}>註冊</button>
               </div>
             </div>
             </div>

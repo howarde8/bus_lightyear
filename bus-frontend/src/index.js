@@ -32,6 +32,10 @@ import PublishPage7_Rule from './containers/PublishPage7_Rule';
 import PublishPage8_Finish from './containers/PublishPage8_Finish';
 import ProductPage from './containers/ProductPage';
 import Article_Consumer from './components/Article_Consumer';
+import Article_Privacy from './components/Article_Privacy';
+import Article_Service from './components/Article_Service';
+
+
 
 
 const initialState = {};
@@ -78,6 +82,9 @@ ReactDOM.render(
         <Route path="/publish_7_rule" component={PublishPage7_Rule}/>
         <Route path="/publish_8_finish" component={PublishPage8_Finish}/>
         <Route path="/article_consumer" component={Article_Consumer}/>
+        <Route path="/article_privacy" component={Article_Privacy}/>
+        <Route path="/article_service" component={Article_Service}/>
+
       </div>
     </ConnectedRouter>
   </Provider>, 

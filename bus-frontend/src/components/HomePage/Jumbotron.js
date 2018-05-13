@@ -42,7 +42,7 @@ export default class Jumbotron extends React.Component{
       width : '100%',
       height : '100%',
       backgroundColor : '#000000',
-      opacity : '0.3',
+      opacity : '0.6',
     };
     const textBlock = {
       zIndex : '2',

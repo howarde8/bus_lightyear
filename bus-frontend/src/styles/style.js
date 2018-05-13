@@ -26,9 +26,11 @@ export const Styles = {
   color : {
     yellow: '#EEC853',
     blue: '#1092BA'
-
+  },
+  center : {
+    left : '50%',
+    transform: 'translateX(-50%)'
   }
-
 };
 
 

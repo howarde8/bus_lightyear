@@ -77,7 +77,7 @@ class PublishPage1_Company extends React.Component {
       borderRadius: 5,
       ...h5,
       fontWeight: 300,
-      color: 'rgba(0, 0, 0, 0.5)'
+      color: 'rgba(0, 0, 0, 0.8)'
     };
     const redStyle = {
       color: 'red'
