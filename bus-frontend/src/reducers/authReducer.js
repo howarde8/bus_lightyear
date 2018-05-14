@@ -15,7 +15,10 @@ import auth from '../auth'
 let initialState = {
   formState: {
     username: '',
-    password: ''
+    birth: '',
+    email: '',
+    password: '',
+    subscribe: ''
   },
   error: '',
   currentlySending: false,

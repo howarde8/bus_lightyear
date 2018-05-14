@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Styles } from '../styles/style';
-import {changeForm, loginRequest, registerRequest} from '../actions/auth'
+import {changeForm, loginRequest, registerRequest, clearError} from '../actions/auth'
 
 const overlayStyle = {
   position: 'fixed',
@@ -45,11 +45,12 @@ const modelStyle = {
   visibility : 'hidden',
 }
 export default class LoginModal extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       modalIsOpen: false,
       hidden : 'hidden',
+      sourceState : props.authState
     };
   }
   listenKeyboard = (event) => {
@@ -75,16 +76,17 @@ export default class LoginModal extends React.Component {
     event.stopPropagation();
   }
   buttonClick = () => {
+    this.props.dispatch(clearError())
     this.setState({ hidden: 'visible'});
   }
   onLoginClick = () => {
     this.setState({ hidden: 'hidden'});
-    const { username, password } = this.props.formState;
-    this.props.dispatch(loginRequest({username, password}));
+    const { email, password } = this.props.formState;
+    this.props.dispatch(loginRequest({email, password}));
   }
-  onRegisterClick = () => {
-    const { username, password } = this.props.formState;
-    this.props.dispatch(registerRequest({username, password}))
+  onSwitchRegisterClick = () => {
+    // const { email, password } = this.props.formState;
+    // this.props.dispatch(registerRequest({email, password}))
   }
   onClickDismiss = () => {
     this.setState({ hidden: 'hidden'});
@@ -94,8 +96,8 @@ export default class LoginModal extends React.Component {
   }
 
   // typing session
-  _changeUsername = (event) => {
-    this._emitChange({...this.props.formState, username: event.target.value})
+  _changeEmail = (event) => {
+    this._emitChange({...this.props.formState, email: event.target.value})
   }
 
   _changePassword = (event) => {
@@ -103,6 +105,7 @@ export default class LoginModal extends React.Component {
   }
 
   _emitChange = (newFormState) => {
+    console.log(newFormState);
     this.props.dispatch(changeForm(newFormState))
   }
 
@@ -222,11 +225,11 @@ export default class LoginModal extends React.Component {
                 </div>
                 <div class="row" style={{...Styles.noMargin}}>
                   <div class="email_input button"> 
-                    <input placeholder="電子郵件地址" style={{...btnStyle,...inputStyle}}/>
+                    <input placeholder="電子郵件地址" style={{...btnStyle,...inputStyle}} onChange={this._changeEmail}/>
                   </div>
                 </div>
                 <div class="row" style={{...Styles.noMargin}}>
-                  <input type="password" placeholder="密碼" style={{...btnStyle,...inputStyle}} />
+                  <input type="password" placeholder="密碼" style={{...btnStyle,...inputStyle}} onChange={this._changePassword}/>
                 </div>
                 <div class="row" style={{...Styles.noMargin}}>
                   <div class="login_forgot" style={forgotStyle}><a href="#">忘記密碼？</a></div>
@@ -241,7 +244,7 @@ export default class LoginModal extends React.Component {
                 </div>
                 <div class="row" style={{...Styles.noMargin}}>
                   <div class="text-muted" style={textStyle}>還沒有帳號嗎？</div>
-                  <button class="text" onClick={this.onRegisterClick} style={switchStyle}>註冊</button>
+                  <button class="text" onClick={this.onSwitchRegisterClick} style={switchStyle}>註冊</button>
                 </div>
               </div>
             </div>

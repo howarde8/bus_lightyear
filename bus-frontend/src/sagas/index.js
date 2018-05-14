@@ -22,14 +22,14 @@ import {
 
 /**
  * Effect to handle authorization
- * @param  {string} username               The username of the user
+ * @param  {string} email                  The email of the user
  * @param  {string} password               The password of the user
  * @param  {object} options                Options
  * @param  {boolean} options.isRegistering Is this a register request?
  */
-export function * authorize ({username, password, isRegistering}) {
+export function * authorize ({email, password, isRegistering}) {
   // We send an action that tells Redux we're sending a request
-  if(!username || !password){
+  if(!email || !password){
     yield put({type: REQUEST_ERROR, error: 'wrong input'});
     alert('please confirm your info');
     return;
@@ -38,7 +38,7 @@ export function * authorize ({username, password, isRegistering}) {
 
   // We then try to register or log in the user, depending on the request
   try {
-    const salt = genSalt(username)
+    const salt = genSalt(email)
     const hash = hashSync(password, salt)
     let response
 
@@ -47,9 +47,9 @@ export function * authorize ({username, password, isRegistering}) {
     // as if it's synchronous because we pause execution until the call is done
     // with `yield`!
     if (isRegistering) {
-      response = yield call(auth.register, username, hash)
+      response = yield call(auth.register, email, hash)
     } else {
-      response = yield call(auth.login, username, hash)
+      response = yield call(auth.login, email, hash)
     }
 
     return response
@@ -93,13 +93,13 @@ export function * loginFlow () {
   while (true) {
     // And we're listening for `LOGIN_REQUEST` actions and destructuring its payload
     const request = yield take(LOGIN_REQUEST)
-    const {username, password} = request.data
+    const {email, password} = request.data
 
     // A `LOGOUT` action may happen while the `authorize` effect is going on, which may
     // lead to a race condition. This is unlikely, but just in case, we call `race` which
     // returns the "winner", i.e. the one that finished first
     const winner = yield race({
-      auth: call(authorize, {username, password, isRegistering: false}),
+      auth: call(authorize, {email, password, isRegistering: false}),
       logout: take(LOGOUT)
     })
 
@@ -107,7 +107,7 @@ export function * loginFlow () {
     if (winner.auth) {
       // ...we send Redux appropiate actions
       yield put({type: SET_AUTH, newAuthState: true}) // User is logged in (authorized)
-      yield put({type: CHANGE_FORM, newFormState: {username: '', password: ''}}) // Clear form
+      yield put({type: CHANGE_FORM, newFormState: {email: '', password: ''}}) // Clear form
       // forwardTo('/dashboard') // Go to dashboard page
       // yield put(push('/dashboard'));
     }
@@ -137,16 +137,16 @@ export function * registerFlow () {
   while (true) {
     // We always listen to `REGISTER_REQUEST` actions
     const request = yield take(REGISTER_REQUEST)
-    const {username, password} = request.data
+    const {email, password} = request.data
 
     // We call the `authorize` task with the data, telling it that we are registering a user
     // This returns `true` if the registering was successful, `false` if not
-    const wasSuccessful = yield call(authorize, {username, password, isRegistering: true})
+    const wasSuccessful = yield call(authorize, {email, password, isRegistering: true})
 
     // If we could register a user, we send the appropiate actions
     if (wasSuccessful) {
       yield put({type: SET_AUTH, newAuthState: true}) // User is logged in (authorized) after being registered
-      yield put({type: CHANGE_FORM, newFormState: {username: '', password: ''}}) // Clear form
+      yield put({type: CHANGE_FORM, newFormState: {email: '', password: ''}}) // Clear form
       // forwardTo('/dashboard') // Go to dashboard page
     }
   }

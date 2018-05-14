@@ -77,14 +77,14 @@ export default class SignupModal extends React.Component {
   buttonClick = () => {
     this.setState({ hidden: 'visible'});
   }
-  onLoginClick = () => {
-    this.setState({ hidden: 'hidden'});
-    const { username, password } = this.props.formState;
-    this.props.dispatch(loginRequest({username, password}));
+  onSwitchLoginClick = () => {
+    // this.setState({ hidden: 'hidden'});
+    // const { email, password } = this.props.formState;
+    // this.props.dispatch(loginRequest({email, password}));
   }
   onRegisterClick = () => {
-    const { username, password } = this.props.formState;
-    this.props.dispatch(registerRequest({username, password}))
+    const { email, password } = this.props.formState;
+    this.props.dispatch(registerRequest({email, password}))
   }
   onClickDismiss = () => {
     this.setState({ hidden: 'hidden'});
@@ -94,8 +94,8 @@ export default class SignupModal extends React.Component {
   }
 
   // typing session
-  _changeUsername = (event) => {
-    this._emitChange({...this.props.formState, username: event.target.value})
+  _changeEmail = (event) => {
+    this._emitChange({...this.props.formState, email: event.target.value})
   }
 
   _changePassword = (event) => {
@@ -249,10 +249,10 @@ export default class SignupModal extends React.Component {
                   <input type="gender" placeholder="生日" style={{...btnStyle,...inputStyle}} />
                 </div>
                 <div class="row" style={{...Styles.noMargin}}>
-                  <input type="email" placeholder="電子郵件地址" style={{...btnStyle,...inputStyle}}/>
+                  <input type="email" placeholder="電子郵件地址" style={{...btnStyle,...inputStyle}} onChange={this._changeEmail}/>
                 </div>
                 <div class="row" style={{...Styles.noMargin}}>
-                  <input type="password" placeholder="密碼" style={{...btnStyle,...inputStyle}} />
+                  <input type="password" placeholder="密碼" style={{...btnStyle,...inputStyle}} onChange={this._changePassword}/>
                 </div>
                 <div class="row" style={{...Styles.noMargin}}>
                   <label class="text-muted" style={containerStyle} value="recorder"> 我想收到巴士光年的遊覽車宣傳、特別優惠、旅遊靈感與政策更新等相關資訊。我隨時可以選擇不要再收到這些資訊。
@@ -262,7 +262,7 @@ export default class SignupModal extends React.Component {
                 </div>
                 <div class="row" style={{...Styles.noMargin}}>
                   <div class="login_button button"> 
-                    <button onClick={this.onLoginClick} class="text" style={{...btnStyle,...signupStyle}} >註冊</button>
+                    <button onClick={this.onRegisterClick} class="text" style={{...btnStyle,...signupStyle}} >註冊</button>
                   </div>
                 </div>
                 <div class="row" style={{...Styles.noMargin}}>
@@ -270,7 +270,7 @@ export default class SignupModal extends React.Component {
                 </div>
                 <div class="row" style={{...Styles.noMargin}}>
                   <div class="text-muted" style={textStyle}>已經有巴士光年帳號了？</div>
-                  <button class="text" onClick={this.onRegisterClick} style={switchStyle}>登入</button>
+                  <button class="text" onClick={this.onSwitchLoginClick} style={switchStyle}>登入</button>
                 </div>
               </div>
             </div>
