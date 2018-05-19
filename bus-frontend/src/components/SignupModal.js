@@ -78,6 +78,9 @@ export default class SignupModal extends React.Component {
     this.setState({ hidden: 'visible'});
   }
   onSwitchLoginClick = () => {
+    if(this.props.onSwitchLoginClick){
+      this.props.onSwitchLoginClick();
+    }
     // this.setState({ hidden: 'hidden'});
     // const { email, password } = this.props.formState;
     // this.props.dispatch(loginRequest({email, password}));

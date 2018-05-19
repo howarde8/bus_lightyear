@@ -85,6 +85,9 @@ export default class LoginModal extends React.Component {
     this.props.dispatch(loginRequest({email, password}));
   }
   onSwitchRegisterClick = () => {
+    if(this.props.onSwitchRegisterClick){
+      this.props.onSwitchRegisterClick();
+    }
     // const { email, password } = this.props.formState;
     // this.props.dispatch(registerRequest({email, password}))
   }

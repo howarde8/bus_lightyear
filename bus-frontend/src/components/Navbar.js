@@ -11,9 +11,21 @@ class Navbar extends React.Component{
             this.props.dispatch(logout());
         }
     }
+    onSwitchLoginClick = () => {
+        if (this.loginModal) {
+            this.registModal.onClickDismiss();
+            this.loginModal.buttonClick();
+        }
+    }
+    onSwitchRegisterClick = () => {
+        if (this.registModal) {
+            this.loginModal.onClickDismiss();
+            this.registModal.buttonClick();
+        }
+    }
     render(){
-        const AuthComponent = this.props.authData.loggedIn ? "登出" : <LoginModal title={'登入'} dispatch={this.props.dispatch} formState={this.props.authData.formState} authSate={'login'}/>;
-        const SignupCompoent = this.props.authData.loggedIn ? "": <SignupModal title={'註冊'} dispatch={this.props.dispatch} formState={this.props.authData.formState} authSate={'login'}/>; 
+        const AuthComponent = this.props.authData.loggedIn ? "登出" : <LoginModal ref={ref=>this.loginModal=ref} title={'登入'} dispatch={this.props.dispatch} formState={this.props.authData.formState} authSate={'login'} onSwitchRegisterClick={this.onSwitchRegisterClick}/>;
+        const SignupCompoent = this.props.authData.loggedIn ? "": <SignupModal ref={ref=>this.registModal=ref} title={'註冊'} dispatch={this.props.dispatch} formState={this.props.authData.formState} authSate={'login'} onSwitchLoginClick={this.onSwitchLoginClick}/>; 
         return(
         <nav className="navbar navbar-default" role="navigation" style={{marginBottom: 0}}>
             <div className="navbar-header">
