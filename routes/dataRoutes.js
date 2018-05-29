@@ -1,34 +1,7 @@
 const mongoose = require("mongoose");
 const async = require("async");
 
-var busSchema = new mongoose.Schema(
-    {
-        "id": String,
-        "name": String,
-        "company_name": String,
-        "company_id": String,
-        "category": String,
-        "img_src": String,
-        "description": {
-            "max_amount": Number,
-            "start_time": String,
-            "end_time": String,
-            "introduction": String,
-            "precaution": Array,
-            "subscription": String,
-            "subscription_cancel": String
-        },
-        "entertainment": Array,
-        "safety_facility": Array,
-        "order": {
-            "availability": Boolean,
-            "price": Number,
-            "discount": Number
-        }
-    },
-    {collection: "bus"}
-);
-mongoose.model("bus", busSchema);
+const Bus = mongoose.model("buses");
 
 var ratingSchema = new mongoose.Schema(
     {
