@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Footer from '../components/Footer';
 import NavBar from '../components/Navbar';
 import ProductPage from './ProductPage';
-
 // ... global stylish
 const h1 = { fontSize : 80 };
 const h2 = { fontSize : 60 };
