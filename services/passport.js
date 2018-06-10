@@ -24,17 +24,17 @@ passport.use(
       proxy: true
     },
     (accessToken, refreshToken, profile, done) => {
-      User.findOne({ googleId: profile.id }).then(existingUser => {
+      User.findOne({ google_id: profile.id }).then(existingUser => {
         if (existingUser) {
           // we already have a record with the given profile ID
           done(null, existingUser);
         } else {
           var user = new User({
-            googleId: profile.id,
+            google_id: profile.id,
             name: profile.displayName,
             email: profile.emails[0].value,
             gender: profile.gender,
-            imgSrc: profile.photos[0].value
+            img_src: profile.photos[0].value
           });
 
           user
