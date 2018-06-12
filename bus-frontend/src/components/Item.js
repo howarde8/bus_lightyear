@@ -8,6 +8,7 @@ class Item extends React.Component {
   }
 
   render() {
+    console.log(this.props,'items');
     const {price = "none" } = this.props.item.order || {};
     const busCardStyle = {
       width : 270,
@@ -19,7 +20,7 @@ class Item extends React.Component {
         <div className="top">
           <img className="bus_pic" src={this.props.item.img_src} alt=""/>
           <div className="size">
-            {/* <div className="max_amount">{this.props.item.description.max_amount}人</div> */}
+            <div className="max_amount">{this.props.item.max_amount}人</div>
           </div>
         </div>
         <div className="bottom">

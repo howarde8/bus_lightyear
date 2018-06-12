@@ -79,7 +79,7 @@ class BookingPage extends React.Component {
                   </div>
                 </div>
                 <div className="row">
-                  <p className="col-sm-12">{BookingData.description.introduction}</p>
+                  <p className="col-sm-12">{BookingData.introduction}</p>
                 </div>
                 <div className="row">
                   <div className="btn">查看更多</div>

@@ -26,8 +26,8 @@ const getVisibleProducts = (products, filter) => {
       return products;
     case 'FILT_NUMBER':
       return products.filter(value=>
-        value.description.max_amount > filter.lowBound && 
-        value.description.max_amount <= filter.upBound
+        value.max_amount > filter.lowBound && 
+        value.max_amount <= filter.upBound
       );
     case 'FILT_BRAND':
       return products.filter(value=>

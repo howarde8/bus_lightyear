@@ -141,7 +141,7 @@ class Product extends React.Component {
           <div className="top" style={topStyle}>
             <img className="bus_pic"  style={buspicStyle} src={this.props.item.img_src} alt=""/>
             <div className="size" style={sizeStyle}>
-              <div className="max_amount" style={maxamountStyle}>{this.props.item.description.max_amount}人</div>
+              <div className="max_amount" style={maxamountStyle}>{this.props.item.max_amount}人</div>
             </div>
           </div>
           <div className="bottom" style={bottomStyle}>

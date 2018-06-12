@@ -72,34 +72,34 @@ class BusPage extends React.Component {
                 <h3 className="name">{BusData.name}</h3>
                 <h5 className="fw total_comments"> 32 則評價</h5>
                 <h5 className="fw average_stars"> ★★★★★</h5>
-                <h5 className="fw max_amount">最高乘載人數：{BusData.description.max_amount} 人</h5>
+                <h5 className="fw max_amount">最高乘載人數：{BusData.max_amount} 人</h5>
                 <h5 className="fw availablable_num">尚有 2 台</h5>
               </section>
 
             {/* ＣＯＮＴＥＮＴ＿ＩＮＴＲＯＤＵＣＴＩＯＮ */} 
               <section className="content">
                 <h4 className="title">簡介</h4>
-                <p className="introduction mb20">{BusData.description.introduction}</p>
+                <p className="introduction mb20">{BusData.introduction}</p>
               </section>
 
             {/* ＣＯＮＴＥＮＴ＿ＰＲＥＣＡＵＴＩＯＮ */} 
               <section className="content">
                 <h4 className="title">注意事項</h4>
                 <div className="block">
-                  <p className="precaution mb20">{BusData.description.precaution}</p>
+                  <p className="precaution mb20">{BusData.precaution}</p>
                 </div>
               </section>
 
             {/* ＣＯＮＴＥＮＴ＿ＰＲＥＰＡＲＥ */} 
               <section className="content">
                 <h4 className="title">可訂狀態</h4>
-                <p className="prepare_day mb20">{BusData.description.subscription}</p>
+                <p className="prepare_day mb20">{BusData.subscription}</p>
               </section>
 
             {/* ＣＯＮＴＥＮＴ＿ＣＡＮＣＬＥ */} 
               <section className="content">
                 <h4 className="title">退訂方案</h4>
-                <p className="cancel mb20">{BusData.description.subscription_cancel}</p>
+                <p className="cancel mb20">{BusData.subscription_cancel}</p>
               </section>
 
             {/* ＡＣＣＥＳＳＯＲＹ */} 
@@ -135,7 +135,7 @@ class BusPage extends React.Component {
                     <div className="block col-sm-3"><img src={BusData.company_src} alt=""/></div>
                   </div>
                   <div className="row"> 
-                    <p className="info col-sm-12">{BusData.description.introduction}</p>
+                    <p className="info col-sm-12">{BusData.introduction}</p>
                     <div className="owner-btn btn">其他車源</div>
                     {/* <input id="search_bar" type="search" style="font-size: 15px;" color="$color_gray" placeholder=" 搜尋評價"/> */}
                   </div>
