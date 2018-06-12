@@ -87,7 +87,7 @@ class Article_Service extends React.Component {
                   <li style={{...contentStyle,marginLeft:22,listStyleType:'decimal'}}>需有行照駕照等書面資料。</li>
                   <li style={{...contentStyle,marginLeft:22,listStyleType:'decimal'}}>應具有合格及有效之駕照及遊覽車客運業駕駛人登記證。</li> 
                   <li style={{...contentStyle,marginLeft:22,listStyleType:'decimal'}}>駕駛員均持有監理所核發之「遊覽車客運業駕駛人職業登記證」。</li>
-                  <li style={{...contentStyle,marginLeft:22,listStyleType:'decimal'}}>駕駛員應於行程前及行程中各休息、遊憩點出車前實施酒精檢測、由乘克確認後方可行駛。</li>
+                  <li style={{...contentStyle,marginLeft:22,listStyleType:'decimal'}}>駕駛員應於行程前及行程中各休息、遊憩點出車前實施酒精檢測、由乘客確認後方可行駛。</li>
                   <li style={{...contentStyle,marginLeft:22,listStyleType:'decimal'}}>駕駛員需穿著整潔襯衫、長褲、適合行使遊覽車之鞋子。</li> 
                   <li style={{...contentStyle,marginLeft:22,listStyleType:'decimal'}}>駕駛員在行車前、行車中不得有吸食毒品及酗酒的行為。</li>
                 </ul>

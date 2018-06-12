@@ -86,7 +86,6 @@ ReactDOM.render(
         <Route path="/article_consumer" component={Article_Consumer}/>
         <Route path="/article_privacy" component={Article_Privacy}/>
         <Route path="/article_service" component={Article_Service}/>
-
       </div>
     </ConnectedRouter>
   </Provider>, 
