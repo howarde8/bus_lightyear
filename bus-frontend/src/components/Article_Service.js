@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import { Styles } from '../styles/style';
 import Footer from './Footer';
+import { connect } from 'react-redux';
 
 class Article_Service extends React.Component {
   render() {
@@ -118,5 +119,9 @@ class Article_Service extends React.Component {
     )
   }
 }
-
-export default Article_Service;
+const mapStateToProps = ( state ) => {
+  return{
+    authData : state.get('authReducer')
+  }
+}
+export default connect(mapStateToProps,null)(Article_Service);

@@ -10,6 +10,9 @@ const cors = require("cors");
 require("./models/User");
 require("./models/Bus");
 require("./models/Company");
+require("./models/Product");
+require("./models/Booking");
+require("./models/Comment");
 require("./services/passport");
 
 app.use(cors());
@@ -26,8 +29,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require("./routes/authRoutes")(app);
-require("./routes/dataRoutes")(app);
+// require("./routes/dataRoutes")(app);
 require("./routes/companyRoutes")(app);
+require("./routes/busRoutes")(app);
+require("./routes/productRoutes")(app);
+require("./routes/bookingRoutes")(app);
+require("./routes/commentRoutes")(app);
 // app.use(express.static('html'));
 
 if (process.env.NODE_ENV === "production") {

@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import { Styles } from '../styles/style';
 import Footer from './Footer';
+import { connect } from 'react-redux';
 
 class Article_Privacy extends React.Component {
   render() {
@@ -73,7 +74,7 @@ class Article_Privacy extends React.Component {
     };
     return (
       <div id="publish_page_1" style={backgroundStyle}>
-        <Navbar/>
+        <Navbar authData={this.props.authData} dispatch={this.props.dispatch}/>
         <div className="container" style={{...Styles.noPadding}}>
           <div className="row" style={mT100Style}>
             <div class="col-sm-3 col-sm-offset-1 article_list_area" style={{...Styles.noPadding}}>
@@ -125,4 +126,9 @@ class Article_Privacy extends React.Component {
   }
 }
 
-export default Article_Privacy;
+const mapStateToProps = ( state ) => {
+  return{
+    authData : state.get('authReducer')
+  }
+}
+export default connect(mapStateToProps,null)(Article_Privacy);
