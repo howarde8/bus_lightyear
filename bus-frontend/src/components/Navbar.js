@@ -52,7 +52,7 @@ class Navbar extends React.Component{
             <ul className="nav navbar-nav navbar-right">
                 <li><a href="./publish_1_company">刊登資料</a></li>
                 <li><a href="./backend">後台管理</a></li>
-                <li><a href="#">臉書粉專</a></li>
+                <li><a href="./landingpage">關於我們</a></li>
                 <li><a href="#" onClick={this.onClick}>{AuthComponent}</a></li>
                 {!this.props.authData.loggedIn && <li><a href="#">{SignupCompoent}</a></li>}
                 {/* <li><a href="#">登入</a></li> */}

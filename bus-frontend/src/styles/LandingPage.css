@@ -1,0 +1,452 @@
+@charset "UTF-8";
+* {
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  font-family: 微軟正黑體;
+  color: black;
+  box-sizing: border-box;
+}
+
+#landing_page {
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.jumbotron {
+  background-color: white;
+  height: 420px;
+}
+.jumbotron .jumbo_row {
+  margin-top: 80px;
+}
+.jumbotron .row .signup_window {
+  z-index: 1;
+  position: absolute;
+  background: #F7F6F6;
+  border-radius: 4px;
+  width: 270px;
+  height: 400px;
+  text-align: center;
+  box-shadow: 16px 16px 30px -22px;
+  transition-duration: 0.5s;
+}
+.jumbotron .row .signup_window:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.jumbotron .row .signup_window .row {
+  margin: 0px;
+  margin-top: 20px;
+}
+.jumbotron .row .signup_window .row .col-xs-10.col-xs-offset-1 {
+  padding: 0px;
+}
+.jumbotron .row .signup_window .row hr {
+  border: solid 0.5px rgba(0, 0, 0, 0.3);
+  margin: 0px;
+}
+.jumbotron .row .signup_window .row .input_row {
+  margin-top: 10px;
+}
+.jumbotron .row .signup_window .row .input_row input {
+  margin: 0px;
+  width: 100%;
+  height: 40px;
+  border-radius: 6px;
+  padding-left: 4px;
+  letter-spacing: 2px;
+  font-weight: 300;
+  font-size: 16px;
+  border: solid 0.5px rgba(0, 0, 0, 0.5);
+}
+.jumbotron .row .signup_window .row .button_style {
+  color: white;
+  background-color: #1092BA;
+  width: 100%;
+  height: 60px;
+  border-radius: 5px;
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 6px;
+}
+
+.text_area {
+  padding: 0px;
+}
+.text_area h2 {
+  margin-top: 0px;
+  letter-spacing: 10px;
+  line-height: 60px;
+}
+.text_area h3 {
+  margin-top: 10px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  line-height: 40px;
+}
+.text_area h4 {
+  font-weight: 300;
+  letter-spacing: 6px;
+}
+
+.container-fluid .section1 {
+  height: 460px;
+}
+.container-fluid .section1 .travel_img {
+  height: 100%;
+  background-image: url("https://i.imgur.com/K8bBguk.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+}
+.container-fluid .section1 .logo_area {
+  height: 100%;
+  background-color: rgba(0, 0, 1, 0.03);
+}
+.container-fluid .section1 .logo_area .logo {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+.container-fluid .section2 .white_rec {
+  position: absolute;
+  height: 73px;
+  top: -70px;
+  background-color: white;
+  border-radius: 5px;
+}
+.container-fluid .section3 {
+  background-color: white;
+}
+.container-fluid .section3 .col-xs-offset-1.col-xs-10 {
+  padding: 0px;
+}
+.container-fluid .section3 .rec, .container-fluid .section3 .col-md-6 {
+  margin-top: 80px;
+}
+.container-fluid .section3 .color1 {
+  background-color: #14ACDB;
+}
+.container-fluid .section3 .color2 {
+  background-color: #00BBE4;
+}
+.container-fluid .section3 .color3 {
+  background-color: #00D6DA;
+}
+.container-fluid .section3 .color4 {
+  background-color: #00EAD3;
+}
+.container-fluid .section3 .rec {
+  display: inline-block;
+  height: 297px;
+  text-align: center;
+}
+.container-fluid .section3 .rec .textbox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  width: 80%;
+}
+.container-fluid .section3 .rec .textbox .title {
+  margin-top: 0px;
+  color: white;
+}
+.container-fluid .section3 .rec .textbox .content {
+  margin-top: 24px;
+  background-color: white;
+  font-weight: 300;
+  line-height: 30px;
+  padding: 10px;
+}
+.container-fluid .section3 .rec .textbox .small {
+  font-size: 16px;
+}
+.container-fluid .section3 .col-md-6 {
+  padding: 0px;
+}
+.container-fluid .section3 .col-md-6 .pic {
+  height: 297px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container-fluid .section3 .col-md-6 .pic1 {
+  background-image: url("https://i.imgur.com/i0GmtH5.png");
+  background-position: bottom center;
+}
+.container-fluid .section3 .col-md-6 .pic2 {
+  background-image: url("https://i.imgur.com/bxsqg19.png");
+  background-position: center;
+}
+.container-fluid .section3 .col-md-6 .pic3 {
+  background-image: url("https://i.imgur.com/kdOwgGK.jpg");
+  background-position: center;
+}
+.container-fluid .section3 .col-md-6 .pic4 {
+  background-image: url("https://i.imgur.com/IAiXCPy.jpg");
+  background-position: center;
+}
+.container-fluid .section4 .white_rec {
+  position: absolute;
+  height: 70px;
+  top: 70px;
+  background-color: white;
+  border-radius: 5px;
+}
+.container-fluid .section4 .img {
+  margin-top: 80px;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://i.imgur.com/XpvxgJx.jpg");
+}
+.container-fluid .section4 .img .text_area {
+  margin-top: 80px;
+  color: white;
+}
+.container-fluid .section4 .img .text_area .btn {
+  color: white;
+  background-color: #14ACDB;
+  font-size: 16px;
+  letter-spacing: 6px;
+  padding: 20px 10px;
+  margin-top: 120px;  
+  transition-duration: 0.3s;
+}
+.container-fluid .section4 .img .text_area .btn:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.container-fluid .section5 {
+  height: 300px;
+  text-align: center;
+}
+.container-fluid .section5 .text_area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+.container-fluid .section5 .text_area h1 {
+  line-height: 40px;
+}
+.container-fluid .section6 .col-sm-5 {
+  padding: 0px;
+}
+.container-fluid .section6 .col1 {
+  padding-right: 20px;
+}
+.container-fluid .section6 .col2 {
+  padding-left: 20px;
+}
+.container-fluid .section6 .pic {
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.container-fluid .section6 .pic1 {
+  background-image: url("https://i.imgur.com/OQbT0Qm.jpg");
+}
+.container-fluid .section6 .pic2 {
+  background-image: url("https://i.imgur.com/oDqwuCS.jpg");
+}
+.container-fluid .section6 .text_area {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.container-fluid .section6 .text_area h4 {
+  font-weight: 600;
+  font-size: 20px;
+}
+.container-fluid .section6 .text_area h5 {
+  line-height: 20px;
+  letter-spacing: 2px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.container-fluid .section7 .logo_area {
+  text-align: center;
+  padding: 0px;
+}
+.container-fluid .section7 .logo_area label {
+  width: 100%;
+}
+.container-fluid .section7 .logo_area label .text_area {
+  text-align: left;
+  position: absolute;
+  margin-top: 40px;
+}
+.container-fluid .section7 .logo_area label .text_area .title, .container-fluid .section7 .logo_area label .text_area .subtitle {
+  line-height: 50px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+.container-fluid .section7 .logo_area hr {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: relative;
+  border: 0.5px solid rgba(0, 0, 0, 0.3);
+  width: 84%;
+}
+.container-fluid .section7 .logo_area #easter_egg {
+  display: none;
+}
+.container-fluid .section7 .logo_area #easter_egg:checked + .img_area {
+  margin-top: 200px;
+}
+.container-fluid .section7 .logo_area .img_area {
+  background-color: white;
+  transition-duration: 0.5s;
+}
+.container-fluid .section7 .logo_area img {
+  margin-top: 40px;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+}
+.container-fluid .section7 .logo_area img:hover {
+  -webkit-animation: rotate 0.6s 1;
+          animation: rotate 0.6s 1;
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  10% {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  20% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  40% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  50% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  60% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  70% {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  10% {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  20% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  40% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  50% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  60% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  70% {
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+.container-fluid .section7 .logo_area .btn {
+  display: block;
+  color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 100px;
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  padding-top: 20px;
+  transition-duration: 0.3s;
+}
+.container-fluid .section7 .logo_area .btn:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.container-fluid .section8 .footer {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://i.imgur.com/lsDQ4tP.jpg");
+}
+.container-fluid .section8 .footer .title, .container-fluid .section8 .footer p {
+  color: white;
+  font-weight: 300;
+  letter-spacing: 4px;
+}
+.container-fluid .section8 .footer .title {
+  margin-top: 80px;
+}
+.container-fluid .section8 .footer p {
+  margin-top: 40px;
+}
+.container-fluid .section8 .footer textarea {
+  margin-top: 40px;
+  display: block;
+  width: 100%;
+  letter-spacing: 4px;
+  font-weight: 300;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+}
+.container-fluid .section8 .footer .btn {
+  margin-top: 80px;
+  margin-bottom: 120px;
+  border: 2px solid white;
+  border-radius: 1px;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 8px;
+  padding: 10px;
+  transition-duration: 0.3s;
+}
+.container-fluid .section8 .footer .btn:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}

@@ -4,7 +4,6 @@ import NavBar from '../components/Navbar';
 import { connect } from 'react-redux';
 import Footer from '../components/Footer';
 class BookingPage extends React.Component {
-  
   render() {
     const BookingData = this.props.order;
     const IMG = {

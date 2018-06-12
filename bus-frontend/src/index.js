@@ -33,9 +33,11 @@ import PublishPage6_Price from './containers/PublishPage6_Price';
 import PublishPage7_Rule from './containers/PublishPage7_Rule';
 import PublishPage8_Finish from './containers/PublishPage8_Finish';
 import ProductPage from './containers/ProductPage';
+import LandingPage from './containers/LandingPage';
 import Article_Consumer from './components/Article_Consumer';
 import Article_Privacy from './components/Article_Privacy';
 import Article_Service from './components/Article_Service';
+
 
 
 
@@ -86,6 +88,7 @@ ReactDOM.render(
         <Route path="/article_consumer" component={Article_Consumer}/>
         <Route path="/article_privacy" component={Article_Privacy}/>
         <Route path="/article_service" component={Article_Service}/>
+        <Route path="/landingpage" component={LandingPage}/>
       </div>
     </ConnectedRouter>
   </Provider>, 
